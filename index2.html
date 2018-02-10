@@ -1,0 +1,29 @@
+<html lang="en">
+
+  <head>
+    <meta charset = "UTF-8">
+    <link href="./styles/styles.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>AGX Online Hearing Test</title>
+
+    <script>
+    function handleLoad(e) { console.log('Loaded import: ' + e.target.href); }
+    function handleError(e) { console.log('Error loading import: ' + e.target.href); }
+    </script>
+
+    <link href="./html/html-templates.html" id="html-templates" rel="import">
+  </head>
+
+
+  <body>
+
+    <div class="quiz-window">
+      <div class="header"></div>
+      <div class="quiz-body"></div>
+    </div>
+
+  </body>
+
+
+  <script src="./scripts/app.js"></script>
+</html>

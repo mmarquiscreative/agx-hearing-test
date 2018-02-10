@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div id="form-container">
+            <div class="page-header text-center">
+                
+                <!-- the links to our nested states using relative paths -->
+                <!-- add the active class if the state matches our ui-sref -->
+                <div ui-sref-active="hidden" ui-sref=".intro" >
+                <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+                <div id="status-buttons" class="text-center nav">
+                    <div id="stepNavBar">
+                        <div class="stepNavItem" ui-sref-active="active" ui-sref=".quiz">Quiz</div>
+                        <div class="stepNavItem" ui-sref-active="active" ui-sref=".toneTest">Tone Test</div>
+                        <div class="stepNavItem" ui-sref-active="active" ui-sref=".volume">Volume</div>
+                        <div class="stepNavItem" ui-sref-active="active" ui-sref=".speechTest">Speech Test</div>
+                        <div class="stepNavItem" ui-sref-active="active" ui-sref=".results">Results</div>
+                    
+                    </div>
+                    <div class="prog-bar-main">
+                        <div class="prog-bubble" ui-sref-active="prog-current" ui-sref=".quiz"></div>
+                        <div class="prog-bubble" ui-sref-active="prog-current" ui-sref=".volume" ></div>
+                        <div class="prog-bubble" ui-sref-active="prog-current" ui-sref=".toneTest" ></div>
+                        <div class="prog-bubble" ui-sref-active="prog-current" ui-sref=".speechTest"></div>
+                        <div class="prog-bubble" ui-sref-active="prog-current" ui-sref=".results"></div>
+                    </div>
+                </div>
+                    <!-- <a ui-sref-active="active" ui-sref=".intro"><span>1</span></a>
+                    <a ui-sref-active="active" ui-sref=".quiz"><span>2</span></a>
+                   
+                     <a ui-sref-active="active" ui-sref=".volume"><span>3</span></a>
+                      <a ui-sref-active="active" ui-sref=".toneTest"><span>4</span></a>
+                      <a ui-sref-active="active" ui-sref=".speechTest"><span>5</span></a>
+                      <a ui-sref-active="active" ui-sref=".results"><span>6</span></a> -->
+                </div>
+                
+        
+                
+            </div>
+            
+            <!-- use ng-submit to catch the form submission and use our angular function -->
+            
+            <form id="signup-form" ng-submit="processForm()">
+                
+                <!-- our nested state views will be injected here -->
+                <div id="form-views" ui-view></div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+

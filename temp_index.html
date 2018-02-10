@@ -1,0 +1,62 @@
+<html ng-app="OHTApp">
+    <head>
+        
+        <meta charset = "UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>AGX Online Hearing Test</title>
+
+    
+    </head>
+    <body>
+    <div ng-controller = "HearingTestCtrl as test">
+       <div ng-if="test.stage.speech" ng-controller = "SpeechTest as speech">
+        
+        <div class="stage-speech-test">
+      <div class="header">
+        
+        <div class="steps">
+          <div class="step-1">Quiz</div>
+          <div class="step-2">Tone Test</div>
+          <div class="step-3">Speech Test</div>
+          <div class="step-4">Results</div>
+        </div>
+
+        <div class="prog-bar">
+          <div class="prog-bubble" id='box1'></div>
+          <div class="prog-bubble" id='box2'></div>
+          <div class="prog-bubble" id='box3'></div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+
+      <div class="speech-test-body">
+        <p class="lead-text">Click on the words you hear spoken</p>
+        <div class="answerGrid">
+           <data-speech-test-btn></data-speech-test-btn>
+        </div>
+        <h3 ng-repeat="curAns in speech.answerInput track by $index">{{curAns}}</h3>
+        <div class="calib-tone-3">
+          <button ng-if="!speech.startTestDisabled" ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-yn-yes" id="toneAnswer">Start Test</button>
+        </div>
+      </div>
+    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+        <script src="app.js"></script>
+</body>
+</html>
