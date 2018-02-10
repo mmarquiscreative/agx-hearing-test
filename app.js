@@ -19,6 +19,7 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     .state('stage.intro', {
         url: '/intro',
+        templateUrl: 'stage-intro.html'
     })
     
     // url will be /stage/quiz
