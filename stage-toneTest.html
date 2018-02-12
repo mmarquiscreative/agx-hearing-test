@@ -14,12 +14,12 @@
       </div>
 
       <div class="btns-yn">
-        <button class="btn-yn-yes">Yes</button>
-        <button class="btn-yn-no">No</button>
+        <button class="btn-yn-yes" ng-click="nextTone(true)">Yes</button>
+        <button class="btn-yn-no" ng-click="nextTone(false)">No</button>
       </div>
 
       <div class="tone-test-tones">
-        <audio id="2000hz" loop="true" src="../sounds/2000.wav"></audio>
+        <audio id="2000hz" ng-attr-loop="{{true}}" src="../sounds/2000.wav"></audio>
         <audio id="4000hz" loop="true" src="../sounds/4000.wav"></audio>
         <audio id="6000hz" loop="true" src="../sounds/6000.wav"></audio>
         <audio id="8000hz" loop="true" src="../sounds/8000.wav"></audio>

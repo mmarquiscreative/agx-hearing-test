@@ -41,7 +41,8 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     .state('stage.toneTest', {
         url: '/toneTest',
-        templateUrl: 'stage-toneTest.html'
+        templateUrl: 'stage-toneTest.html',
+        controller: 'toneTestController'
     })
     
     // url will be /stage/speechTest
@@ -105,6 +106,29 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
         {question: 'Are you often told that you set the television volume very loud?',
         answer: ""}
       ]
+      })
+
+.controller('toneTestController', function ($scope) {
+        var tone = this;
+        $scope.curTone = 0;
+        
+        $scope.loopBool = new Array("true", "false", "false", "false", "false");
+    
+        $scope.toneClass = new Array("freqBlock ", "freqBlock", "freqBlock", "freqBlock", "freqBlock");
+        
+        $scope.toneAns = [];
+        
+        $scope.nextTone = function(someBool){
+           $scope.loopBool[$scope.curTone] = "false";
+            
+            $scope.toneAns[$scope.curTone] = someBool;
+            console.log($scope.toneAns[$scope.curTone]);
+                       
+            $scope.curTone++;
+            
+            $scope.loopBool[$scope.curTone] = "true";
+        }
+        
       });
 
 
