@@ -1,14 +1,20 @@
  <div class="stage-quiz">
       <div class="header">
-
+        <div class="prog-bar-main">
+                        <div ng-class="progClass[0]"></div>
+                        <div ng-class="progClass[1]"></div>
+                        <div ng-class="progClass[2]"></div>
+                        <div ng-class="progClass[3]"></div>
+            
+                    </div>
         
 
       <div class="quiz-body">
-        <p class="quiz-question-text"></p>
+        <p class="quiz-question-text">{{questions[curQuestion].question}}</p>
       </div>
 
-      <div class="btns-yn">
-        <button class="btn-yn-yes">Yes</button>
-        <button class="btn-yn-no">No</button>
+      <div ng-hide="curQuestion >= questions.length" class="btns-yn">
+        <button  ng-click="nextQuestion(true)" class="btn-yn-yes">Yes</button>
+        <button ng-click="nextQuestion(false)" class="btn-yn-no">No</button>
       </div>
-    </div> <button ui-sref="stage.volume" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    </div> <button ng-show="curQuestion >= questions.length" ui-sref="stage.volume" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>

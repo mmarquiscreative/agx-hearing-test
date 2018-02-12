@@ -145,7 +145,7 @@ LAYOUT ELEMENTS
 }
 
 .prog-bubble {
-  background: #b9aac8;
+  background-color: #b9aac8;
   border-radius: 100%;
   display: inline-block;
   height: .5rem;
@@ -154,7 +154,12 @@ LAYOUT ELEMENTS
 }
 
 .prog-current {
-  background: #532d6d;
+  background-color: #532d6d;
+    border-radius: 100%;
+  display: inline-block;
+  height: .5rem;
+  margin: 0 .3rem;
+  width: .5rem;
 }
 
 .tone-test-frequencies {
