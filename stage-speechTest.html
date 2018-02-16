@@ -1,32 +1,15 @@
-<div class="stage-speech-test">
+<div ng-controller="SpeechTest as speech" class="stage-speech-test">
 
       
 
-      <div class="speech-test-body">
+     <div class="speech-test-body">
         <p class="lead-text">Click on the words you hear spoken</p>
-
         <div class="answerGrid">
-          <div class="calib-tone-1">
-            <button class='speechBtn' id='ans1'>One</button>
-            <button class='speechBtn' id='ans2'>Two</button>
-            <button class='speechBtn' id='ans3'>Three</button>    
-          </div>
-
-          <div class="calib-tone-2">
-            <button class='speechBtn' id='ans4'>Four</button>
-            <button class='speechBtn' id='ans5'>Five</button>
-            <button class='speechBtn' id='ans6'>Six</button>
-          </div>
-
-          <div class="calib-tone-3">
-            <button class='speechBtn' id='ans7'>Seven</button>
-            <button class='speechBtn' id='ans8'>Eight</button>
-            <button class='speechBtn' id='ans9'>Nine</button>
-          </div>
+           <data-speech-test-btn></data-speech-test-btn>
         </div>
-
+        <h3 ng-repeat="curAns in speech.answerInput track by $index">{{curAns}}</h3>
         <div class="calib-tone-3">
-          <button class="btn-yn-yes" id="toneAnswer">Start Test</button>
+          <button ng-if="!speech.startTestDisabled" ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-yn-yes" id="toneAnswer">Start Test</button>
         </div>
       </div>
       <button ui-sref="stage.results" class="btn-submit-intro">Results <span class="glyphicon glyphicon-circle-arrow-right"></span></button>

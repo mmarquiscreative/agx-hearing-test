@@ -1,5 +1,5 @@
 
-    <div class="stage-results">
+    <div ng-controller = "resultsController as results" class="stage-results">
       <div class="header">
        
         <h2>Your AGX<sup>&reg;</sup> Online Hearing Test Results</h2>
@@ -31,7 +31,7 @@
             <p class="results-head">Speech Test</p>
 
             <div class="score">
-              <div class="score-speech">%speechTotal%</div>
+              <div class="score-speech">{{results.wrongAns.speechAns}}</div>
             </div>
           </div>
         </div>

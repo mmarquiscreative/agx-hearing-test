@@ -1,0 +1,245 @@
+<html lang="en">
+
+  <head>
+    <meta charset = "UTF-8">
+    <title>AGX Online Hearing Test HTML Resources</title>
+  </head>
+
+
+  <body>
+
+    <!-- INTRO -->
+
+    <div class="stage-intro">
+      <div class="header">
+        <img class="agx-hearing-logo logo-intro" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+        <h1>AGX<sup>&reg;</sup> Online Hearing Test</h1>
+      </div>
+
+      <div class="intro-body">
+        <p class="lead-text">Is it time to talk to an audiologist?</p>
+        <p class="lead-text">This online hearing test can help identify problem areas in your hearing health.</p>
+      </div>
+
+      <button class="btn-submit-intro">Take the Test</button>
+    </div>
+
+
+    <!-- QUIZ -->
+
+    <div class="stage-quiz">
+      <div class="header">
+
+        <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+
+        <div class="steps">
+          <div class="step-1">Quiz</div>
+          <div class="step-2">Tone Test</div>
+          <div class="step-3">Speech Test</div>
+          <div class="step-4">Results</div>
+        </div>
+
+        <div class="prog-bar">
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+        </div>
+      </div>
+
+      <div class="quiz-body">
+        <p class="quiz-question-text"></p>
+      </div>
+
+      <div class="btns-yn">
+        <button class="btn-yn-yes">Yes</button>
+        <button class="btn-yn-no">No</button>
+      </div>
+    </div>
+
+
+    <!-- GLOBAL VOLUME SET -->
+
+    <div class="stage-volume">
+      <div class="header">
+        <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+
+        <div class="steps">
+          <div class="step-1">Quiz</div>
+          <div class="step-2">Tone Test</div>
+          <div class="step-3">Speech Test</div>
+          <div class="step-4">Results</div>
+        </div>
+
+        <div class="prog-bar">
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+        </div>
+      </div>
+
+      <div class="volume-body">
+        <p class="lead-text">Adjust the volume on your computer so the noise plays at a comfortable level.</p>
+        <p class="lead-text">Please do not adjust your computer volume after this step.</p>
+      </div>
+
+      <button class="btn-submit-volume">Set Volume</button>
+      
+      <div class="vol-tones">
+        <audio id="noise" loop="true" src="../sounds/noise.wav"></audio>
+      </div>
+    </div>
+
+
+    <!-- TONE TEST -->
+
+    <div class="stage-tone-test">
+      <div class="header">
+        <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+
+        <div class="steps">
+          <div class="step-1">Quiz</div>
+          <div class="step-2">Tone Test</div>
+          <div class="step-3">Speech Test</div>
+          <div class="step-4">Results</div>
+        </div>
+
+        <div class="prog-bar">
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+          <div class="prog-bubble"></div>
+        </div>
+      </div>
+
+      <div class="tone-test-body">
+        <p class="lead-text">Do you hear the tone playing?</p>
+
+        <div class="tone-test-frequencies">
+          <p class="freq-2000hz active-freq">Tone 1</p>
+          <p class="freq-4000hz">Tone 2</p>
+          <p class="freq-6000hz">Tone 3</p>
+          <p class="freq-8000hz">Tone 4</p>
+          <p class="freq-10000hz">Tone 5</p>
+        </div>
+      </div>
+
+      <div class="btns-yn">
+        <button class="btn-yn-yes">Yes</button>
+        <button class="btn-yn-no">No</button>
+      </div>
+
+      <div class="tone-test-tones">
+        <audio id="2000hz" loop="true" src="../sounds/2000.wav"></audio>
+        <audio id="4000hz" loop="true" src="../sounds/4000.wav"></audio>
+        <audio id="6000hz" loop="true" src="../sounds/6000.wav"></audio>
+        <audio id="8000hz" loop="true" src="../sounds/8000.wav"></audio>
+        <audio id="10000hz" loop="true" src="../sounds/10000.wav"></audio>
+      </div>
+    </div>
+
+
+    <!-- SPEECH TEST -->
+
+    <div class="stage-speech-test">
+      <div class="header">
+        <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+
+        <div class="steps">
+          <div class="step-1">Quiz</div>
+          <div class="step-2">Tone Test</div>
+          <div class="step-3">Speech Test</div>
+          <div class="step-4">Results</div>
+        </div>
+
+        <div class="prog-bar">
+          <div class="prog-bubble" id='box1'></div>
+          <div class="prog-bubble" id='box2'></div>
+          <div class="prog-bubble" id='box3'></div>
+        </div>
+      </div>
+      
+
+      <div class="speech-test-body">
+        <p class="lead-text">Click on the words you hear spoken</p>
+
+        <div class="answerGrid">
+          <div class="calib-tone-1">
+            <button class='speechBtn' id='ans1'>One</button>
+            <button class='speechBtn' id='ans2'>Two</button>
+            <button class='speechBtn' id='ans3'>Three</button>    
+          </div>
+
+          <div class="calib-tone-2">
+            <button class='speechBtn' id='ans4'>Four</button>
+            <button class='speechBtn' id='ans5'>Five</button>
+            <button class='speechBtn' id='ans6'>Six</button>
+          </div>
+
+          <div class="calib-tone-3">
+            <button class='speechBtn' id='ans7'>Seven</button>
+            <button class='speechBtn' id='ans8'>Eight</button>
+            <button class='speechBtn' id='ans9'>Nine</button>
+          </div>
+        </div>
+
+        <div class="calib-tone-3">
+          <button class="btn-yn-yes" id="toneAnswer">Start Test</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div class="stage-results">
+      <div class="header">
+        <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
+        <h2>Your AGX<sup>&reg;</sup> Online Hearing Test Results</h2>
+      </div>
+
+      <div class="results-body">
+        <p class="results-summary">A summary of your online hearing test results.</p>
+
+        <div class="results-row">
+          <div class="results-col results-quiz">
+            <p class="results-head">Hearing Quiz</p>
+
+            <div class="score">
+              <div class="score-quiz">%quizTotal%</div>
+            </div>
+            
+            <div class="quiz-environments"></div>
+          </div>
+
+          <div class="results-col results-tone">
+            <p class="results-head">Tone Test</p>
+
+            <div class="score">
+              <div class="score-tone">%toneTotal%</div>
+            </div>
+          </div>
+
+          <div class="results-col results-speech">
+            <p class="results-head">Speech Test</p>
+
+            <div class="score">
+              <div class="score-speech">%speechTotal%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="environments-intro"><strong>Environments you struggle to hear in.</strong></p>
+    <p class="environment">%environment%</p>
+
+
+  </body>
+
+</html>
