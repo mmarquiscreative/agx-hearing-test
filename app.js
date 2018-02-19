@@ -42,7 +42,8 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     .state('stage.volume', {
         url: '/volume',
-        templateUrl: 'stage-volume.html'
+        templateUrl: 'stage-volume.html',
+        controller: 'volumeController'
     })
     
     // url will be /stage/toneTest
@@ -116,6 +117,10 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
         answer: ""}
       ]
       })
+
+.controller('volumeController', function($scope) {
+  var volume = this;
+})
 
 .controller('toneTestController', function ($scope) {
         var tone = this;
