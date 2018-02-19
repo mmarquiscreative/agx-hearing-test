@@ -3,6 +3,8 @@
 var answerStrings = ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take'];
 
 var resultsObj = {
+    quizAns: 0,
+    toneAns: 0,
     speechAns: 0
 }
 
@@ -100,7 +102,9 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
            $scope.progClass[$scope.curQuestion] = "prog-bubble";
            console.log($scope.progClass); $scope.questions[someNum].answer = someBool
             
-            console.log(someBool);
+            if(someBool){
+                resultsObj.quizAns++;
+            };
             
             $scope.curQuestion++;
             
@@ -287,5 +291,3 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
     
     
 })
-
-console.log(formApp.SpeechTest.wrongAns);
