@@ -1,4 +1,4 @@
-angular.module('formApp').controller('SpeechTest', ['$scope', function($scope){
+angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'answerStrings', function($scope, resultsObj, answerStrings){
     
     ///////////////////////////////////
     //////////// Variables ////////////
@@ -104,4 +104,5 @@ angular.module('formApp').controller('SpeechTest', ['$scope', function($scope){
            
      };  
     
-}])
+}]);
+

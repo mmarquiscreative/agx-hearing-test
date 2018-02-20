@@ -1,5 +1,5 @@
 
-    angular.module('formApp').controller('quizController', ['$scope', function ($scope) {
+    angular.module('formApp').controller('quizController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
         var quiz = this;
         $scope.curQuestion = 0;
         

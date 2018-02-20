@@ -1,14 +1,15 @@
 
-// MODULE
-var answerStrings = ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take'];
 
-var resultsObj = {
+
+var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
+// MODULE
+formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take']);
+
+formApp.value('resultsObj', {
     quizAns: 0,
     toneAns: 0,
     speechAns: 0
-}
-
-var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
+});
 
 
 
@@ -29,5 +30,3 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router'])
     
 })
 */
-
-

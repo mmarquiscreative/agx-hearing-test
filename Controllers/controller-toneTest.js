@@ -1,4 +1,4 @@
-angular.module('formApp').controller('toneTestController', ['$scope', function ($scope) {
+angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
         var tone = this;
         $scope.curTone = 0;
         

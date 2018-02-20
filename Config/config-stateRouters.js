@@ -6,7 +6,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     // route to show our basic form
     .state('stage', {
         url: '/stage',
-        templateUrl: 'stage.html',
+        templateUrl: '/Templates/stage.html',
         controller: 'stageController'
     })
     
@@ -16,14 +16,14 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     
     .state('stage.intro', {
         url: '/intro',
-        templateUrl: 'stage-intro.html'
+        templateUrl: '/Templates/stage-intro.html'
     })
     
     // url will be /stage/quiz
     
     .state('stage.quiz', {
         url: '/quiz',
-        templateUrl: 'stage-quiz.html',
+        templateUrl: '/Templates/stage-quiz.html',
         controller: 'quizController'
     })
     
@@ -31,7 +31,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     
     .state('stage.volume', {
         url: '/volume',
-        templateUrl: 'stage-volume.html',
+        templateUrl: '/Templates/stage-volume.html',
         controller: 'volumeController'
     })
     
@@ -39,7 +39,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     
     .state('stage.toneTest', {
         url: '/toneTest',
-        templateUrl: 'stage-toneTest.html',
+        templateUrl: '/Templates/stage-toneTest.html',
         controller: 'toneTestController'
     })
     
@@ -47,7 +47,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     
     .state('stage.speechTest', {
         url: '/speechTest',
-        templateUrl: 'stage-speechTest.html',
+        templateUrl: '/Templates/stage-speechTest.html',
         controller: 'SpeechTest'
     })
     
@@ -55,7 +55,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     
     .state('stage.results', {
         url: '/results',
-        templateUrl: 'stage-results.html'
+        templateUrl: '/Templates/stage-results.html'
     })
     
     // catch all route
