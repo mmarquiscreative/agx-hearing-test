@@ -1,15 +1,8 @@
-<div class="stage-volume">
-
-      <div class="volume-body">
-        <p class="lead-text">Adjust the volume on your computer so the noise plays at a comfortable level.</p>
-        <p class="lead-text">Please do not adjust your computer volume after this step.</p>
-      </div>
-
-      <button class="btn-submit-volume">Set Volume</button>
+<div class="stage-volume" ng-controller="volumeController as volume">
+  <div class="volume-body">
+    <p class="lead-text">Adjust the volume on your computer so the noise plays at a comfortable level.</p>
+    <p class="lead-text">Please do not adjust your computer volume after this step.</p>
+  </div>
       
-      <div class="vol-tones">
-        <audio id="noise" loop="true" src="../sounds/noise.wav"></audio>
-      </div>
-
-    <button ui-sref="stage.toneTest" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button></div>
-    
+  <button ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+</div>
