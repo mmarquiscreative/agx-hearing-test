@@ -1,5 +1,17 @@
 angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
-       var tone = this;
+    var tone = this;
+    
+    // TEST COMPLETED SECTION //
+    tone.testCompleted = resultsObj.testComplete('tone');
+    
+    tone.resetStage = function(){
+        resultsObj.toneAns = 0;
+        resultsObj.toneCompleted = false;
+        tone.testCompleted = resultsObj.testComplete('tone');
+    };
+    ////////////////////////////
+    
+    
     tone.toneAudio = document.querySelector('#toneAudio');
     tone.toneAudio.volume = 0.5;
     tone.toneAudio.loop = true;
@@ -43,7 +55,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
                 tone.toneAudio.pause();
                 tone.buttonHide_YN = true;
                 tone.buttonHide_Next = false;
-                
+                resultsObj.toneCompleted = true;
                 console.log(resultsObj.toneAns);
             } else {
                 console.log(("something went wrong with tone.nextTone. Here is someBool: " + someBool + "\n and here is tone.curTone: " + tone.curTone));

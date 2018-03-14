@@ -1,11 +1,23 @@
 //// Quiz CONTROLLER ////
 angular.module('formApp').controller('quizController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
 
-    
-    //// ---- VARIABLES ---- ////
-    
+        
     // ues keyword to keep $scope specific to this controller
     var quiz = this;
+    
+     // TEST COMPLETED SECTION //
+    quiz.testCompleted = resultsObj.testComplete('quiz');
+    
+    quiz.resetStage = function(){
+        resultsObj.quizAns = 0;
+        resultsObj.quizCompleted = false;
+        quiz.testCompleted = resultsObj.testComplete('quiz');
+    };
+    ////////////////////////////
+    
+    
+    //// ---- VARIABLES ---- ////
+
     
     // Current Question Counter
     quiz.curQuestion = 0;
@@ -50,6 +62,10 @@ angular.module('formApp').controller('quizController', ['$scope', 'resultsObj', 
 
         // 4. Set the new current progress bubble to 'current'
         quiz.progClass[quiz.curQuestion] = "prog-current";
+        
+        if(quiz.curQuestion >= quiz.questions.length){
+        resultsObj.quizCompleted = true;
+        };
     }
     
     

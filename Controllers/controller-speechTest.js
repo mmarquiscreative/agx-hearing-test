@@ -5,6 +5,18 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     
     var speech = this;
     
+    
+    // TEST COMPLETED SECTION //
+    speech.testCompleted = resultsObj.testComplete('speech');
+    
+    speech.resetStage = function(){
+        resultsObj.speechAns = 0;
+        resultsObj.speechCompleted = false;
+        speech.testCompleted = resultsObj.testComplete('speech');
+    };
+    ////////////////////////////
+    
+    
     // Pulls array of strings from global namespace
     speech.answerStrings = answerStrings;
     
@@ -104,7 +116,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             // 2. Push number of wrong answers to global resultsObj object
             console.log('time for the next round');
             resultsObj.speechAns = speech.wrongAns.length;
-            
+            resultsObj.speechCompleted = true;
+            //$state.go('stage.results');
         }
     };
     
