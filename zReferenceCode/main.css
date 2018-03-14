@@ -152,11 +152,11 @@ LAYOUT ELEMENTS
   margin: 0;
 }
 
-.freq-2000hz  { background: #e6f0f4 }
-.freq-4000hz  { background: #e6f0f4 }
-.freq-6000hz  { background: #e6f0f4 }
-.freq-8000hz  { background: #e6f0f4 }
-.freq-10000hz { background: #e6f0f4 }
+#freq-2000hz  { background: #e6f0f4 }
+#freq-4000hz  { background: #e6f0f4 }
+#freq-6000hz  { background: #e6f0f4 }
+#freq-8000hz  { background: #e6f0f4 }
+#freq-10000hz { background: #e6f0f4 }
 
 .results-summary {
   background: #ece9f5;
@@ -527,11 +527,11 @@ RESPONSIVE STYLES
     vertical-align: top;
   }
 
-  .freq-2000hz  { height: 2.5rem; padding-top: .2rem; width: 6rem; }
-  .freq-4000hz  { height: 2.5rem; padding-top: .2rem; width: 7rem; }
-  .freq-6000hz  { height: 2.5rem; padding-top: .2rem; width: 8rem; }
-  .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
-  .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
+  #freq-2000hz  { height: 2.5rem; padding-top: .2rem; width: 6rem; }
+  #freq-4000hz  { height: 2.5rem; padding-top: .2rem; width: 7rem; }
+  #freq-6000hz  { height: 2.5rem; padding-top: .2rem; width: 8rem; }
+  #freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
+  #freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
 
   .speechBtn {
     margin: .06rem;
@@ -607,11 +607,11 @@ RESPONSIVE STYLES
     vertical-align: middle;
   }
 
-  .freq-2000hz  { height: 2.5rem; padding-top: .2rem;  width: 15% }
-  .freq-4000hz  { height: 3rem;   padding-top: .45rem; width: 15% }
-  .freq-6000hz  { height: 3.5rem; padding-top: .7rem;  width: 15% }
-  .freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
-  .freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
+  #freq-2000hz  { height: 2.5rem; padding-top: .2rem;  width: 15% }
+  #freq-4000hz  { height: 3rem;   padding-top: .45rem; width: 15% }
+  #freq-6000hz  { height: 3.5rem; padding-top: .7rem;  width: 15% }
+  #freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
+  #freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
 
   .speechBtn {
     margin: .25rem;

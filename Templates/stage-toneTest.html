@@ -1,29 +1,26 @@
-<div class="stage-tone-test">
+<div class="stage-tone-test" ng-controller="toneTestController as tone">
       <div class="header">
 
       <div class="tone-test-body">
         <p class="lead-text">Do you hear the tone playing?</p>
 
         <div class="tone-test-frequencies">
-          <p class="freq-2000hz active-freq">Tone 1</p>
-          <p class="freq-4000hz">Tone 2</p>
-          <p class="freq-6000hz">Tone 3</p>
-          <p class="freq-8000hz">Tone 4</p>
-          <p class="freq-10000hz">Tone 5</p>
+          <p ng-attr-class="freq-2000hz {{tone.curClass[0]}}">Tone 1</p>
+          <p ng-attr-class="freq-4000hz {{tone.curClass[1]}}">Tone 2</p>
+          <p ng-attr-class="freq-6000hz {{tone.curClass[2]}}">Tone 3</p>
+          <p ng-attr-class="freq-8000hz {{tone.curClass[3]}}">Tone 4</p>
+          <p ng-attr-class="freq-10000hz {{tone.curClass[4]}}">Tone 5</p>
         </div>
       </div>
 
       <div class="btns-yn">
-        <button class="btn-yn-yes" ng-click="nextTone(true)">Yes</button>
-        <button class="btn-yn-no" ng-click="nextTone(false)">No</button>
+        <button ng-hide="tone.buttonHide_YN" class="btn-yn-yes" ng-click="tone.nextTone(true)" ng-disabled="{{tone.disabledBool}}">Yes</button>
+        <button ng-hide="tone.buttonHide_YN" class="btn-yn-no" ng-click="tone.nextTone(false)" ng-disabled="{{tone.disabledBool}}">No</button>
       </div>
 
       <div class="tone-test-tones">
-        <audio id="2000hz" ng-attr-loop="{{true}}" src="../sounds/2000.wav"></audio>
-        <audio id="4000hz" loop="true" src="../sounds/4000.wav"></audio>
-        <audio id="6000hz" loop="true" src="../sounds/6000.wav"></audio>
-        <audio id="8000hz" loop="true" src="../sounds/8000.wav"></audio>
-        <audio id="10000hz" loop="true" src="../sounds/10000.wav"></audio>
+        <audio autoplay id="toneAudio" ng-src="{{tone.curToneObj.srcPath}}"></audio>
       </div>
-   <button ui-sref="stage.speechTest" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+   <button ng-hide="tone.buttonHide_Next" ui-sref="stage.speechTest" class="btn-submit-intro">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
     </div>
+</div>
