@@ -1,20 +1,18 @@
-angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
+angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var tone = this;
     
     // TEST COMPLETED SECTION //
     tone.testCompleted = resultsObj.testComplete('tone');
     
-    tone.resetStage = function(){
-        resultsObj.toneAns = 0;
-        resultsObj.toneCompleted = false;
-        tone.testCompleted = resultsObj.testComplete('tone');
-    };
-    ////////////////////////////
     
     
     tone.toneAudio = document.querySelector('#toneAudio');
     tone.toneAudio.volume = 0.5;
     tone.toneAudio.loop = true;
+    
+    if(!tone.testCompleted){
+    tone.toneAudio.autoplay = true;
+    }
     tone.disabledBool = false;
     tone.buttonHide_YN = false;
     tone.buttonHide_Next = true;
@@ -52,14 +50,32 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
             
             } else if (tone.curTone >= tone.frequencies.length){
                 tone.disabledBool = true;
-                tone.toneAudio.pause();
+                tone.toneAudio.autoplay = false;
                 tone.buttonHide_YN = true;
                 tone.buttonHide_Next = false;
                 resultsObj.toneCompleted = true;
+                $state.go('^.speechTest')
                 console.log(resultsObj.toneAns);
+                
             } else {
                 console.log(("something went wrong with tone.nextTone. Here is someBool: " + someBool + "\n and here is tone.curTone: " + tone.curTone));
             }
             }
+        
+        tone.resetStage = function(){
+                           tone.toneAudio.play();
+
+ setTimeout(function(){
+        $scope.$apply(function(){
+           tone.toneAudio.autoplay = true;
+        });
+        }, 1);
+        resultsObj.toneAns = 0;
+        resultsObj.toneCompleted = false;
+        tone.testCompleted = resultsObj.testComplete('tone');
+    };
+    
+    
+    ////////////////////////////
         
       }])

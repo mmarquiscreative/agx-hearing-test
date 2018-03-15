@@ -1,6 +1,6 @@
 <div ng-controller="SpeechTest as speech" class="stage-speech-test">
 
-      
+       <div class="header">
 
      <div class="speech-test-body" ng-hide="speech.testCompleted">
         <p class="lead-text">Click on the words you hear spoken</p>
@@ -11,7 +11,7 @@
         <div class="calib-tone-3">
           <button ng-if="!speech.startTestDisabled" ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-yn-yes" id="toneAnswer">Start Test</button>
         </div>
-      <button ui-sref="stage.results" class="btn-submit-intro">Results <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+      
             </div>
 
       <!-- Test Completed Section -->
@@ -21,5 +21,5 @@
            <p>— Or —</p>
            <button ui-sref="stage.results" class="btn-submit-intro">Go to next section?</button>
        </div>
-       
+    </div>
     </div>

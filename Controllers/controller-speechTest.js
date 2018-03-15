@@ -1,4 +1,4 @@
-angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'answerStrings', function($scope, resultsObj, answerStrings){
+angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'answerStrings', '$state', function($scope, resultsObj, answerStrings, $state){
     
     ///////////////////////////////////
     //////////// Variables ////////////
@@ -117,7 +117,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             console.log('time for the next round');
             resultsObj.speechAns = speech.wrongAns.length;
             resultsObj.speechCompleted = true;
-            //$state.go('stage.results');
+            $state.go('^.results');
         }
     };
     

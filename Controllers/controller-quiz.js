@@ -1,5 +1,5 @@
 //// Quiz CONTROLLER ////
-angular.module('formApp').controller('quizController', ['$scope', 'resultsObj', function ($scope, resultsObj) {
+angular.module('formApp').controller('quizController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj) {
 
         
     // ues keyword to keep $scope specific to this controller
@@ -64,6 +64,7 @@ angular.module('formApp').controller('quizController', ['$scope', 'resultsObj', 
         quiz.progClass[quiz.curQuestion] = "prog-current";
         
         if(quiz.curQuestion >= quiz.questions.length){
+        $state.go('^.volume');    
         resultsObj.quizCompleted = true;
         };
     }
