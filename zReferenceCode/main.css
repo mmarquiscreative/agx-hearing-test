@@ -538,7 +538,13 @@ RESPONSIVE STYLES
     padding: .3rem;
     width: calc((100% / 3) - .275rem);
   }
-
+    /*
+.speechBtn {
+    margin: .25rem;
+    padding: .35rem;
+    width: 8rem;
+  }
+*/
   .results-col {
     float: none;
     height: auto;
@@ -613,12 +619,7 @@ RESPONSIVE STYLES
   #freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
   #freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
 
-  .speechBtn {
-    margin: .25rem;
-    padding: .35rem;
-    width: 8rem;
-  }
-
+  
   .results-col {
     float: left;
     height: 25rem;

@@ -387,24 +387,40 @@ BUTTONS
 .btn-yn-no  { background: #b9aac8;  color: #555; }
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover, .speechBtn:hover  { background: #afa0bd; }
+.btn-yn-no:hover, .speechBtn:hover  { background: #afa0bd;
+border: none;
+}
 
 .speechBtn:active {
   background: #3d214f;
   color: #fff;
+border: none;
+    box-shadow: none;
+    top: 0;
+}
+
+.answerGrid {
+    display: table;
+    width: 100%;
 }
 
 .speechBtn {
-     margin: .25rem;
-    padding: 2rem;
-  border: none;
+    position: relative;
+    top: -2px;
+     margin: 1vh;
+    padding: 2vh;
+    width: 30%;
+    min-width: 8rem;
+  border: 2px solid #e0e0e0;
   border-radius: 10rem;
-  display: inline-block;
+  display: table-cell;
   font-size: 1.2em;
   font-weight: 200;
   letter-spacing: .05em;
   outline: none;
+    box-shadow: 1px 1px 3px grey;
 }
+
 
 #toneAnswer{
   margin-top: .25rem;
@@ -551,12 +567,6 @@ RESPONSIVE STYLES
   .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
   .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
 
-  .speechBtn {
-    margin: .06rem;
-    padding: .3rem;
-    width: calc((100% / 3) - .275rem);
-  }
-
   .results-col {
     float: none;
     height: auto;
@@ -631,11 +641,7 @@ RESPONSIVE STYLES
   .freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
   .freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
 
-  .speechBtn {
-    margin: .25rem;
-    padding: .35rem;
-    width: 8rem;
-  }
+  
 
   .results-col {
     float: left;
