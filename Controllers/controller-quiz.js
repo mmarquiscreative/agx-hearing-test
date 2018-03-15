@@ -1,9 +1,13 @@
 //// Quiz CONTROLLER ////
-angular.module('formApp').controller('quizController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj) {
-
+angular.module('formApp').controller('quizController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj, ) {
+    
+    
+    $scope.$state = $state;
         
     // ues keyword to keep $scope specific to this controller
     var quiz = this;
+    
+
     
      // TEST COMPLETED SECTION //
     quiz.testCompleted = resultsObj.testComplete('quiz');

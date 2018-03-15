@@ -18,3 +18,15 @@ formApp.value('resultsObj', {
         return this[(someString + 'Completed')];
         }
     });
+
+// Speech Test Words/options
+formApp.value('activeClass', {
+quiz: 'stepNavItem',
+volume: '',
+tone: '',
+speech: '',
+results: '',
+reload: function(){
+    return this;
+}
+});

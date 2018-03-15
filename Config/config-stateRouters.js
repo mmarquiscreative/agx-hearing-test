@@ -7,7 +7,10 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     .state('stage', {
         url: '/stage',
         templateUrl: '/Templates/stage.html',
-        controller: 'stageController'
+        controller: 'stageController',
+        data: {
+            testClass: 'stepNavItem active'
+        }
     })
     
     // nested states

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller = "stageController as stage">
     <div class="col-sm-8 col-sm-offset-2">
         <div id="form-container">
             <div class="page-header text-center">
@@ -6,14 +6,15 @@
                 <!-- the links to our nested states using relative paths -->
                 <!-- add the active class if the state matches our ui-sref 
                 <div ui-sref-active="hidden" ui-sref=".intro" >-->
-                <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
-                <div id="status-buttons" class="text-center nav">
+                
+                <div id="status-buttons" ng-class="stage.testBool('intro') ? 'hidden' : 'text-center nav'">
+                   <img class="agx-hearing-logo logo-stages" src="./img/AGX-Hearing-Logo-Horizontal.png" />
                     <div id="stepNavBar">
-                        <div class="stepNavItem" ui-sref-active="active" disabled>Quiz</div>
-                        <div class="stepNavItem" ui-sref-active="active" >Volume</div>
-                        <div class="stepNavItem" ui-sref-active="active" >Tone Test</div>
-                        <div class="stepNavItem" ui-sref-active="active" >Speech Test</div>
-                        <div class="stepNavItem" ui-sref-active="active" >Results</div>
+                        <div ng-class="stage.testBool('quiz') ? 'stepNavItem active' : 'stepNavItem'">Quiz</div>
+                        <div ng-class="stage.testBool('volume') ? 'stepNavItem active' : 'stepNavItem'" >Volume</div>
+                        <div ng-class="stage.testBool('tone') ? 'stepNavItem active' : 'stepNavItem'" >Tone Test</div>
+                        <div ng-class="stage.testBool('speech') ? 'stepNavItem active' : 'stepNavItem'" >Speech Test</div>
+                        <div ng-class="stage.testBool('results') ? 'stepNavItem active' : 'stepNavItem'" >Results</div>
                     
                     </div>
                     
