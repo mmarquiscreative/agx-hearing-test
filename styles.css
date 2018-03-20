@@ -8,93 +8,100 @@ purple:     #874fb2
 --shade:    #7a47a1
 
 --tint:     #e6f0f4
--tint:     #b6d8e4
+-tint:      #b6d8e4
 teal:       #008aab
 --shade:    #00738f
 
 --tint:     #ece9f5
--tint:     #b9aac8
+-tint:      #b9aac8
 ag purple:  #532d6d
 --shade:    #3d214f
-*/active
+*/
 
-/* Animations */
 
-#form-views             { width:auto; }
+/******************************************************************
+ANIMATIONS
+******************************************************************/
+
+#form-views { width: auto; }
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */
 #form-views.ng-enter,
-#form-views.ng-leave      { position:absolute; left:30px; right:30px;
-    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
+#form-views.ng-leave {
+  left: 30px;
+  position: absolute;
+  right: 30px;
+  transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease; 
 }
 
 /* enter animation */
-#form-views.ng-enter            { 
-    -webkit-animation:slideInRight 1s both ease;
-    -moz-animation:slideInRight 1s both ease;
-    animation:slideInRight 1s both ease; 
+#form-views.ng-enter { 
+  -webkit-animation: slideInRight 1s both ease;
+  -moz-animation: slideInRight 1s both ease;
+  animation: slideInRight 1s both ease; 
 }
 
 /* leave animation */
-#form-views.ng-leave            { 
-    -webkit-animation:slideOutLeft 1s both ease;
-    -moz-animation:slideOutLeft 1s both ease;
-    animation:slideOutLeft 1s both ease;   
+#form-views.ng-leave { 
+  -webkit-animation: slideOutLeft 1s both ease;
+  -moz-animation: slideOutLeft 1s both ease;
+  animation: slideOutLeft 1s both ease;   
 }
 
-/* ANIMATIONS
-============================================================================= */
 /* slide out to the left */
 @keyframes slideOutLeft {
-    to      { transform: translateX(-200%); }
+  to  { transform: translateX(-200%); }
 }
+
 @-moz-keyframes slideOutLeft {  
-    to      { -moz-transform: translateX(-200%); }
+  to  { -moz-transform: translateX(-200%); }
 }
+
 @-webkit-keyframes slideOutLeft {
-    to      { -webkit-transform: translateX(-200%); }
+  to  { -webkit-transform: translateX(-200%); }
 }
 
 /* slide in from the right */
 @keyframes slideInRight {
-    from    { transform:translateX(200%); }
-    to      { transform: translateX(0); }
+  from  { transform: translateX(200%); }
+  to    { transform: translateX(0); }
 }
+
 @-moz-keyframes slideInRight {
-    from    { -moz-transform:translateX(200%); }
-    to      { -moz-transform: translateX(0); }
+  from  { -moz-transform: translateX(200%); }
+  to    { -moz-transform: translateX(0); }
 }
+
 @-webkit-keyframes slideInRight {
-    from    { -webkit-transform:translateX(200%); }
-    to      { -webkit-transform: translateX(0); }
+  from  { -webkit-transform: translateX(200%); }
+  to    { -webkit-transform: translateX(0); }
 }
 
 
 /*---------------------------*/
 
-
-button {
-    display: block;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700');
 
-.hidden{
-    display: none;
-}
+
 /******************************************************************
 GLOBAL STYLES
 ******************************************************************/
 
 * {
+  box-sizing:         border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing:    border-box;
-  box-sizing:         border-box;
 }
 
 body {
   font-family: 'Open Sans';
+}
+
+button {
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -113,42 +120,52 @@ sup { font-size: 50%; }
 LAYOUT ELEMENTS
 ******************************************************************/
 
+.active {
+  background: #008aab;
+  color: #fff;
+  font-weight: 700;
+}
+
+.agx-hearing-logo {
+  display: block;
+  margin: auto;
+  min-width: 200px;
+  width: 30%;
+}
+
+.answerGrid {
+  display: table;
+  width: 100%;
+}
+
 .container {
-    background: #fff;
-    box-shadow: 0 .2rem 1rem #666;
-    left: 50%;
-    overflow-y: auto;
-    padding: 2rem;
-    width: 70vw;
-    height: 70vh;
-    margin: auto;
-
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 200px;
+  background: #fff;
+  box-shadow: 0 .2rem 1rem #666;
+  height: 70vh;
+  left: 50%;
+  margin: auto;
+  min-width: 200px;
+  overflow-y: auto;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
 }
 
-[class*='stage-'] {
-  height: 100%;
-  padding: 1rem;
-  position: relative;
-}
+.freq-2000hz  { background: #e6f0f4 }
+.freq-4000hz  { background: #e6f0f4 }
+.freq-6000hz  { background: #e6f0f4 }
+.freq-8000hz  { background: #e6f0f4 }
+.freq-10000hz { background: #e6f0f4 }
 
 .header {
   margin: 0 auto;
   text-align: center;
 }
 
-.agx-hearing-logo {
-    min-width: 200px;
-    width: 30%;
-    margin: auto;
-    display: block;
-}
-
-.logo-intro {
-  margin: 2rem auto 2rem auto;
+.hidden {
+  display: none;
 }
 
 .lead-text, .quiz-question-text {
@@ -157,47 +174,21 @@ LAYOUT ELEMENTS
   text-align: center;
 }
 
-.vol-text {
-  color: #532d6d;
-  font-size: 1.2em;
-  font-weight: 700;
-}
-.nav{
-    display:table;
-    width: 100%;
-}
-#stepNavBar {
-  margin: 1rem auto .5rem auto;
-    display: flex;
-    width: 100%;
-    text-align: center;
-    border-radius: 100rem;
-    overflow: hidden;
+.logo-intro {
+  margin: 2rem auto 2rem auto;
 }
 
-.stepNavItem {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-  padding: .5rem;
-  width: 20%;
-    background: #b6d8e4;
-  color: #555;
-}
-
-.active {
-  background: #008aab;
-  color: #fff;
-  font-weight: 700;
+.nav {
+  display:table;
+  width: 100%;
 }
 
 [class*='prog-bar-'] {
-    display: block;
-    width: 100%;
+  display: block;
   height: .5rem;
   margin: .2rem auto 2rem auto;
   text-align: center;
+  width: 100%;
 }
 
 .prog-bubble {
@@ -211,46 +202,15 @@ LAYOUT ELEMENTS
 
 .prog-current {
   background-color: #532d6d;
-    border-radius: 100%;
+  border-radius: 100%;
   display: inline-block;
   height: .5rem;
   margin: 0 .3rem;
   width: .5rem;
 }
 
-.tone-test-frequencies {
-  color: #888;
-  margin: 1.5rem 0;
-  text-align: center;
-}
-
-.tone-test-frequencies p {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-.freq-2000hz  { background: #e6f0f4 }
-.freq-4000hz  { background: #e6f0f4 }
-.freq-6000hz  { background: #e6f0f4 }
-.freq-8000hz  { background: #e6f0f4 }
-.freq-10000hz { background: #e6f0f4 }
-
-.results-summary {
-  background: #ece9f5;
-  font-size: 1.2em;
-  margin: 1rem 0;
-  padding: .8rem 1rem;
-  text-align: center;
-}
-
-.results-row {
-  margin: 1rem 0;
-}
-
-.results-row:after {
-  clear: both;
-  content: '';
-  display: block;
+.quiz-environments {
+  margin-top: 1rem;
 }
 
 .results-col {
@@ -267,6 +227,24 @@ LAYOUT ELEMENTS
   margin-right: 0;
 }
 
+.results-row {
+  margin: 1rem 0;
+}
+
+.results-row:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.results-summary {
+  background: #ece9f5;
+  font-size: 1.2em;
+  margin: 1rem 0;
+  padding: .8rem 1rem;
+  text-align: center;
+}
+
 .score {
   background: #fff;
   border: .2rem solid #b6d8e4;
@@ -278,8 +256,47 @@ LAYOUT ELEMENTS
   width: 6rem;
 }
 
-.quiz-environments {
-  margin-top: 1rem;
+[class*='stage-'] {
+  height: 100%;
+  padding: 1rem;
+  position: relative;
+}
+
+#stepNavBar {
+  border-radius: 100rem;
+  display: flex;
+  margin: 1rem auto .5rem auto;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+
+.stepNavItem {
+  background: #b6d8e4;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: .5rem;
+  text-align: center;
+  width: 20%;
+}
+
+.tone-test-frequencies {
+  color: #888;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.tone-test-frequencies p {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.vol-text {
+  color: #532d6d;
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
 
@@ -289,12 +306,6 @@ OBJECT ELEMENTS
 
 .calib-body {
   margin: 2rem auto;
-}
-
-.calib-ui {
-  height: 10rem;
-  margin: 2rem auto;
-  position: relative;
 }
 
 [class*='calib-side-'] {
@@ -314,6 +325,12 @@ OBJECT ELEMENTS
   margin: .5rem 0;
   padding: .2rem;
   text-align: center;
+}
+
+.calib-ui {
+  height: 10rem;
+  margin: 2rem auto;
+  position: relative;
 }
 
 .active-calib-tone {
@@ -388,9 +405,8 @@ OBJECT ELEMENTS
   font-size: 1em;
 }
 
-[id*='ans']{
-    display: inline-block;
-    
+[id*='ans'] {
+  display: inline-block;
 }
 
 /******************************************************************
@@ -398,7 +414,6 @@ BUTTONS
 ******************************************************************/
 
 [class*='btn-submit-'] {
-    margin: auto;
   background: linear-gradient(to right, #874fb2 0%, #008aab 100%);
   border: none;
   border-radius: 10rem;
@@ -407,11 +422,13 @@ BUTTONS
   font-size: 1.2em;
   font-weight: 200;
   letter-spacing: .05em;
+  margin: auto;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
   min-width: 12rem;
   outline: none;
   padding: .5rem 1.5rem;
   position: relative;
-    margin-bottom: 1rem;
 }
 
 [class*='btn-submit-']:hover {
@@ -433,7 +450,7 @@ BUTTONS
   font-weight: 200;
   letter-spacing: .05em;
   margin: 0 .5rem;
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   outline: none;
   padding: .5rem 2rem;
   width: 8rem;
@@ -443,42 +460,34 @@ BUTTONS
 .btn-yn-no  { background: #b9aac8;  color: #555; }
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover, .speechBtn:hover  { background: #afa0bd;
-border: none;
-}
+.btn-yn-no:hover, .speechBtn:hover { background: #afa0bd;  border: none; }
 
 .speechBtn:active {
   background: #3d214f;
+  border: none;
+  box-shadow: none;
   color: #fff;
-border: none;
-    box-shadow: none;
-    top: 0;
-}
-
-.answerGrid {
-    display: table;
-    width: 100%;
+  top: 0;
 }
 
 .speechBtn {
-    position: relative;
-    top: -2px;
-     margin: 1vh;
-    padding: 2vh;
-    width: 30%;
-    min-width: 8rem;
   border: 2px solid #e0e0e0;
   border-radius: 10rem;
+  box-shadow: 1px 1px 3px grey;
   display: table-cell;
   font-size: 1.2em;
   font-weight: 200;
   letter-spacing: .05em;
+  margin: 1vh;
+  min-width: 8rem;
   outline: none;
-    box-shadow: 1px 1px 3px grey;
+  padding: 2vh;
+  position: relative;
+  top: -2px;
+  width: 30%;
 }
 
-
-#toneAnswer{
+#toneAnswer {
   margin-top: .25rem;
   padding: .5rem;
   width: 10rem;
