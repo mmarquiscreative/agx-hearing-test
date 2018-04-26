@@ -1,5 +1,5 @@
 //// Quiz CONTROLLER ////
-angular.module('formApp').controller('quizController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj, ) {
+angular.module('formApp').controller('quizController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj) {
     
     
     $scope.$state = $state;
@@ -13,7 +13,8 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
     quiz.testCompleted = resultsObj.testComplete('quiz');
     
     quiz.resetStage = function(){
-        resultsObj.quizAns = 0;
+        resultsObj.quizScore = 0;
+        resultsObj.quizAns = [];
         resultsObj.quizCompleted = false;
         quiz.testCompleted = resultsObj.testComplete('quiz');
     };
@@ -32,16 +33,20 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
         // Array of question/answer objects
   quiz.questions = [{
         question: 'Do you have difficulty understanding people with higher speaking voices?',
-        answer: false
+        answer: false,
+        environment: '• High pitched voices'
     },{
         question: 'Do you have a hard time understanding people over the phone?',
-        answer: false
+        answer: false,
+        environment: '• Telephone conversations'
     },{
         question: 'Do you have trouble keeping up with conversations in busy restaurants?',
-        answer: false
+        answer: false,
+        environment: '• Noisy restaurants'
     },{
         question: 'Are you often told that you set the television volume very loud?',
-        answer: false
+        answer: false,
+        environment: '• Television shows'
     }]
     
     
@@ -55,7 +60,8 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
 
         // 2. If answer was a yes--i.e. i do have trouble hearing--add 1 to the resultsObj.quizAns counter
         if(someBool){
-            resultsObj.quizAns++;
+            resultsObj.quizScore++;
+            resultsObj.quizAns.push( quiz.questions[quiz.curQuestion].environment)
         };
         
         // 3. Save answer to corresponding question/answer object

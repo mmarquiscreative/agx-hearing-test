@@ -36,11 +36,14 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         tone.nextTone = function(someBool){
             
             tone.curClass[tone.curTone] = '';
-            tone.curTone++;
-             if(!someBool){
-                resultsObj.toneAns++
+            
+            if(!someBool){
+                resultsObj.toneScore++
+                resultsObj.toneAns.push(tone.frequencies[tone.curTone]);
             };
             
+            tone.curTone++;
+             
             if(tone.curTone < tone.frequencies.length){
             tone.curClass[tone.curTone] = 'active-freq';
             var newSrc = ('/sounds/' + tone.frequencies[tone.curTone] + '.wav');
@@ -70,7 +73,8 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
            tone.toneAudio.autoplay = true;
         });
         }, 1);
-        resultsObj.toneAns = 0;
+        resultsObj.toneScore = 0;
+        resultsObj.toneAns = [];
         resultsObj.toneCompleted = false;
         tone.testCompleted = resultsObj.testComplete('tone');
     };

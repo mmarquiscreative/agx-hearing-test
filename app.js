@@ -8,11 +8,14 @@ formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page'
 
 // results object to save individual sections wrong answers to
 formApp.value('resultsObj', {
-    quizAns: 0,
+    quizScore: 0,
+    quizAns: [],
     quizCompleted: false,
-    toneAns: 0,
+    toneScore: 0,
+    toneAns: [1000],
     toneCompleted: false,
-    speechAns: 0,
+    speechScore: 0,
+    speechAns: ["moon"],
     speechCompleted: false,
     testComplete: function(someString){
         return this[(someString + 'Completed')];
