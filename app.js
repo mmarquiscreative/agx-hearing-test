@@ -12,10 +12,10 @@ formApp.value('resultsObj', {
     quizAns: [],
     quizCompleted: false,
     toneScore: 0,
-    toneAns: [1000],
+    toneAns: [],
     toneCompleted: false,
     speechScore: 0,
-    speechAns: ["moon"],
+    speechAns: [],
     speechCompleted: false,
     testComplete: function(someString){
         return this[(someString + 'Completed')];

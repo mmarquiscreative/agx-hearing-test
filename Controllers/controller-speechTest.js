@@ -10,7 +10,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     speech.testCompleted = resultsObj.testComplete('speech');
     
     speech.resetStage = function(){
-        resultsObj.speechAns = 0;
+        resultsObj.speechScore = 0;
+        resultsObj.speechAns = [];
         resultsObj.speechCompleted = false;
         speech.testCompleted = resultsObj.testComplete('speech');
     };
@@ -82,6 +83,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                 
                 // add wrong answer string to wrongAns array
                 speech.wrongAns.push(speech.answerKey[i]);
+                resultsObj.speechAns.push(speech.answerKey[i]);
             };
         };
         console.log(speech.wrongAns);
@@ -115,7 +117,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             
             // 2. Push number of wrong answers to global resultsObj object
             console.log('time for the next round');
-            resultsObj.speechAns = speech.wrongAns.length;
+            resultsObj.speechScore = speech.wrongAns.length;
+            console.log(resultsObj.quizAns);
             resultsObj.speechCompleted = true;
             $state.go('^.results');
         }
