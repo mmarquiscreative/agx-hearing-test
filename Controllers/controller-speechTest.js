@@ -57,17 +57,24 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
  
            // 1. if round is over push answer then eval
             speech.answerInput.push(someAns);
+
+             evalAnswers();
             
+                                        
+
             setTimeout(function(){
                 // 2. compare answers to key
-            evalAnswers();
-            
+           
             // 3. reset answerInput array
-            $scope.$apply(function(){
-                speech.answerInput = [];});
-                }, 100);
+           
+                $scope.$apply(function(){
+                speech.answerInput = [];
+                console.log(speech.answerInput);
+            });
+            }, 100);
             // 4. Play next round audio/gen answers ect
             speech.roundAudio();
+    
 
 
             
@@ -85,7 +92,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             
             // if answerInput doesn't match answerKey
             if(speech.answerInput[i] !== speech.answerKey[i]){
-                
+                console.log(speech.answerInput[i] + " vs " + speech.answerKey[i]);
                 // add wrong answer string to wrongAns array
                 speech.wrongAns.push(speech.answerKey[i]);
                 resultsObj.speechAns.push(speech.answerKey[i]);
@@ -96,10 +103,9 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     
     // play new round audio/gen new round answers
     speech.roundAudio = function(){
-        
+
         // establish how many rounds here
         if(speech.curRound < 4){
-            
             // 1. add one to curRound counter
             speech.curRound++;
             
@@ -113,8 +119,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             generateRoundAns();
             
             // 5. play corresponding audio for new round answers
-            playRoundAudio();
             
+                playRoundAudio();
         } else { 
             
             // 1. disable answer input
@@ -127,6 +133,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             resultsObj.speechCompleted = true;
             $state.go('^.results');
         }
+
     };
     
     // generates three random answers from answerkey for new round
