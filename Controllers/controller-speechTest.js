@@ -54,18 +54,23 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         if(speech.answerInput.length < 2){
             speech.answerInput.push(someAns);
         } else {
-            
-            // 1. if round is over push answer then eval
+ 
+           // 1. if round is over push answer then eval
             speech.answerInput.push(someAns);
             
-            // 2. compare answers to key
+            setTimeout(function(){
+                // 2. compare answers to key
             evalAnswers();
             
             // 3. reset answerInput array
-            speech.answerInput = [];
-            
+            $scope.$apply(function(){
+                speech.answerInput = [];});
+                }, 100);
             // 4. Play next round audio/gen answers ect
             speech.roundAudio();
+
+
+            
         };
     
     }

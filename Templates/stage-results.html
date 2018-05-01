@@ -40,7 +40,7 @@
             </div>
             
             <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
-            <p class="environment" ng-repeat="item in results.wrongAns.speechAns">{{item}}</p></div>
+            <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p></div>
           </div>
         </div>
       </div>

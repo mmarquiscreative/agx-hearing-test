@@ -7,9 +7,9 @@
         <div class="answerGrid">
            <data-speech-test-btn></data-speech-test-btn>
         </div>
-        <h3 ng-repeat="curAns in speech.answerInput track by $index">{{curAns}}</h3>
+         <h3>&nbsp;<span style="margin: 0% 5%;" ng-repeat="curAns in speech.answerInput track by $index">{{curAns}}&nbsp;</span></h3>
         <div class="calib-tone-3">
-          <button ng-if="!speech.startTestDisabled" ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-yn-yes" id="toneAnswer">Start Test</button>
+          <button ng-show="!speech.startTestDisabled" ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-yn-yes" id="toneAnswer">Start Test</button>
         </div>
       
             </div>
