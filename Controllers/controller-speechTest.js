@@ -17,6 +17,21 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     };
     ////////////////////////////
     
+    speech.bgNoise = document.querySelector('#bgNoise');
+    console.log(speech.bgNoise);
+    speech.bgNoise.volume = 0;
+    speech.bgNoise.loop = true;
+    
+    /* if(!speech.testCompleted){
+    speech.bgNoise.autoplay = true;
+    } else if (speech.testCompleted){
+        speech.bgNoise.autoplay = false;
+    } */
+    
+    speech.bgNoiseSettings = {
+        loopBool: 'true',
+        srcPath: '/sounds/BackgroundNoise.mp3'
+    }
     
     // Pulls array of strings from global namespace
     speech.answerStrings = answerStrings;
@@ -78,7 +93,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
 
             
-        };
+        }
     
     }
     
@@ -96,16 +111,20 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                 // add wrong answer string to wrongAns array
                 speech.wrongAns.push(speech.answerKey[i]);
                 resultsObj.speechAns.push(speech.answerKey[i]);
-            };
-        };
+            }
+        }
         console.log(speech.wrongAns);
-    };
+    }
     
     // play new round audio/gen new round answers
     speech.roundAudio = function(){
-
+        
+        
+            speech.bgNoise.autoplay = true;
         // establish how many rounds here
         if(speech.curRound < 4){
+            speech.bgNoise.volume += 0.15;
+            speech.bgNoise.play();
             // 1. add one to curRound counter
             speech.curRound++;
             
@@ -131,6 +150,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             resultsObj.speechScore = speech.wrongAns.length;
             console.log(resultsObj.quizAns);
             resultsObj.speechCompleted = true;
+            speech.bgNoise.pause();
             $state.go('^.results');
         }
 
@@ -153,14 +173,14 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         while (num1 === num2 || num2 === num3 || num1 === num3){
             num2 = Math.round(Math.random()*8);
             num3 = Math.round(Math.random()*8);
-        };
+        }
         
         // 3. Push answers to answerStrings array
         // Uses random numbers above to pull random answers from answerKey
         speech.answerKey.push(speech.answerStrings[num1]);
         speech.answerKey.push(speech.answerStrings[num2]);
         speech.answerKey.push(speech.answerStrings[num3]);
-     };
+     }
   
     // Play the audio files that match the answers generated
     function playRoundAudio(){
@@ -176,7 +196,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             
             // Push file paths to audio file which corresponds to the round answers
              tempAudio.push(new Audio('/sounds/Speech_' +  speech.answerKey[i] + '.mp3'));
-        };
+        }
             
             // play first audio
         tempAudio[0].play();
@@ -200,7 +220,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             }, delayTime)
         }, delayTime);
            
-     };  
+     }  
     
 }]);
 

@@ -21,6 +21,8 @@ formApp.value('resultsObj', {
         return this[(someString + 'Completed')];
         },
     restartTest: function(){
+        
+        console.log('running restart test');
         // 1. reset Quiz
         
         this.quizScore = 0;
