@@ -34,7 +34,6 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
     stage.restart = function(){
         resultsObj.restartTest();
         
-        $state.go('^.intro');
     };
         
 }])

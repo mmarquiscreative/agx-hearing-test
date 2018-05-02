@@ -517,6 +517,35 @@ BUTTONS
 .vol-minus:active { top: .05rem; }
 .vol-plus:active  { top: .1rem; }
 
+#btn-restart {
+    display: inline-block;
+    border-style: none;
+    border: lightgrey 1px solid;
+    background-color: white;
+    padding: .75rem;
+    color: lightgray;
+    box-shadow: none;
+    outline: none;
+}
+
+#btn-restart:hover {
+    border-style: none;
+    background-color: white;
+    color: #288dc2;
+    border: #288dc2 1px solid;
+    outline: none;
+    box-shadow: none;
+}
+
+#btn-restart:active {
+    border-style: none;
+    background-color: #288dc2;
+    color: white;
+    border: white 1px solid;
+    outline: none;
+    box-shadow: none;
+}
+
 
 
 /******************************************************************
