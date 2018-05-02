@@ -1,6 +1,6 @@
 
 // CONTROLLERS
-angular.module('formApp').controller('stageController', ['$scope', '$state', function ($scope,  $state) {
+angular.module('formApp').controller('stageController', ['$scope', '$state', 'resultsObj', function ($scope,  $state, resultsObj) {
     var stage = this;
     stage.testBool = function(stageName){
         var returnBool;
@@ -30,5 +30,11 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', fun
                     }
         return returnBool;
                     }
+    
+    stage.restart = function(){
+        resultsObj.restartTest();
+        
+        $state.go('^.intro');
+    };
         
 }])
