@@ -179,11 +179,6 @@ LAYOUT ELEMENTS
   width: 30vw;
 }
 
-.logo-stage {
-  margin: 0 auto 1rem auto;
-  width: 8rem;
-}
-
 .nav {
   display:table;
   width: 100%;
@@ -195,6 +190,10 @@ LAYOUT ELEMENTS
   margin: .2rem auto 2rem auto;
   text-align: center;
   width: 100%;
+}
+
+.page-header {
+  position: relative;
 }
 
 .prog-bubble {
@@ -222,19 +221,14 @@ LAYOUT ELEMENTS
 .results-col {
   background: #e6f0f4;
   float: left;
-  height: 25rem;
   margin-right: .4rem;
   padding: 1rem;
-  text-align: center;
+  position: relative;
   width: calc((100% / 3) - .275rem);
 }
 
 .results-col:last-of-type {
   margin-right: 0;
-}
-
-.results-row {
-  margin: 1rem 0;
 }
 
 .results-row:after {
@@ -282,7 +276,6 @@ LAYOUT ELEMENTS
   color: #555;
   display: flex;
   flex-direction: column;
-  font-size: .7rem;
   justify-content: center;
   padding: .5rem;
   text-align: center;
@@ -389,7 +382,7 @@ OBJECT ELEMENTS
 
 [class*='score-'] {
   color: #532d6d;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   left: 50%;
   line-height: 105%;
   margin: 0;
@@ -405,7 +398,7 @@ OBJECT ELEMENTS
 }
 
 .environments-intro {
-  font-size: 1rem;
+  margin: 1.5rem 0 1rem 0;
 }
 
 .environment {
@@ -523,9 +516,12 @@ BUTTONS
   border: lightgrey 1px solid;
   box-shadow: none;
   color: lightgray;
-  float: right;
+  font-size: .8rem;
   outline: none;
-  padding: .75rem;  
+  padding: .75rem;
+  position: absolute;
+  right: .5rem;
+  top: 1rem;
 }
 
 #btn-restart:hover {
@@ -568,12 +564,21 @@ RESPONSIVE STYLES
     width: 90%;
   }
 
+  .logo-stage {
+    margin: 0 0 0 .5rem;
+    width: 7rem;
+  }
+
   [class*='step-'] {
     height: 3.5rem;
   }
 
   .steps {
     height: 3rem;
+  }
+
+  .stepNavItem {
+    font-size: .6rem;
   }
 
   .quiz-body,
@@ -610,20 +615,18 @@ RESPONSIVE STYLES
   }
 
   .results-head {
-    margin: 2rem 0;
+    margin: 1rem 0;
+    width: 60%;
   }
 
   .score {
-    float: right;
-    height: 5rem;
-    margin: -5.7rem 0 0 0;
+    height: 4rem;
+    margin: 0 0 0 0;
     padding: 0;
-    position: relative;
-    width: 5rem;
-  }
-
-  .environments-intro {
-    margin: 3rem 0 1rem 0;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 4rem;
   }
 
   .environment { 
@@ -634,12 +637,26 @@ RESPONSIVE STYLES
 
 @media (min-width: 435px) {
 
+  .logo-stage {
+    margin: 0 auto 1rem auto;
+    width: 8rem;
+  }
+
   [class*='step-'] {
     height: 2rem;
   }
   
   .steps {
     height: 2rem;
+  }
+
+  .stepNavItem {
+    font-size: .7rem;
+  }
+
+  .results-head {
+    margin: 2rem 0;
+    width: 100%;
   }
 }
 
@@ -684,11 +701,8 @@ RESPONSIVE STYLES
   .freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
   .freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
 
-  
-
   .results-col {
     float: left;
-    height: 25rem;
     margin-right: .4rem;
     margin-top: 0;
     padding: 1rem;
@@ -710,11 +724,9 @@ RESPONSIVE STYLES
     margin: 1rem auto 0 auto;
     padding: 0;
     position: relative;
+    right: 0;
+    top: 0;
     width: 6rem;
-  }
-
-  .environments-intro {
-    margin: 1rem 0 1rem 0;
   }
 
   .environment {

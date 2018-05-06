@@ -1,47 +1,45 @@
+<div ng-controller = "resultsController as results" class="stage-results">
+  <div class="header">
+    
+    <h2>Your AGX<sup>&reg;</sup> Online Hearing Test Results</h2>
+  </div>
 
-    <div ng-controller = "resultsController as results" class="stage-results">
-      <div class="header">
-       
-        <h2>Your AGX<sup>&reg;</sup> Online Hearing Test Results</h2>
+  <div class="results-body">
+    <p class="results-summary">A summary of your online hearing test results.</p>
+
+    <div class="results-row">
+      <div class="results-col results-quiz">
+        <p class="results-head">Hearing Quiz</p>
+
+        <div class="score">
+          <div class="score-quiz">{{results.wrongAns.quizScore}}</div>
+        </div>
+        
+        <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
+        <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p></div>
       </div>
 
-      <div class="results-body">
-        <p class="results-summary">A summary of your online hearing test results.</p>
+      <div class="results-col results-tone">
+        <p class="results-head">Tone Test</p>
 
-        <div class="results-row">
-          <div class="results-col results-quiz">
-            <p class="results-head">Hearing Quiz</p>
-
-            <div class="score">
-              <div class="score-quiz">
-              {{results.wrongAns.quizScore}}</div>
-            </div>
-            
-            <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
-            <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p></div>
-          </div>
-
-          <div class="results-col results-tone">
-            <p class="results-head">Tone Test</p>
-
-            <div class="score">
-              <div class="score-tone">{{results.wrongAns.toneScore}}</div>
-            </div>
-            
-            <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
-            <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p></div>
-          </div>
-
-          <div class="results-col results-speech">
-            <p class="results-head">Speech Test</p>
-
-            <div class="score">
-              <div class="score-speech">{{results.wrongAns.speechScore}}</div>
-            </div>
-            
-            <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
-            <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p></div>
-          </div>
+        <div class="score">
+          <div class="score-tone">{{results.wrongAns.toneScore}}</div>
         </div>
+        
+        <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
+        <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p></div>
+      </div>
+
+      <div class="results-col results-speech">
+        <p class="results-head">Speech Test</p>
+
+        <div class="score">
+          <div class="score-speech">{{results.wrongAns.speechScore}}</div>
+        </div>
+        
+        <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
+        <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p></div>
       </div>
     </div>
+  </div>
+</div>
