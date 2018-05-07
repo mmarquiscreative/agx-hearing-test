@@ -477,10 +477,10 @@ BUTTONS
   display: table-cell;
   font-size: 1rem;
   font-weight: 200;
+  height: 6vh;
   letter-spacing: .05em;
   margin: 1.25%;
   outline: none;
-  padding: 3vw 2vw;
   position: relative;
   top: -2px;
   width: 30%;

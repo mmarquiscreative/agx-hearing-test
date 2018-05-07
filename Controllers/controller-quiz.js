@@ -34,19 +34,19 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
   quiz.questions = [{
         question: 'Do you have difficulty understanding people with higher speaking voices?',
         answer: false,
-        environment: '• High pitched voices'
+        environment: 'High pitched voices'
     },{
         question: 'Do you have a hard time understanding people over the phone?',
         answer: false,
-        environment: '• Telephone conversations'
+        environment: 'Telephone conversations'
     },{
         question: 'Do you have trouble keeping up with conversations in busy restaurants?',
         answer: false,
-        environment: '• Noisy restaurants'
+        environment: 'Noisy restaurants'
     },{
         question: 'Are you often told that you set the television volume very loud?',
         answer: false,
-        environment: '• Television shows'
+        environment: 'Television shows'
     }]
     
     
