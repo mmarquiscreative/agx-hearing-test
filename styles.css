@@ -218,23 +218,23 @@ LAYOUT ELEMENTS
   margin-top: 1rem;
 }
 
+.results-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
 .results-col {
   background: #e6f0f4;
-  float: left;
+  flex: 1;
   margin-right: .4rem;
   padding: 1rem;
   position: relative;
-  width: calc((100% / 3) - .275rem);
 }
 
 .results-col:last-of-type {
   margin-right: 0;
-}
-
-.results-row:after {
-  clear: both;
-  content: '';
-  display: block;
 }
 
 .results-summary {
