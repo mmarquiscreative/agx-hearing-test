@@ -604,6 +604,10 @@ RESPONSIVE STYLES
   .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
   .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
 
+  .results-row {
+    flex-direction: column;
+  }
+
   .results-col {
     float: none;
     height: auto;
@@ -652,6 +656,10 @@ RESPONSIVE STYLES
 
   .stepNavItem {
     font-size: .7rem;
+  }
+
+  .results-row {
+    flex-direction: row;
   }
 
   .results-head {
