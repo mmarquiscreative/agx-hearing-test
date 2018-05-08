@@ -5,7 +5,24 @@
   </div>
 
   <div class="results-body">
-    <p class="results-summary">A summary of your online hearing test results.</p>
+    <div class="results-summary">
+      <div class="summary-col">
+        <p><strong>Hearing Quiz</strong></p>
+        <p class="summary-score"><strong>{{results.wrongAns.quizScore}}</strong></p>
+      </div>
+
+      <div class="summary-col">
+        <p><strong>Tone Test</strong></p>
+        <p class="summary-score"><strong>{{results.wrongAns.toneScore}}</strong></p>
+      </div>
+
+      <div class="summary-col">
+        <p><strong>Speech Test</strong></p>
+        <p class="summary-score"><strong>{{results.wrongAns.speechScore}}</strong></p>
+      </div>
+    </div>
+
+    <button class="btn-submit">Action Button</button>
 
     <div class="results-row">
       <div class="results-col results-quiz">

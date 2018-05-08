@@ -238,11 +238,26 @@ LAYOUT ELEMENTS
 }
 
 .results-summary {
+  align-items: center;
   background: #ece9f5;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1.2rem;
   margin: 1rem 0;
+  overflow: hidden;
   padding: .8rem 1rem;
   text-align: center;
+}
+
+.summary-col {
+  flex: 1;
+  flex-direction: row;
+}
+
+.summary-col p {
+  font-size: 1rem;
+  margin: .25rem 0 0 0;
 }
 
 .score {
@@ -380,6 +395,11 @@ OBJECT ELEMENTS
   font-weight: 700;
 }
 
+.summary-score {
+  color: #532d6d;
+  font-size: 1.2rem;
+}
+
 [class*='score-'] {
   color: #532d6d;
   font-size: 2.2rem;
@@ -423,8 +443,8 @@ BUTTONS
   font-weight: 200;
   letter-spacing: .05em;
   margin: auto;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
   outline: none;
   padding: 1rem 1.5rem;
   position: relative;
@@ -581,10 +601,11 @@ RESPONSIVE STYLES
     font-size: .6rem;
   }
 
+  .intro-body,
   .quiz-body,
   .volume-body,
   .tone-test-body {
-    margin: 2rem auto;
+    margin: 2rem auto 4rem auto;
   }
 
   .speech-test-body {
