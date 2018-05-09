@@ -9,14 +9,14 @@
                 <div ui-sref-active="hidden" ui-sref=".intro" >-->
                
                 <div id="status-buttons" ng-class="stage.testBool('intro') ? 'hidden' : 'text-center nav'">
-                    <button id="btn-restart" ng-click="stage.restart()">Restart Test</button>
+                    <button id="btn-restart" ng-click="stage.restart()">Restart Quiz</button>
                     <img class="agx-hearing-logo logo-stage" src="./img/AGX-Hearing-Color.png" />
                 
                     <div id="stepNavBar">
                         <div ng-class="stage.testBool('quiz') ? 'stepNavItem active' : 'stepNavItem'">Quiz</div>
                         <div ng-class="stage.testBool('volume') ? 'stepNavItem active' : 'stepNavItem'" >Volume</div>
-                        <div ng-class="stage.testBool('tone') ? 'stepNavItem active' : 'stepNavItem'" >Tone Test</div>
-                        <div ng-class="stage.testBool('speech') ? 'stepNavItem active' : 'stepNavItem'" >Speech Test</div>
+                        <div ng-class="stage.testBool('tone') ? 'stepNavItem active' : 'stepNavItem'" >Tone Quiz</div>
+                        <div ng-class="stage.testBool('speech') ? 'stepNavItem active' : 'stepNavItem'" >Speech Quiz</div>
                         <div ng-class="stage.testBool('results') ? 'stepNavItem active' : 'stepNavItem'" >Results</div>
                     </div>
                     

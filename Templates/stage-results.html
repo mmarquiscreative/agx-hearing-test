@@ -1,7 +1,7 @@
 <div ng-controller = "resultsController as results" class="stage-results">
   <div class="header">
     
-    <h2>Your AGX<sup>&reg;</sup> Online Hearing Test Results</h2>
+    <h2>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h2>
   </div>
 
   <div class="results-body">
@@ -12,12 +12,12 @@
       </div>
 
       <div class="summary-col">
-        <p><strong>Tone Test</strong></p>
+        <p><strong>Tone Quiz</strong></p>
         <p class="summary-score"><strong>{{results.wrongAns.toneScore}}</strong></p>
       </div>
 
       <div class="summary-col">
-        <p><strong>Speech Test</strong></p>
+        <p><strong>Speech Quiz</strong></p>
         <p class="summary-score"><strong>{{results.wrongAns.speechScore}}</strong></p>
       </div>
     </div>
@@ -37,7 +37,7 @@
       </div>
 
       <div class="results-col results-tone">
-        <p class="results-head">Tone Test</p>
+        <p class="results-head">Tone Quiz</p>
 
         <div class="score">
           <div class="score-tone">{{results.wrongAns.toneScore}}</div>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="results-col results-speech">
-        <p class="results-head">Speech Test</p>
+        <p class="results-head">Speech Quiz</p>
 
         <div class="score">
           <div class="score-speech">{{results.wrongAns.speechScore}}</div>
