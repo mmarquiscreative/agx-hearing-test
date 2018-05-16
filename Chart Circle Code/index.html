@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="formApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS</title>
+    <link data-require="bootstrap-css" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.15/angular.js" data-semver="1.2.15"></script>
+    <script src="app.js"></script>
+  </head>
+
+<body>
+<div ng-controller = "chartController as chart">
+    
+    <input ng-model="chart.score" type="number">
+    <p>{{chart.score}}</p>
+    <button ng-click="chart.rotateFill()">Update Chart</button>
+    <!-- <canvas id="piechart" width="400" height="400">
+</canvas> -->
+
+<!-- Circle Chart -->
+    <div class="radial-progress">
+	<div class="circle">
+		<div class="mask full">
+			<div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
+			<div ng-style="{'background-color': 'red' }" class="fill fix"></div>
+		</div>
+		<div ng-style="{'transform': chart.halfRotation, 'border': chart.border}" class="mask half">
+			<div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill"></div>
+		</div>
+		<div class="mask full">
+			<div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
+			<div ng-style="{'transform': chart.halfRotation }" class="mask half">
+			    <div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill"></div>
+		    </div>
+		</div>
+        <div class="shadow"></div>
+	</div>
+	<div class="inset"></div>
+</div>
+<!-- END Circle Chart -->
+
+</div>
+</body>
+
+</html>
