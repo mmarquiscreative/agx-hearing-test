@@ -79,7 +79,9 @@ percentScore: 0,
     function rotateFill(someObj){
 
         var rotation = percentToDegree(results[someObj].percentScore);
-
+        
+        Math.ceil(rotation);
+        
         if(rotation >= 180){
             results[someObj].fillRotation = 'rotate(' + 180 + 'deg)';
             results[someObj].halfRotation = 'rotate(' + (rotation - 180) + 'deg)';
@@ -89,7 +91,7 @@ percentScore: 0,
 
         };
 
-        results[someObj].fixRotation = 'rotate(' + (rotation/2) + 'deg)';
+        results[someObj].fixRotation = 'rotate(' + (Math.ceil((rotation/2))) + 'deg)';
 
         if(rotation <= 45){
             results[someObj].color = "#cf504e";

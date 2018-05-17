@@ -769,7 +769,8 @@ RESPONSIVE STYLES
 
 /* score Progress Circle */
 .radial-progress {
-  margin: 50px;
+    display: inline-block;
+  margin: 10px;
   width: 120px;
   height: 120px;
   background-color: #d6dadc;
@@ -826,5 +827,10 @@ z-index: 4;
 mask.full fill {
     z-index: 0;
 }
+
+.inset {
+    text-align: center;
+}
+
 
 /* score Progress Circle END*/
