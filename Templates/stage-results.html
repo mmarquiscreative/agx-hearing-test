@@ -1,62 +1,157 @@
 <div ng-controller = "resultsController as results" class="stage-results">
-  <div class="header">
+    <div class="header">
+
+        <h2>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h2>
+    </div>
+
+    <score-circle circle-id="results.totalScore"></score-circle>
+    <score-circle circle-id="results.quizScore"></score-circle>
+    <score-circle circle-id="results.toneScore"></score-circle>
+    <score-circle circle-id="results.speechScore"></score-circle>
+
+
+
+   <!-- Total Score Circle 
+    <div class="radial-progress totalScore"><div class="circle"><div class="mask full">
+        <div ng-style="{'transform': results.totalScore.fillRotation, 'background-color': results.totalScore.color }" class="fill">
+
+        </div><div ng-style="{'background-color': 'red' }" class="fill fix" style="background-color: red;">
+
+        </div>
+        </div>
+        <div ng-style="{'transform': results.totalScore.halfRotation, 'border': results.totalScore.border}" class="mask half">
+            <div ng-style="{'transform': results.totalScore.fillRotation,  'background-color': results.totalScore.color }" class="fill">
+
+            </div>
+        </div>
+        <div class="mask full">
+            <div ng-style="{'transform': results.totalScore.fillRotation, 'background-color': results.totalScore.color }" class="fill">
+
+            </div>
+            <div ng-style="{'transform': results.totalScore.halfRotation }" class="mask half">
+                <div ng-style="{'transform': results.totalScore.fillRotation,  'background-color': results.totalScore.color }" class="fill">
+
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+
+        </div>
+        </div>
+        <div class="inset">
+
+        </div>
+    </div>
+Total Score Circle -->
     
-    <h2>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h2>
-  </div>
+    <!-- Total Score Circle 
+    <div class="radial-progress totalScore"><div class="circle"><div class="mask full">
+        <div ng-style="{'transform': results.totalScore.fillRotation, 'background-color': results.totalScore.color }" class="fill">
 
-  <div class="results-body">
-    <div class="results-summary">
-      <div class="summary-col">
-        <p><strong>Hearing Quiz</strong></p>
-        <p class="summary-score"><strong>{{results.wrongAns.quizScore}}</strong></p>
-      </div>
+        </div><div ng-style="{'background-color': 'red' }" class="fill fix" style="background-color: red;">
 
-      <div class="summary-col">
-        <p><strong>Tone Quiz</strong></p>
-        <p class="summary-score"><strong>{{results.wrongAns.toneScore}}</strong></p>
-      </div>
+        </div>
+        </div>
+        <div ng-style="{'transform': results.totalScore.halfRotation, 'border': results.totalScore.border}" class="mask half">
+            <div ng-style="{'transform': results.totalScore.fillRotation,  'background-color': results.totalScore.color }" class="fill">
 
-      <div class="summary-col">
-        <p><strong>Speech Quiz</strong></p>
-        <p class="summary-score"><strong>{{results.wrongAns.speechScore}}</strong></p>
-      </div>
+            </div>
+        </div>
+        <div class="mask full">
+            <div ng-style="{'transform': results.totalScore.fillRotation, 'background-color': results.totalScore.color }" class="fill">
+
+            </div>
+            <div ng-style="{'transform': results.totalScore.halfRotation }" class="mask half">
+                <div ng-style="{'transform': results.totalScore.fillRotation,  'background-color': results.totalScore.color }" class="fill">
+
+                </div>
+            </div>
+        </div>
+        <div class="shadow">
+
+        </div>
+        </div>
+        <div class="inset">
+
+        </div>
     </div>
+  Total Score Circle -->
+    
+    
+    <!-- 
+<div class="radial-progress">
+<div class="circle">
+<div class="mask full">
+<div ng-style="{\'transform\': results[scoreCircleId].fillRotation, \'background-color\': results[scoreCircleId].color }" class="fill"></div>
+<div ng-style="{\'background-color\': \'red\' }" class="fill fix"></div>
+</div>
+<div ng-style="{\'transform\': results[scoreCircleId].halfRotation, \'border\': results[scoreCircleId].border}" class="mask half">
+<div ng-style="{\'transform\': results[scoreCircleId].fillRotation,  \'background-color\': results[scoreCircleId].color }" class="fill"></div>
+</div>
+<div class="mask full">
+<div ng-style="{\'transform\': results[scoreCircleId].fillRotation, \'background-color\': results[scoreCircleId].color }" class="fill"></div>
+<div ng-style="{\'transform\': results[scoreCircleId].halfRotation }" class="mask half">
+<div ng-style="{\'transform\': results[scoreCircleId].fillRotation,  \'background-color\': results[scoreCircleId].color }" class="fill"></div>
+</div>
+</div>
+<div class="shadow"></div>
+</div>
+<div class="inset"></div>
+</div> -->
 
-    <button class="btn-submit">Action Button</button>
+    <div class="results-body">
+        <div class="results-summary">
+            <div class="summary-col">
+                <p><strong>Hearing Quiz</strong></p>
+                <p class="summary-score"><strong>{{results.wrongAns.quizScore}}</strong></p>
+            </div>
 
-    <div class="results-row">
-      <div class="results-col results-quiz">
-        <p class="results-head">Hearing Quiz</p>
+            <div class="summary-col">
+                <p><strong>Tone Quiz</strong></p>
+                <p class="summary-score"><strong>{{results.wrongAns.toneScore}}</strong></p>
+            </div>
 
-        <div class="score">
-          <div class="score-quiz">{{results.wrongAns.quizScore}}</div>
+            <div class="summary-col">
+                <p><strong>Speech Quiz</strong></p>
+                <p class="summary-score"><strong>{{results.wrongAns.speechScore}}</strong></p>
+            </div>
         </div>
-        
-        <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
-        <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p></div>
-      </div>
 
-      <div class="results-col results-tone">
-        <p class="results-head">Tone Quiz</p>
+        <button class="btn-submit">Action Button</button>
 
-        <div class="score">
-          <div class="score-tone">{{results.wrongAns.toneScore}}</div>
+        <div class="results-row">
+            <div class="results-col results-quiz">
+                <p class="results-head">Hearing Quiz</p>
+
+                <div class="score">
+                    <div class="score-quiz">{{results.wrongAns.quizScore}}</div>
+                </div>
+
+                <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
+                    <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p></div>
+            </div>
+
+            <div class="results-col results-tone">
+                <p class="results-head">Tone Quiz</p>
+
+                <div class="score">
+                    <div class="score-tone">{{results.wrongAns.toneScore}}</div>
+                </div>
+
+                <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
+                    <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p></div>
+            </div>
+
+            <div class="results-col results-speech">
+                <p class="results-head">Speech Quiz</p>
+
+                <div class="score">
+                    <div class="score-speech">{{results.wrongAns.speechScore}}</div>
+                </div>
+
+                <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
+                    <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p></div>
+            </div>
         </div>
-        
-        <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
-        <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p></div>
-      </div>
-
-      <div class="results-col results-speech">
-        <p class="results-head">Speech Quiz</p>
-
-        <div class="score">
-          <div class="score-speech">{{results.wrongAns.speechScore}}</div>
-        </div>
-        
-        <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
-        <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p></div>
-      </div>
     </div>
-  </div>
 </div>

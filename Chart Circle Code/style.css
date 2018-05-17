@@ -1,3 +1,4 @@
+/* score Progress Circle */
 .radial-progress {
   margin: 50px;
   width: 120px;
@@ -56,4 +57,6 @@ z-index: 4;
 mask.full fill {
     z-index: 0;
 }
+
+/* score Progress Circle END*/
 
