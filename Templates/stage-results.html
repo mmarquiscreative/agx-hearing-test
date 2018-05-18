@@ -5,9 +5,9 @@
     </div>
 
     <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
-    <score-circle circle-id="quizCircle" which-circle="results.quizScore"></score-circle>
-    <score-circle circle-id="toneCircle" which-circle="results.toneScore"></score-circle>
-    <score-circle circle-id="speechCircle" which-circle="results.speechScore"></score-circle>
+    
+    <h3 style="display: inline-block">{{results.totalScore.copy}}</h3>
+    
 
 <!-- <div id="{{circleid}}" class="radial-progress">
    
@@ -148,17 +148,17 @@ Total Score Circle -->
         <div class="results-summary">
             <div class="summary-col">
                 <p><strong>Hearing Quiz</strong></p>
-                <p class="summary-score"><strong>{{results.wrongAns.quizScore}}</strong></p>
+                <score-circle circle-id="quizCircle" which-circle="results.quizScore"></score-circle>
             </div>
 
             <div class="summary-col">
                 <p><strong>Tone Quiz</strong></p>
-                <p class="summary-score"><strong>{{results.wrongAns.toneScore}}</strong></p>
+                <score-circle circle-id="toneCircle" which-circle="results.toneScore"></score-circle>
             </div>
 
             <div class="summary-col">
                 <p><strong>Speech Quiz</strong></p>
-                <p class="summary-score"><strong>{{results.wrongAns.speechScore}}</strong></p>
+                <score-circle circle-id="speechCircle" which-circle="results.speechScore"></score-circle>
             </div>
         </div>
 

@@ -770,21 +770,20 @@ RESPONSIVE STYLES
 /* score Progress Circle */
 .radial-progress {
   margin: 50px;
-  width: 150px;
-  height: 150px;
   background-color: #d6dadc;
   border-radius: 50%;
     z-index: 0;
     position: relative;
 }
 #totalCircle {
-    width: 300px;
-    height: 300px;
+    width: 230px;
+    height: 230px;
+    display: inline-block;
 }
 
 #quizCircle, #toneCircle, #speechCircle {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 }
 
 .circle, .mask.full, .fill, .fill.fix, .mask.half, .shadow, .fillFixContainer, .outerfixclip {
@@ -857,6 +856,15 @@ clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
   border-radius: 50%;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    text-align: center;
+}
+
+.radial-progress .inset h1 {
+    font-size: 4rem;
+    width: 100%;
+    height: 30%;
+    margin: 34% 0;
+    vertical-align: middle;
 }
 .radial-progress .circle .mask,
 .radial-progress .circle .fill

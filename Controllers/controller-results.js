@@ -25,7 +25,9 @@ results.totalScore = {
     halfRotation: 'rotate(0deg)',
     halfFixRotation: 'rotate(0deg)',
     color: '#cf504e',
-    border: '"' + ("solid " + results.color + " 1px") + '"'
+    border: '"' + ("solid " + results.color + " 1px") + '"',
+    copy: '',
+    copyOptions: ['Based on your results, we highly recommend coming in for a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it\'s likely you would greatly benefit from professionally fitted hearing technology. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it is likely you would benefit from a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'You scored very well. However there are still additional things that our professionals can help you address, such as custom hearing protection and tinnitus solutions. Click below to find an AudigyCertified practice near you!', 'You got a perfect score! However, since this is only an online test, it\'s still possible you may have a hearing loss. Click below to find an AudigyCertified practice near you!']
 }
 
 results.quizScore = {
@@ -74,7 +76,25 @@ percentScore: 0,
     rotateFill('quizScore');
     rotateFill('toneScore');
     rotateFill('speechScore');
+    
+    resultsCopy();
+    
+function resultsCopy(){
+    
+    var percentDividend = (100 - results.totalScore.percentScore);
+    
+    percentDividend = (results.totalScore.percentScore / 25);
+    
+    
+    
+    percentDividend = Math.floor(percentDividend);
 
+   results.totalScore.copy = results.totalScore.copyOptions[percentDividend];
+    
+    console.log(percentDividend);
+    console.log(results.totalScore.copy);
+    console.log(results.totalScore.copyOptions[percentDividend]);
+}
     
     function rotateFill(someObj){
 
@@ -117,9 +137,13 @@ percentScore: 0,
         console.log(results[someObj].name + ": ");        console.log(results[someObj]);
 
     };
+    scoreToPercent(23, 89);
     
     function scoreToPercent(actualScore, perfectScore){
         var returnPercent = 100 - ((actualScore/perfectScore) * 100);
+        console.log(returnPercent);
+        returnPercent = Math.ceil(returnPercent);
+        console.log(returnPercent);
         return returnPercent;
     }
     
