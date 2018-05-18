@@ -85,10 +85,11 @@ percentScore: 0,
         if(rotation >= 180){
             results[someObj].fillRotation = 'rotate(' + 180 + 'deg)';
             results[someObj].halfRotation = 'rotate(' + (rotation - 180) + 'deg)';
+            results[someObj].fixRotation = 'rotate(' + (rotation/2) + 'deg)';
         } else {
             results[someObj].fillRotation = 'rotate(' + rotation + 'deg)';
             results[someObj].halfRotation = 'rotate(0deg)';
-
+            results[someObj].fixRotation = 'rotate(' + (rotation/2) + 'deg)';
         };
 
         results[someObj].fixRotation = 'rotate(' + (Math.ceil((rotation/2))) + 'deg)';

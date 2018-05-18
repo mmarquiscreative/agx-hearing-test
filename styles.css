@@ -769,55 +769,100 @@ RESPONSIVE STYLES
 
 /* score Progress Circle */
 .radial-progress {
-    display: inline-block;
-  margin: 10px;
-  width: 120px;
-  height: 120px;
+  margin: 50px;
+  width: 150px;
+  height: 150px;
   background-color: #d6dadc;
   border-radius: 50%;
     z-index: 0;
+    position: relative;
 }
-.radial-progress .circle .mask,
-.radial-progress .circle .fill,
-.radial-progress .circle .shadow {
-  width: 120px;
-  height: 120px;
+#totalCircle {
+    width: 300px;
+    height: 300px;
+}
+
+#quizCircle, #toneCircle, #speechCircle {
+    width: 150px;
+    height: 150px;
+}
+
+.circle, .mask.full, .fill, .fill.fix, .mask.half, .shadow, .fillFixContainer, .outerfixclip {
+  width: 100%;
+  height: 100%;
   position: absolute;
   border-radius: 50%;
+      -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .radial-progress .circle .shadow {
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
+    z-index: 1000;
 }
 
 .radial-progress .circle .mask {
-  clip: rect(0px, 120px, 120px, 60px);
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 
 }
 .radial-progress .circle .mask .fill {
-  clip: rect(0px, 60px, 120px, 0px);
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+
   background-color: #97a71d;
 }
 
+
+
 .fill.fix {
-  clip: rect(0px, 120px, 60px, 0px);
-  background-color: aqua;
-z-index: 4;
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  background-color: orange;
+z-index: 1000;
+    
+    transform: rotate(2deg);
+    
+    -webkit-backface-visibility: hidden;
+  -webkit-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s;
+    
+}
+.fillFixContainer {
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
 }
 
+.outerfixclip {
+    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    z-index: 10;
+    
+    
+    -webkit-backface-visibility: hidden;
+  -webkit-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s;
+
+}
+
+
 .radial-progress .inset {
-  width: 90px;
-  height: 90px;
+  width: 75%;
+  height: 75%;
   position: absolute;
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-left: 12.5%;
+  margin-top: 12.5%;
   background-color: #fbfbfb;
   border-radius: 50%;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 .radial-progress .circle .mask,
-.radial-progress .circle .fill {
+.radial-progress .circle .fill
+{
   -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   -webkit-transition: transform 1s, background-color 1s;
   -ms-transition: transform 1s, background-color 1s;
   transition: transform 1s, background-color 1s;
@@ -828,15 +873,5 @@ mask.full fill {
     z-index: 0;
 }
 
-.inset {
-    text-align: center;
-}
-
-#totalScore {
-    width: 120px;
-    height: 120px;
-    display: inline-block;
-    margin: 0, 0;
-}
-
 /* score Progress Circle END*/
+
