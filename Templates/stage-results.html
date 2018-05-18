@@ -4,9 +4,13 @@
         <h2>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h2>
     </div>
 
-    <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
+   <div class="totalResults">
+       <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
+       <h3 id="totalCta" style="display: inline-block">{{results.totalScore.copy}}</h3>
+   </div>
     
-    <h3 style="display: inline-block">{{results.totalScore.copy}}</h3>
+    
+    
     
 
 <!-- <div id="{{circleid}}" class="radial-progress">

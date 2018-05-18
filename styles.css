@@ -881,5 +881,18 @@ mask.full fill {
     z-index: 0;
 }
 
+.totalResults {
+    display: table;
+}
+
+.totalResults #totalCircle, #totalCta {
+    display: table-cell;
+    
+}
+
+#totalCta {
+    width: 500px;
+    margin-left: 2rem;
+}
 /* score Progress Circle END*/
 
