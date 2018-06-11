@@ -118,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
 
 sup { font-size: 50%; }
 
@@ -223,9 +224,9 @@ LAYOUT ELEMENTS
 }
 
 .results-row {
+  display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
   overflow: hidden;
 }
 
@@ -244,9 +245,10 @@ LAYOUT ELEMENTS
 .results-summary {
   align-items: center;
   background: #ece9f5;
+  display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
+  flex-direction: row;
   font-size: 1.2rem;
   margin: 1rem 0;
   overflow: hidden;
@@ -256,7 +258,6 @@ LAYOUT ELEMENTS
 
 .summary-col {
   flex: 1;
-  flex-direction: row;
 }
 
 .summary-col p {
@@ -284,6 +285,8 @@ LAYOUT ELEMENTS
 #stepNavBar {
   border-radius: 100rem;
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   margin: 1rem auto .5rem auto;
   overflow: hidden;
   text-align: center;
@@ -294,6 +297,8 @@ LAYOUT ELEMENTS
   background: #b6d8e4;
   color: #555;
   display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   flex-direction: column;
   justify-content: center;
   padding: .5rem;
@@ -432,6 +437,130 @@ OBJECT ELEMENTS
 [id*='ans'] {
   display: inline-block;
 }
+
+/* Score Progress Circle */
+.radial-progress {
+  margin: 0;
+  background-color: #d6dadc;
+  border-radius: 50%;
+  z-index: 0;
+  position: relative;
+}
+
+.total-circle-col {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-grow: 1;
+}
+
+#quizCircle, #toneCircle, #speechCircle {
+  width: 6rem;
+  height: 6rem;
+  margin: .5rem auto;
+}
+
+.circle, .mask.full, .fill, .fill.fix, .mask.half, .shadow, .fillFixContainer, .outerfixclip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.radial-progress .circle .shadow {
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
+  z-index: 1000;
+}
+
+.radial-progress .circle .mask {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.radial-progress .circle .mask .fill {
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  background-color: #97a71d;
+}
+
+.fill.fix {
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  background-color: orange;
+  z-index: 1000;
+  transform: rotate(2deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s;  
+}
+
+.fillFixContainer {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.outerfixclip {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s;
+}
+
+.radial-progress .inset {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 10%;
+  background-color: #fbfbfb;
+  border-radius: 50%;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+}
+
+.radial-progress .inset h2 {
+  margin-top: 30%;
+}
+
+
+
+.radial-progress .circle .mask,
+.radial-progress .circle .fill
+{
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s;
+}
+
+mask.full fill {
+  z-index: 0;
+}
+
+.totalResults {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  align-items: center;
+}
+
+#totalCta {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-grow: 1.5;
+  font-size: 1.2rem;
+  margin: .5rem;;
+}
+/* Score Progress Circle END*/
 
 
 /******************************************************************
@@ -661,6 +790,16 @@ RESPONSIVE STYLES
   .environment { 
     margin: 1rem 0;
   }
+
+  .totalResults{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #totalCircle {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 
 
@@ -690,6 +829,20 @@ RESPONSIVE STYLES
   .results-head {
     margin: 2rem 0;
     width: 100%;
+  }
+
+  .totalResults{
+    flex-direction: row;
+    text-align: initial;
+  }
+
+  .total-circle-col {
+    margin-right: 1rem;
+  }
+
+  #totalCircle {
+    width: 8rem;
+    height: 8rem;
   }
 }
 
@@ -766,133 +919,3 @@ RESPONSIVE STYLES
     margin: 1rem 0;
   }
 }
-
-/* score Progress Circle */
-.radial-progress {
-  margin: 50px;
-  background-color: #d6dadc;
-  border-radius: 50%;
-    z-index: 0;
-    position: relative;
-}
-#totalCircle {
-    width: 230px;
-    height: 230px;
-    display: inline-block;
-}
-
-#quizCircle, #toneCircle, #speechCircle {
-    width: 140px;
-    height: 140px;
-}
-
-.circle, .mask.full, .fill, .fill.fix, .mask.half, .shadow, .fillFixContainer, .outerfixclip {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 50%;
-      -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-.radial-progress .circle .shadow {
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
-    z-index: 1000;
-}
-
-.radial-progress .circle .mask {
-  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-
-}
-.radial-progress .circle .mask .fill {
-  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-
-  background-color: #97a71d;
-}
-
-
-
-.fill.fix {
-  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-  background-color: orange;
-z-index: 1000;
-    
-    transform: rotate(2deg);
-    
-    -webkit-backface-visibility: hidden;
-  -webkit-transition: transform 1s, background-color 1s;
-  -ms-transition: transform 1s, background-color 1s;
-  transition: transform 1s, background-color 1s;
-    
-}
-.fillFixContainer {
-    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-}
-
-.outerfixclip {
-    -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-    z-index: 10;
-    
-    
-    -webkit-backface-visibility: hidden;
-  -webkit-transition: transform 1s, background-color 1s;
-  -ms-transition: transform 1s, background-color 1s;
-  transition: transform 1s, background-color 1s;
-
-}
-
-
-.radial-progress .inset {
-  width: 75%;
-  height: 75%;
-  position: absolute;
-  margin-left: 12.5%;
-  margin-top: 12.5%;
-  background-color: #fbfbfb;
-  border-radius: 50%;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    text-align: center;
-}
-
-.radial-progress .inset h1 {
-    font-size: 4rem;
-    width: 100%;
-    height: 30%;
-    margin: 34% 0;
-    vertical-align: middle;
-}
-.radial-progress .circle .mask,
-.radial-progress .circle .fill
-{
-  -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  -webkit-transition: transform 1s, background-color 1s;
-  -ms-transition: transform 1s, background-color 1s;
-  transition: transform 1s, background-color 1s;
-
-}
-
-mask.full fill {
-    z-index: 0;
-}
-
-.totalResults {
-    display: table;
-}
-
-.totalResults #totalCircle, #totalCta {
-    display: table-cell;
-    
-}
-
-#totalCta {
-    width: 500px;
-    margin-left: 2rem;
-}
-/* score Progress Circle END*/
-

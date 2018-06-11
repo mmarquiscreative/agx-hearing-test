@@ -6,82 +6,61 @@
     <title>AngularJS</title>
     <link data-require="bootstrap-css" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.15/angular.js" data-semver="1.2.15"></script>
     <script src="app.js"></script>
   </head>
 
-<body>
-<div ng-controller = "chartController as chart">
-    
-    <input ng-model="chart.score" type="number">
-    <p>{{chart.score}}</p>
-    <button ng-click="chart.rotateFill()">Update Chart</button>
-   
-<div class="outer">
-    <div class="innerGreen">
-        <div class="innerOrange">
-            <div class="innerPurple"></div>
-        </div>
-    </div>
-</div>
+  <body>
+    <div ng-controller = "chartController as chart">
+      <input ng-model="chart.score" type="number">
+      <p>{{chart.score}}</p>
+      <button ng-click="chart.rotateFill()">Update Chart</button>
+      
+      <div class="outer">
+          <div class="innerGreen">
+              <div class="innerOrange">
+                  <div class="innerPurple"></div>
+              </div>
+          </div>
+      </div>
 
 
-
-
-<!-- Circle Chart -->
-   <div class="radial-progress">
-   
-   
-	
-	<div class="circle">
-	
-	<div ng-style="{'transform': chart.fixRotation }" class="outerfixclip">
-	    <div class="fillFixContainer">
-	        <div ng-style="{'background-color': chart.color }" class="fill fix"></div>
-	    </div>
-	</div>
-	
-	
-		<div class="mask full">
-		
-			<div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
-			
-			
-			
-		</div>
-		
-		<div ng-style="{'transform': chart.halfRotation, 'border': chart.border}" class="mask half">
-		
-			<div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill">
-			</div>
-			
-		</div>
-		
-		<div class="mask full">
-		
-			<div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
-			
-			<div ng-style="{'transform': chart.halfRotation }" class="mask half">
+      <!-- Circle Chart -->
+      <div class="radial-progress">
+        <div class="circle">
+          <div ng-style="{'transform': chart.fixRotation }" class="outerfixclip">
+            <div class="fillFixContainer">
+              <div ng-style="{'background-color': chart.color }" class="fill fix"></div>
+            </div>
+          </div>
+          
+          <div class="mask full">
+            <div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
+          </div>
             
-			    <div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill"></div>
-			    
-		    </div>
-		    
-		</div>
-       
-        <div class="shadow"></div>
-        
-	</div>
-	<div class="inset"></div>
-</div>
-   
-<!-- END Circle Chart -->
+          <div ng-style="{'transform': chart.halfRotation, 'border': chart.border}" class="mask half">
+            <div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill"></div>
+          </div>
+            
+          <div class="mask full">
+            <div ng-style="{'transform': chart.fillRotation, 'background-color': chart.color }" class="fill"></div>
+            <div ng-style="{'transform': chart.halfRotation }" class="mask half">
+              <div ng-style="{'transform': chart.fillRotation,  'background-color': chart.color }" class="fill"></div>
+            </div>
+          </div>
+              
+          <div class="shadow"></div>
+        </div>
 
-</div>
-</body>
+        <div class="inset"></div>
+      </div>
+      <!-- END Circle Chart -->
 
+    </div>
+  </body>
 </html>
