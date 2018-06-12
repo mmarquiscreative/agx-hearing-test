@@ -67,7 +67,7 @@ percentScore: 0,
     
     results.speechScore.percentScore = scoreToPercent(results.wrongAns.speechScore, results.wrongAns.speechPerfectScore);
     
-    results.totalScore.percentScore = (results.quizScore.percentScore + results.toneScore.percentScore + results.speechScore.percentScore) / 3;
+    results.totalScore.percentScore = Math.round((results.quizScore.percentScore + results.toneScore.percentScore + results.speechScore.percentScore) / 3);
     
     
     rotateFill('totalScore');

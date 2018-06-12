@@ -223,6 +223,10 @@ LAYOUT ELEMENTS
   margin-top: 1rem;
 }
 
+.environments-intro, .score {
+  display: none;
+}
+
 .results-row {
   display: flex;
   display: -webkit-flex;
