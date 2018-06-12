@@ -25,7 +25,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         freq: '2000',
         loopBool: 'true',
         activeClass: 'active-freq',
-        srcPath: '/sounds/2000.wav'
+        srcPath: '/sounds/2000.mp3'
     }
     
     $scope.loopBool = new Array("true", "false", "false", "false", "false");
@@ -46,7 +46,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
              
             if(tone.curTone < tone.frequencies.length){
             tone.curClass[tone.curTone] = 'active-freq';
-            var newSrc = ('/sounds/' + tone.frequencies[tone.curTone] + '.wav');
+            var newSrc = ('/sounds/' + tone.frequencies[tone.curTone] + '.mp3');
             tone.curToneObj.freq = tone.frequencies[tone.curTone];
             
             tone.curToneObj.srcPath = newSrc;
