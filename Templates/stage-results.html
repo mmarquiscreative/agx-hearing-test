@@ -3,13 +3,37 @@
     <h3>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h3>
   </div>
 
-  <div class="totalResults">
-    <div class="total-circle-col">
-      <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
+  <div class="totals-container"<>
+    <div class="totalResults">
+      <div class="total-circle-col">
+        <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
+      </div>
+  
+      <p id="totalCta">{{results.totalScore.copy}}</p>
     </div>
 
-    <p id="totalCta">{{results.totalScore.copy}}</p>
+    <div class="totals-divider"></div>
+
+    <div class="results-summary">
+      <div class="summary-col">
+        <p><strong>Hearing Quiz</strong></p>
+        <score-circle circle-id="quizCircle" which-circle="results.quizScore"></score-circle>
+      </div>
+    
+      <div class="summary-col">
+        <p><strong>Tone Quiz</strong></p>
+        <score-circle circle-id="toneCircle" which-circle="results.toneScore"></score-circle>
+      </div>
+
+      <div class="summary-col">
+        <p><strong>Speech Quiz</strong></p>
+        <score-circle circle-id="speechCircle" which-circle="results.speechScore"></score-circle>
+      </div>
+    </div>
+    
+    <button class="btn-submit">Action Button</button>
   </div>
+  
 
 
   <!-- <div id="{{circleid}}" class="radial-progress">
@@ -146,25 +170,6 @@
 </div> -->
 
   <div class="results-body">
-    <div class="results-summary">
-      <div class="summary-col">
-        <p><strong>Hearing Quiz</strong></p>
-        <score-circle circle-id="quizCircle" which-circle="results.quizScore"></score-circle>
-      </div>
-
-      <div class="summary-col">
-        <p><strong>Tone Quiz</strong></p>
-        <score-circle circle-id="toneCircle" which-circle="results.toneScore"></score-circle>
-      </div>
-
-      <div class="summary-col">
-        <p><strong>Speech Quiz</strong></p>
-        <score-circle circle-id="speechCircle" which-circle="results.speechScore"></score-circle>
-      </div>
-    </div>
-
-    <button class="btn-submit">Action Button</button>
-
     <div class="results-row">
       <div class="results-col results-quiz">
         <p class="results-head">Hearing Quiz</p>
