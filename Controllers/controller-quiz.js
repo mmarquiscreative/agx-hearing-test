@@ -44,7 +44,7 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
         answer: false,
         environment: 'Noisy restaurants'
     },{
-        question: 'Are you often told that you set the television volume very loud?',
+        question: 'Are you often told that you set the television volume too loud?',
         answer: false,
         environment: 'Television shows'
     }]

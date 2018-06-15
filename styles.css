@@ -179,7 +179,7 @@ LAYOUT ELEMENTS
 }
 
 .logo-intro {
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 2rem auto;
   max-width: 15rem;
   width: 30vw;
 }
@@ -418,6 +418,13 @@ OBJECT ELEMENTS
   background: #b6d8e4;
   color: #532d6d;
   font-weight: 700;
+}
+
+.disclaimer {
+  color: #666;
+  font-size: .7rem;
+  margin: 3rem auto 0 auto;
+  text-align: center;
 }
 
 .summary-score {
