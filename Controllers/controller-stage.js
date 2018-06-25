@@ -24,6 +24,9 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
         case 'results':
             returnBool = $state.$current.includes['stage.results'];
             break;
+        case 'exit':
+            returnBool = $state.$current.includes['stage.exit'];
+            break;
         default:
             console.log('stage.testBool no match');
             break;

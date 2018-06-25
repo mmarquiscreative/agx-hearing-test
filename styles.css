@@ -120,6 +120,21 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 
+input {
+  border: 1px solid #666;
+  color: #666;
+  display: block;
+  font-size: 1.2rem;
+  margin: 2rem auto 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
 sup { font-size: 50%; }
 
 
@@ -422,7 +437,7 @@ OBJECT ELEMENTS
 
 .disclaimer {
   color: #666;
-  font-size: .7rem;
+  font-size: .8rem;
   margin: 3rem auto 0 auto;
   text-align: center;
 }
@@ -834,6 +849,10 @@ RESPONSIVE STYLES
 
 @media (min-width: 600px) {
 
+  input {
+    min-width: 80%;
+  }
+
   .logo-stage {
     margin: 0 auto 1rem auto;
     width: 8rem;
@@ -882,6 +901,10 @@ RESPONSIVE STYLES
 
   html {
     font-size: 100%;
+  }
+
+  input {
+    min-width: 60%;
   }
 
   .lead-text, .quiz-question-text {

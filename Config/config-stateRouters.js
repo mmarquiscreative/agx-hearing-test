@@ -60,6 +60,14 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
         url: '/results',
         templateUrl: '/Templates/stage-results.html'
     })
+
+    // url will be /stage/exit
+
+    .state('stage.exit', {
+      url: '/exit',
+      templateUrl: '/Templates/stage-exit.html',
+      controller: 'exitController'
+    })
     
     // catch all route
     // send users to the form page
