@@ -267,8 +267,6 @@ LAYOUT ELEMENTS
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
-  flex-direction: row;
-  font-size: 1.2rem;
   margin: 0;
   overflow: hidden;
   padding: .8rem 1rem;
@@ -445,6 +443,11 @@ OBJECT ELEMENTS
 .summary-score {
   color: #532d6d;
   font-size: 1.2rem;
+}
+
+.mobile-summary-score {
+  color: #532d6d;
+  font-weight: 700;
 }
 
 [class*='score-'] {
@@ -798,6 +801,14 @@ RESPONSIVE STYLES
   .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
   .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
 
+  .results-summary {
+    flex-direction: column;
+  }
+
+  .mobile-summary-score {
+    display: block;
+  }
+
   .results-row {
     flex-direction: column;
   }
@@ -814,7 +825,6 @@ RESPONSIVE STYLES
 
   .results-head {
     margin: 1rem 0;
-    width: 60%;
   }
 
   .score {
@@ -844,6 +854,10 @@ RESPONSIVE STYLES
     width: 6rem;
     height: 6rem;
   }
+
+  #quizCircle, #toneCircle, #speechCircle {
+    display: none;
+  }
 }
 
 
@@ -870,13 +884,20 @@ RESPONSIVE STYLES
     font-size: .7rem;
   }
 
+  .results-summary {
+    flex-direction: row;
+  }
+
+  .mobile-summary-score {
+    display: none;
+  }
+
   .results-row {
     flex-direction: row;
   }
 
   .results-head {
     margin: 2rem 0;
-    width: 100%;
   }
 
   .totalResults{
@@ -893,6 +914,10 @@ RESPONSIVE STYLES
   #totalCircle {
     width: 8rem;
     height: 8rem;
+  }
+
+  #quizCircle, #toneCircle, #speechCircle {
+    display: block;
   }
 }
 

@@ -17,16 +17,19 @@
     <div class="results-summary">
       <div class="summary-col">
         <p><strong>Hearing Quiz</strong></p>
+        <p class="mobile-summary-score">{{results.wrongAns.quizScore}}</p>
         <score-circle circle-id="quizCircle" which-circle="results.quizScore"></score-circle>
       </div>
     
       <div class="summary-col">
         <p><strong>Tone Quiz</strong></p>
+        <p class="mobile-summary-score">{{results.wrongAns.toneScore}}</p>
         <score-circle circle-id="toneCircle" which-circle="results.toneScore"></score-circle>
       </div>
 
       <div class="summary-col">
         <p><strong>Speech Quiz</strong></p>
+        <p class="mobile-summary-score">{{results.wrongAns.speechScore}}</p>
         <score-circle circle-id="speechCircle" which-circle="results.speechScore"></score-circle>
       </div>
     </div>
