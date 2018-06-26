@@ -610,6 +610,15 @@ mask.full fill {
 BUTTONS
 ******************************************************************/
 
+.btn-exit {
+  border-radius: 100%;
+  position: absolute;
+  top: -.5rem;
+  right: -.5rem;
+  height: 2rem;
+  width: 2rem;
+}
+
 .btn-submit {
   background: #008aab;
   border: none;
@@ -749,6 +758,10 @@ RESPONSIVE STYLES
     font-size: 80%;
   }
 
+  input {
+    width: 100%;
+  }
+
   .btn-submit {
     min-width: 8rem;
   }
@@ -865,6 +878,7 @@ RESPONSIVE STYLES
 
   input {
     min-width: 80%;
+    width: auto;
   }
 
   .logo-stage {
@@ -930,6 +944,7 @@ RESPONSIVE STYLES
 
   input {
     min-width: 60%;
+    width: auto;
   }
 
   .lead-text, .quiz-question-text {
