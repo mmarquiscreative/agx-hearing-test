@@ -1,105 +1,105 @@
 angular.module('formApp').controller('resultsController', ['$scope', 'resultsObj', function($scope, resultsObj){
+    
+    // Uses keyword to keep $scope specific to this controller
     var results = this;
 
+    //// ---- VARIABLES ---- ////    
     results.wrongAns = resultsObj;
-
-
     results.wrongAns.speechAnsClean = removeDuplicates(results.wrongAns.speechAns);
 
     console.log(results.wrongAns.speechAnsClean);
-
     console.log(results.wrongAns.speechAns);
-    
-        results.score = 0;
+
+    results.score = 0;
 
     results.testRotate = 180;
 
-    
-results.totalScore = {
-    name: 'totalScore',
-    percentScore: 0,
-    fillRotation: 'rotate(0deg)',
-    fixRotation: 'rotate(0deg)',
-    halfRotation: 'rotate(0deg)',
-    halfFixRotation: 'rotate(0deg)',
-    color: '#cf504e',
-    border: '"' + ("solid " + results.color + " 1px") + '"',
-    copy: '',
-    copyOptions: ['Based on your results, we highly recommend coming in for a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it\'s likely you would greatly benefit from professionally fitted hearing technology. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it is likely you would benefit from a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'You scored very well. However there are still additional things that our professionals can help you address, such as custom hearing protection and tinnitus solutions. Click below to find an AudigyCertified practice near you!', 'You got a perfect score! However, since this is only an online test, it\'s still possible you may have a hearing loss. Click below to find an AudigyCertified practice near you!']
-}
 
-results.quizScore = {
+    results.totalScore = {
+        name: 'totalScore',
+        percentScore: 0,
+        fillRotation: 'rotate(0deg)',
+        fixRotation: 'rotate(0deg)',
+        halfRotation: 'rotate(0deg)',
+        halfFixRotation: 'rotate(0deg)',
+        color: '#cf504e',
+        border: '"' + ("solid " + results.color + " 1px") + '"',
+        copy: '',
+        copyOptions: ['Based on your results, we highly recommend coming in for a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it\'s likely you would greatly benefit from professionally fitted hearing technology. Click below to find an AudigyCertified Practice near you!', 'Based on your results, it is likely you would benefit from a complimentary hearing screening. Click below to find an AudigyCertified Practice near you!', 'You scored very well. However there are still additional things that our professionals can help you address, such as custom hearing protection and tinnitus solutions. Click below to find an AudigyCertified practice near you!', 'You got a perfect score! However, since this is only an online test, it\'s still possible you may have a hearing loss. Click below to find an AudigyCertified practice near you!']
+    }
+
+    results.quizScore = {
         name: 'quizScore',
-    percentScore: 0,
-    fillRotation: 'rotate(0deg)',
-    fixRotation: 'rotate(0deg)',
-    halfRotation: 'rotate(0deg)',
-    halfFixRotation: 'rotate(0deg)',
-    color: '#cf504e',
-    border: '"' + ("solid " + results.color + " 1px") + '"'
-}
-    
-results.toneScore = {
+        percentScore: 0,
+        fillRotation: 'rotate(0deg)',
+        fixRotation: 'rotate(0deg)',
+        halfRotation: 'rotate(0deg)',
+        halfFixRotation: 'rotate(0deg)',
+        color: '#cf504e',
+        border: '"' + ("solid " + results.color + " 1px") + '"'
+    }
+
+    results.toneScore = {
         name: 'toneScore',
-percentScore: 0,
-    fillRotation: 'rotate(0deg)',
-    fixRotation: 'rotate(0deg)',
-    halfRotation: 'rotate(0deg)',
-    halfFixRotation: 'rotate(0deg)',
-    color: '#cf504e',
-    border: '"' + ("solid " + results.color + " 1px") + '"'
-}
-    
-results.speechScore = {
+        percentScore: 0,
+        fillRotation: 'rotate(0deg)',
+        fixRotation: 'rotate(0deg)',
+        halfRotation: 'rotate(0deg)',
+        halfFixRotation: 'rotate(0deg)',
+        color: '#cf504e',
+        border: '"' + ("solid " + results.color + " 1px") + '"'
+    }
+
+    results.speechScore = {
         name: 'speechScore',
-percentScore: 0,
-    fillRotation: 'rotate(0deg)',
-    fixRotation: 'rotate(0deg)',
-    halfRotation: 'rotate(0deg)',
-    halfFixRotation: 'rotate(0deg)',
-    color: '#cf504e',
-    border: '"' + ("solid " + results.color + " 1px") + '"'
-}
+        percentScore: 0,
+        fillRotation: 'rotate(0deg)',
+        fixRotation: 'rotate(0deg)',
+        halfRotation: 'rotate(0deg)',
+        halfFixRotation: 'rotate(0deg)',
+        color: '#cf504e',
+        border: '"' + ("solid " + results.color + " 1px") + '"'
+    }
     results.quizScore.percentScore = scoreToPercent(results.wrongAns.quizScore, results.wrongAns.quizPerfectScore);
-    
+
     results.toneScore.percentScore = scoreToPercent(results.wrongAns.toneScore, results.wrongAns.tonePerfectScore);
-    
-    
+
+
     results.speechScore.percentScore = scoreToPercent(results.wrongAns.speechScore, results.wrongAns.speechPerfectScore);
-    
+
     results.totalScore.percentScore = Math.round((results.quizScore.percentScore + results.toneScore.percentScore + results.speechScore.percentScore) / 3);
-    
-    
+
+
     rotateFill('totalScore');
     rotateFill('quizScore');
     rotateFill('toneScore');
     rotateFill('speechScore');
-    
-    resultsCopy();
-    
-function resultsCopy(){
-    
-    var percentDividend = (100 - results.totalScore.percentScore);
-    
-    percentDividend = (results.totalScore.percentScore / 25);
-    
-    
-    
-    percentDividend = Math.floor(percentDividend);
 
-   results.totalScore.copy = results.totalScore.copyOptions[percentDividend];
-    
-    console.log(percentDividend);
-    console.log(results.totalScore.copy);
-    console.log(results.totalScore.copyOptions[percentDividend]);
-}
-    
+    resultsCopy();
+
+    function resultsCopy(){
+
+        var percentDividend = (100 - results.totalScore.percentScore);
+
+        percentDividend = (results.totalScore.percentScore / 25);
+
+
+
+        percentDividend = Math.floor(percentDividend);
+
+        results.totalScore.copy = results.totalScore.copyOptions[percentDividend];
+
+        console.log(percentDividend);
+        console.log(results.totalScore.copy);
+        console.log(results.totalScore.copyOptions[percentDividend]);
+    }
+
     function rotateFill(someObj){
 
         var rotation = percentToDegree(results[someObj].percentScore);
-        
+
         Math.ceil(rotation);
-        
+
         if(rotation >= 180){
             results[someObj].fillRotation = 'rotate(' + 180 + 'deg)';
             results[someObj].halfRotation = 'rotate(' + (rotation - 180) + 'deg)';
@@ -136,7 +136,7 @@ function resultsCopy(){
 
     };
     scoreToPercent(23, 89);
-    
+
     function scoreToPercent(actualScore, perfectScore){
         var returnPercent = 100 - ((actualScore/perfectScore) * 100);
         console.log(returnPercent);
@@ -144,12 +144,12 @@ function resultsCopy(){
         console.log(returnPercent);
         return returnPercent;
     }
-    
+
     function percentToDegree(percentNum){
         var returnDegree = (percentNum/100) * 360;
         return returnDegree;
     }
-        
+
     function removeDuplicates (someArray) {
         var returnArray = [];
 
@@ -170,5 +170,5 @@ function resultsCopy(){
 
         return returnArray;
     }
-   
+
 }])
