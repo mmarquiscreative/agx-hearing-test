@@ -1,14 +1,15 @@
 <div ng-controller = "resultsController as results" class="stage-results">
-   
     <div class="header">
         <h3>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h3>
     </div>
 
     <div class="totals-container">
         <div class="totalResults">
-            <div class="total-circle-col">
-                <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
-            </div>
+			<!--
+				<div class="total-circle-col">
+					<score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
+				</div>
+			-->
 
             <p id="totalCta">{{results.totalScore.copy}}</p>
         </div>

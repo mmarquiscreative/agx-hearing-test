@@ -1,49 +1,51 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSS -->
-        <link href="styles.css" rel="stylesheet">
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-        <title>AGX Online Hearing Test</title>
+    <title>AGX Online Hearing Test</title>
 
-        <!-- JS -->
-        <!-- load angular, nganimate, and ui-router -->
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
 
-        <!-- angularJS MODULE -->
-        <script src="app.js"></script>
+    <!-- angularJS MODULE -->
+    <script src="app.js"></script>
 
-        <!-- angularJS CONFIG -->
-        <script src="/Config/config-stateRouters.js"></script>
+    <!-- angularJS CONFIG -->
+    <script src="/Config/config-stateRouters.js"></script>
 
-        <!-- angularJS DIRECTIVES -->
-        <script src="/Directives/directive-speechBtn.js"></script>
-        <script src="/Directives/directive-scoreCircle.js"></script>
+    <!-- angularJS DIRECTIVES -->
+    <script src="/Directives/directive-speechBtn.js"></script>
+    <script src="/Directives/directive-scoreCircle.js"></script>
 
-        <!-- angularJS CONTROLLERS -->
-        <script src="/Controllers/controller-stage.js"></script>
-        <script src="/Controllers/controller-quiz.js"></script>
-        <script src="/Controllers/controller-volume.js"></script>
-        <script src="/Controllers/controller-toneTest.js"></script>
-        <script src="/Controllers/controller-speechTest.js"></script>
-        <script src="/Controllers/controller-results.js"></script>
-    </head>
+    <!-- angularJS CONTROLLERS -->
+    <script src="/Controllers/controller-stage.js"></script>
+    <script src="/Controllers/controller-quiz.js"></script>
+    <script src="/Controllers/controller-volume.js"></script>
+    <script src="/Controllers/controller-toneTest.js"></script>
+    <script src="/Controllers/controller-speechTest.js"></script>
+    <script src="/Controllers/controller-results.js"></script>
+  </head>
 
-    <!-- apply our angular app -->
-    <body ng-app="formApp">
-        <div class="container">
-            <button ui-sref="stage.exit" class="btn-exit">X</button>
+  <!-- apply our angular app -->
+  <body ng-app="formApp">
+    <div class="container" ng-controller="stageController as stage">
+      <!-- doesn't currently have access to testBool function -->
+      <button ui-sref="stage.exit" ng-class="stage.testBool('results') ? 'btn-exit' : 'hidden'">X</button>
+      <button ng-click="" ng-class="stage.testBool('results') ? 'hidden' : 'btn-exit'">XX</button>
 
-            <!-- views will be injected here -->
-            <div ui-view>
-            </div>
-        </div>
-    </body>
+      <!-- views will be injected here -->
+      <div ui-view>
+      </div>
+    </div>
+  </body>
 </html>
