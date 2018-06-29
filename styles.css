@@ -538,12 +538,12 @@ OBJECT ELEMENTS
   background-color: orange;
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
   transform: rotate(2deg);
-  transition: transform 1s, background-color 1s;  
+  transition: transform 2s, background-color 1s;  
   z-index: 1000;
-  -ms-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 2s, background-color 1s;
   -webkit-backface-visibility: hidden;
   -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-  -webkit-transition: transform 1s, background-color 1s;
+  -webkit-transition: transform 2s, background-color 1s;
 }
 
 .fillFixContainer {
@@ -553,12 +553,12 @@ OBJECT ELEMENTS
 
 .outerfixclip {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-  transition: transform 1s, background-color 1s;
+  transition: transform 2s, background-color 1s;
   z-index: 10;
-  -ms-transition: transform 1s, background-color 1s;
+  -ms-transition: transform 2s, background-color 1s;
   -webkit-backface-visibility: hidden;
   -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-  -webkit-transition: transform 1s, background-color 1s;
+  -webkit-transition: transform 2s, background-color 1s;
 }
 
 .radial-progress .inset {
@@ -578,10 +578,10 @@ OBJECT ELEMENTS
 .radial-progress .circle .fill
 {
   backface-visibility: hidden;
-  transition: transform 1s, background-color 1s;
-  -ms-transition: transform 1s, background-color 1s;
+  transition: transform 2s, background-color 1s;
+  -ms-transition: transform 2s, background-color 1s;
   -webkit-backface-visibility: hidden;
-  -webkit-transition: transform 1s, background-color 1s;
+  -webkit-transition: transform 2s, background-color 1s;
  }
 
 mask.full fill {

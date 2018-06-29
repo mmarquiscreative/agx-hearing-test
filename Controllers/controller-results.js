@@ -6,15 +6,9 @@ angular.module('formApp').controller('resultsController', ['$scope', 'resultsObj
     //// ---- VARIABLES ---- ////    
     results.wrongAns = resultsObj;
     results.wrongAns.speechAnsClean = removeDuplicates(results.wrongAns.speechAns);
-
-    console.log(results.wrongAns.speechAnsClean);
-    console.log(results.wrongAns.speechAns);
-
     results.score = 0;
-
     results.testRotate = 180;
-
-
+    
     results.totalScore = {
         name: 'totalScore',
         percentScore: 0,
