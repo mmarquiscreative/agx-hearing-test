@@ -1,30 +1,48 @@
 angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var tone = this;
     
-    // TEST COMPLETED SECTION //
+    
+    // returns a boolean from resultsObj.toneCompleted 
     tone.testCompleted = resultsObj.testComplete('tone');
     
-    
-    
+    // assigns audio html to a variable
     tone.toneAudio = document.querySelector('#toneAudio');
+    
+    // set volume of audio
     tone.toneAudio.volume = 0.5;
+    
+    // sets loop
     tone.toneAudio.loop = true;
     
-    if(!tone.testCompleted){
-    tone.toneAudio.autoplay = true;
-    }
+    // establishes autoplay variable
+    tone.toneAudio.autoplay = false;
+    
+    // disable y/n buttons if true
     tone.disabledBool = false;
+    
+    // hide y/n buttons if true
     tone.buttonHide_YN = false;
+    
+    // hide next button if true
     tone.buttonHide_Next = true;
     
-    tone.frequencies = new Array('2000', '4000', '6000', '8000', '10000');    
+    // array of frequency strings that match audio file names
+    tone.frequencies = new Array('2000', '4000', '6000', '8000', '10000');
+    
+    // The html block with active-freq is styled as the active tone.
+    // The active-freq will be pushed down the array,
+    // and the corresponding html blocks will change to active style
+    // depending on which index of the array contains 'active-freq'
+    
     tone.curClass = new Array('active-freq', '', '', '', '');
+    
+    // a counter for which tone we're on
     tone.curTone = 0;
     
+    // an object which the active tone
     tone.curToneObj = {
         freq: '2000',
         loopBool: 'true',
-        activeClass: 'active-freq',
         srcPath: '/sounds/2000.mp3'
     }
     
@@ -32,7 +50,11 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     
         $scope.toneClass = new Array("freqBlock ", "freqBlock", "freqBlock", "freqBlock", "freqBlock");
         
-    
+        // starts audio if test has not already been completed
+    if(!tone.testCompleted){
+    tone.toneAudio.autoplay = true;
+    }
+
         tone.nextTone = function(someBool){
             
             tone.curClass[tone.curTone] = '';
