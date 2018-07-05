@@ -50,13 +50,20 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         tone.toneAudio.autoplay = true;
     }
 
-    
+    // function that runs when either y/n button is pushed
+    // someBool is true if 'yes' or false if 'No'
     tone.nextTone = function(someBool){
 
+        // removes 'active-freq' class from current html block
         tone.curClass[tone.curTone] = '';
 
+        // if false / answered 'no' / couldn't hear tone
         if(!someBool){
+            
+            // add one to score for this section
             resultsObj.toneScore++
+            
+            // push which frequency they struggled with to resultsObj
             resultsObj.toneAns.push(tone.frequencies[tone.curTone]);
         };
 
