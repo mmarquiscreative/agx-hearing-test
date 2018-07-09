@@ -21,6 +21,17 @@ grey:       #3d3935
 */
 
 
+/*Added by Chris*/
+#agx-hearing-test {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+
 /******************************************************************
 ANIMATIONS
 ******************************************************************/
@@ -36,21 +47,21 @@ ANIMATIONS
   right: 30px;
   transition: 0.5s all ease;
   -moz-transition: 0.5s all ease;
-  -webkit-transition: 0.5s all ease; 
+  -webkit-transition: 0.5s all ease;
 }
 
 /* enter animation */
-#form-views.ng-enter { 
+#form-views.ng-enter {
   -webkit-animation: slideInRight 1s both ease;
   -moz-animation: slideInRight 1s both ease;
-  animation: slideInRight 1s both ease; 
+  animation: slideInRight 1s both ease;
 }
 
 /* leave animation */
-#form-views.ng-leave { 
+#form-views.ng-leave {
   -webkit-animation: slideOutLeft 1s both ease;
   -moz-animation: slideOutLeft 1s both ease;
-  animation: slideOutLeft 1s both ease;   
+  animation: slideOutLeft 1s both ease;
 }
 
 /* slide out to the left */
@@ -58,7 +69,7 @@ ANIMATIONS
   to  { transform: translateX(-200%); }
 }
 
-@-moz-keyframes slideOutLeft {  
+@-moz-keyframes slideOutLeft {
   to  { -moz-transform: translateX(-200%); }
 }
 
@@ -538,7 +549,7 @@ OBJECT ELEMENTS
   background-color: orange;
   clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
   transform: rotate(2deg);
-  transition: transform 2s, background-color 1s;  
+  transition: transform 2s, background-color 1s;
   z-index: 1000;
   -ms-transition: transform 2s, background-color 1s;
   -webkit-backface-visibility: hidden;
@@ -775,7 +786,7 @@ RESPONSIVE STYLES
   .btn-submit {
     min-width: 8rem;
   }
-  
+
   .quiz-window {
     height: 80%;
     max-height: 40rem;
@@ -860,7 +871,7 @@ RESPONSIVE STYLES
     width: 4rem;
   }
 
-  .environment { 
+  .environment {
     margin: 1rem 0;
   }
 
@@ -899,7 +910,7 @@ RESPONSIVE STYLES
   [class*='step-'] {
     height: 2rem;
   }
-  
+
   .steps {
     height: 2rem;
   }
@@ -999,7 +1010,7 @@ RESPONSIVE STYLES
     text-align: center;
     width: calc((100% / 3) - .275rem);
   }
-  
+
   .results-col:last-of-type {
     margin-right: 0;
   }

@@ -1,6 +1,6 @@
 <div class="stage-intro">
   <div class="header">
-    <img class="agx-hearing-logo logo-intro" src="./img/AGX-Hearing-Color.png" />
+    <img class="agx-hearing-logo logo-intro" src="/wp-content/plugins/agx-hearing-test/img/AGX-Hearing-Color.png" />
     <h1>AGX<sup>&reg;</sup> Online Hearing Quiz</h1>
   </div>
 

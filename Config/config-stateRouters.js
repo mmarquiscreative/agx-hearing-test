@@ -1,76 +1,76 @@
 //CONFIG
 angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-    
+
     $stateProvider
-    
+
     // route to show our basic form
     .state('stage', {
         url: '/stage',
-        templateUrl: '/Templates/stage.html',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage.php',
         controller: 'stageController',
         data: {
             testClass: 'stepNavItem active'
         }
     })
-    
+
     // nested states
     // each of these will have their own view
     // url will be nested (/stage/intro)
-    
+
     .state('stage.intro', {
         url: '/intro',
-        templateUrl: '/Templates/stage-intro.html'
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-intro.php'
     })
-    
+
     // url will be /stage/quiz
-    
+
     .state('stage.quiz', {
         url: '/quiz',
-        templateUrl: '/Templates/stage-quiz.html',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-quiz.php',
         controller: 'quizController'
     })
-    
+
     // url will be /stage/volume
-    
+
     .state('stage.volume', {
         url: '/volume',
-        templateUrl: '/Templates/stage-volume.html',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-volume.php',
         controller: 'volumeController'
     })
-    
+
     // url will be /stage/toneTest
-    
+
     .state('stage.toneTest', {
         url: '/toneTest',
-        templateUrl: '/Templates/stage-toneTest.html',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-toneTest.php',
         controller: 'toneTestController'
     })
-    
+
     // url will be /stage/speechTest
-    
+
     .state('stage.speechTest', {
         url: '/speechTest',
-        templateUrl: '/Templates/stage-speechTest.html',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-speechTest.php',
         controller: 'SpeechTest'
     })
-    
+
     // url will be /stage/results
-    
+
     .state('stage.results', {
         url: '/results',
-        templateUrl: '/Templates/stage-results.html'
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-results.php'
     })
 
     // url will be /stage/exit
 
     .state('stage.exit', {
       url: '/exit',
-      templateUrl: '/Templates/stage-exit.html',
+      templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-exit.php',
       controller: 'exitController'
     })
-    
+
     // catch all route
     // send users to the form page
-    
+
     $urlRouterProvider.otherwise('/stage/intro');
 }])

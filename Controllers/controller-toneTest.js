@@ -2,7 +2,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     var tone = this;
 
 
-    // returns a boolean from resultsObj.toneCompleted 
+    // returns a boolean from resultsObj.toneCompleted
     tone.testCompleted = resultsObj.testComplete('tone');
 
     // assigns audio html to a variable
@@ -42,7 +42,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     // an reference object for the current audio filepath / updating it
     tone.curToneObj = {
         freq: '2000',
-        srcPath: '/sounds/2000.mp3'
+        srcPath: '/wp-content/plugins/agx-hearing-test/sounds/2000.mp3'
     }
 
     // starts audio if test has not already been completed
@@ -59,10 +59,10 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 
         // if false / answered 'no' / couldn't hear tone
         if(!someBool){
-            
+
             // add one to score for this section
             resultsObj.toneScore++
-            
+
             // push which frequency they struggled with to resultsObj
             resultsObj.toneAns.push(tone.frequencies[tone.curTone]);
         };
@@ -71,7 +71,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 
         if(tone.curTone < tone.frequencies.length){
             tone.curClass[tone.curTone] = 'active-freq';
-            var newSrc = ('/sounds/' + tone.frequencies[tone.curTone] + '.mp3');
+            var newSrc = ('/wp-content/plugins/agx-hearing-test/sounds/' + tone.frequencies[tone.curTone] + '.mp3');
             tone.curToneObj.freq = tone.frequencies[tone.curTone];
 
             tone.curToneObj.srcPath = newSrc;
