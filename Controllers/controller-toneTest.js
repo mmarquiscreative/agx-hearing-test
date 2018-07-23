@@ -1,7 +1,8 @@
 angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var tone = this;
 
-
+tone.startTest = false;
+    
     // returns a boolean from resultsObj.toneCompleted 
     tone.testCompleted = resultsObj.testComplete('tone');
 
@@ -16,6 +17,8 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 
     // establishes autoplay variable
     tone.toneAudio.autoplay = false;
+    
+    tone.toneAudio.pause();
 
     // disable y/n buttons if true
     tone.disabledBool = false;
@@ -103,6 +106,11 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         resultsObj.toneCompleted = false;
         tone.testCompleted = resultsObj.testComplete('tone');
     };
+    tone.startToneTest = function(){
+        tone.startTest = true;
+        tone.toneAudio.play();
+        
+    }
 
 
     ////////////////////////////
