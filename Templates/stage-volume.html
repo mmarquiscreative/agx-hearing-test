@@ -1,7 +1,7 @@
 <div class="stage-volume" ng-controller="volumeController as volume">
     <div class="volume-body">
-        <p class="quiz-question-text">Calibrate the Volume</p>
-        <p class="lead-text">
+        <p class="lead-text">Calibrate the Volume</p>
+
         <ol>
             <li>Click the button below to begin playing the tone.</li>
             <li>Adjust the volume of your computer to play at a comfortable level. This will establish a baseline volume for the rest of the quiz.</li>
@@ -11,7 +11,8 @@
 
     <audio id="volumeAudio" src="/sounds/noise.mp3" loop autoplay></audio>
 
-    <button ng-click="volume.startNoise()" ui- class="btn-submit">Play Tone<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
-
-    <button ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    <div class="btns-yn">
+     	<button ng-click="volume.startNoise()" ui- class="btn-yn-vol-tone">Play Tone<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    	<button ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-yn-vol-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    </div>    
 </div>

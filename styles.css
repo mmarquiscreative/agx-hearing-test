@@ -83,10 +83,6 @@ ANIMATIONS
 }
 
 
-
-
-
-
 /*---------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700');
@@ -135,6 +131,21 @@ input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
 input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
 input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
+input[type='checkbox'] {
+  border-radius: 100%;
+  height: 1rem;
+}
+
+li {
+  margin: .8rem 0;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
 sup { font-size: 50%; }
 
 
@@ -160,7 +171,6 @@ LAYOUT ELEMENTS
 .container {
   background: #fff;
   box-shadow: 0 .2rem 1rem #666;
-  height: 70vh;
   left: 50%;
   margin: auto;
   min-width: 200px;
@@ -183,9 +193,7 @@ LAYOUT ELEMENTS
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .lead-text, .quiz-question-text {
   font-size: 1.2rem;
@@ -194,8 +202,8 @@ LAYOUT ELEMENTS
 }
 
 .logo-intro {
-  margin: 0 auto 2rem auto;
-  max-width: 15rem;
+  margin: -.5rem auto 2rem auto;
+  max-width: 10rem;
   width: 30vw;
 }
 
@@ -295,7 +303,6 @@ LAYOUT ELEMENTS
 
 [class*='stage-'] {
   height: 100%;
-  padding: 1rem;
   position: relative;
 }
 
@@ -330,7 +337,6 @@ LAYOUT ELEMENTS
 }
 
 .tone-test-frequencies p {
-  font-size: 1.5rem;
   margin: 0;
 }
 
@@ -636,7 +642,7 @@ BUTTONS
   display: block;
   font-size: 1.2rem;
   font-weight: 200;
-  letter-spacing: .05em;
+  letter-spacing: .05rem;
   margin: auto;
   margin-bottom: 2rem;
   margin-top: 1rem;
@@ -668,7 +674,10 @@ BUTTONS
   margin: .5rem;
   outline: none;
   padding: 1rem 2rem;
-  width: 8rem;
+  transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  -webkit-transition: 0.2s all ease;
+  min-width: 8rem;
 }
 
 .btn-yn-yes { background: #532d6d;  color: #fff; }
@@ -676,6 +685,12 @@ BUTTONS
 
 .btn-yn-yes:hover { background: #3d214f; }
 .btn-yn-no:hover, .speechBtn:hover { background: #afa0bd;  border: none; }
+
+.btn-yn-vol-tone { background: #532d6d; color: #fff; }
+.btn-yn-vol-submit { background: #008aab; color: #fff; }
+
+.btn-yn-vol-tone:hover { background: #3d214f; }
+.btn-yn-vol-submit:hover { background: #00738f; }
 
 .speechBtn:active {
   background: #3d214f;
@@ -734,9 +749,6 @@ BUTTONS
   font-size: .8rem;
   outline: none;
   padding: .75rem;
-  position: absolute;
-  right: .5rem;
-  top: 1rem;
 }
 
 #btn-restart:hover {
@@ -772,20 +784,25 @@ RESPONSIVE STYLES
     width: 100%;
   }
 
+  .container {
+    height: 80vh;
+  }
+
+  [class*='stage-'] {
+    padding: 0;
+  }
+
   .btn-submit {
     min-width: 8rem;
   }
-  
-  .quiz-window {
-    height: 80%;
-    max-height: 40rem;
-    min-height: 35rem;
-    width: 90%;
-  }
 
   .logo-stage {
-    margin: 0 0 0 .5rem;
-    width: 7rem;
+    display: none;
+  }
+
+  #btn-restart {
+    position: relative;
+    margin: 0;
   }
 
   [class*='step-'] {
@@ -804,7 +821,7 @@ RESPONSIVE STYLES
   .quiz-body,
   .volume-body,
   .tone-test-body {
-    margin: 2rem auto 4rem auto;
+    margin: 2rem auto 2rem auto;
   }
 
   .speech-test-body {
@@ -813,16 +830,17 @@ RESPONSIVE STYLES
 
   .tone-test-frequencies p {
     display: block;
-    margin: .5rem auto;
+    font-size: 1.2rem;
+    margin: .2rem auto;
     text-align: center;
     vertical-align: top;
   }
 
-  .freq-2000hz  { height: 2.5rem; padding-top: .2rem; width: 6rem; }
-  .freq-4000hz  { height: 2.5rem; padding-top: .2rem; width: 7rem; }
-  .freq-6000hz  { height: 2.5rem; padding-top: .2rem; width: 8rem; }
-  .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
-  .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
+  .freq-2000hz  { height: 2rem; padding-top: .2rem; width: 6rem; }
+  .freq-4000hz  { height: 2rem; padding-top: .2rem; width: 7rem; }
+  .freq-6000hz  { height: 2rem; padding-top: .2rem; width: 8rem; }
+  .freq-8000hz  { height: 2rem; padding-top: .2rem; width: 9rem; }
+  .freq-10000hz { height: 2rem; padding-top: .2rem; width: 10rem; }
 
   .results-summary {
     flex-direction: column;
@@ -891,9 +909,24 @@ RESPONSIVE STYLES
     width: auto;
   }
 
+  .container {
+    height: 70vh;
+  }
+
+  [class*='stage-'] {
+    padding: 1rem;
+  }
+
   .logo-stage {
+    display: block;
     margin: 0 auto 1rem auto;
     width: 8rem;
+  }
+
+  #btn-restart {
+    position: absolute;
+    right: .5rem;
+    top: 1rem;
   }
 
   [class*='step-'] {
@@ -923,6 +956,17 @@ RESPONSIVE STYLES
   .results-head {
     margin: 2rem 0;
   }
+
+  .tone-test-frequencies p {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .freq-2000hz  { height: 2.5rem; padding-top: .4rem;  width: 18% }
+  .freq-4000hz  { height: 3rem;   padding-top: .65rem; width: 18% }
+  .freq-6000hz  { height: 3.5rem; padding-top: .9rem;  width: 18% }
+  .freq-8000hz  { height: 4rem;   padding-top: 1.15rem; width: 18% }
+  .freq-10000hz { height: 4.5rem; padding-top: 1.4rem; width: 18% }
 
   .totalResults{
     flex-direction: row;
@@ -965,24 +1009,10 @@ RESPONSIVE STYLES
     min-width: 12rem;
   }
 
-  .quiz-window {
-    height: 30rem;
-    width: 50rem;
-  }
-
   .quiz-body,
   .volume-body
   .tone-test-body {
     margin: 3rem auto;
-  }
-
-  .speech-test-body {
-    margin: 0 auto;
-  }
-
-  .tone-test-frequencies p {
-    display: inline-block;
-    vertical-align: middle;
   }
 
   .freq-2000hz  { height: 2.5rem; padding-top: .2rem;  width: 15% }
@@ -990,6 +1020,14 @@ RESPONSIVE STYLES
   .freq-6000hz  { height: 3.5rem; padding-top: .7rem;  width: 15% }
   .freq-8000hz  { height: 4rem;   padding-top: .95rem; width: 15% }
   .freq-10000hz { height: 4.5rem; padding-top: 1.2rem; width: 15% }
+
+  .tone-test-frequencies p {
+    font-size: 1.5rem;
+  }
+
+  .speech-test-body {
+    margin: 0 auto;
+  }
 
   .results-col {
     float: left;

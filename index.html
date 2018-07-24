@@ -41,7 +41,7 @@
     <div class="container" ng-controller="stageController as stage">
       <!-- doesn't currently have access to testBool function -->
       <button ui-sref="stage.exit" ng-class="stage.testBool('results') ? 'btn-exit' : 'hidden'">X</button>
-      <button ng-click="" ng-class="stage.testBool('results') ? 'hidden' : 'btn-exit'">XX</button>
+      <button ng-click="" ng-class="stage.testBool('results') ? 'hidden' : 'btn-exit'">X</button>
 
       <!-- views will be injected here -->
       <div ui-view>
