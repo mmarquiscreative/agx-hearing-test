@@ -49,7 +49,7 @@ tone.startTest = false;
     }
 
     // starts audio if test has not already been completed
-    if(!tone.testCompleted){
+    if(!tone.testCompleted && tone.startTest){
         tone.toneAudio.autoplay = true;
     }
 

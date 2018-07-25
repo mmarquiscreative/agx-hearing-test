@@ -7,9 +7,12 @@ angular.module('formApp').controller('volumeController', ['$scope', function($sc
 
     volume.startNoise = function(){
         volume.noise.play();
+        volume.tonePlaying = true;
+        
     }
     volume.stopNoise = function(){
         volume.noise.pause();
+        volume.tonePlaying = false;
     }
 
 
