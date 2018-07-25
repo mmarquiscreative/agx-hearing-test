@@ -56,7 +56,8 @@ tone.startTest = false;
     // function that runs when either y/n button is pushed
     // someBool is true if 'yes' or false if 'No'
     tone.nextTone = function(someBool){
-
+        tone.startTest = true;
+        tone.toneAudio.autoplay = true;
         // removes 'active-freq' class from current html block
         tone.curClass[tone.curTone] = '';
 
@@ -95,7 +96,7 @@ tone.startTest = false;
 
     tone.resetStage = function(){
         tone.toneAudio.play();
-
+        tone.startTest = false;
         setTimeout(function(){
             $scope.$apply(function(){
                 tone.toneAudio.autoplay = true;
