@@ -1,7 +1,8 @@
 angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var tone = this;
 
-
+tone.startTest = false;
+    
     // returns a boolean from resultsObj.toneCompleted
     tone.testCompleted = resultsObj.testComplete('tone');
 
@@ -16,7 +17,9 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 
     // establishes autoplay variable
     tone.toneAudio.autoplay = false;
-
+    
+    tone.toneAudio.pause();
+    
     // disable y/n buttons if true
     tone.disabledBool = false;
 
@@ -46,7 +49,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     }
 
     // starts audio if test has not already been completed
-    if(!tone.testCompleted){
+    if(!tone.testCompleted && tone.startTest){
         tone.toneAudio.autoplay = true;
     }
 
@@ -54,6 +57,9 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     // someBool is true if 'yes' or false if 'No'
     tone.nextTone = function(someBool){
 
+        tone.startTest = true;
+        tone.toneAudio.autoplay = true;
+        
         // removes 'active-freq' class from current html block
         tone.curClass[tone.curTone] = '';
 
@@ -93,6 +99,8 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     tone.resetStage = function(){
         tone.toneAudio.play();
 
+                tone.startTest = false;
+        
         setTimeout(function(){
             $scope.$apply(function(){
                 tone.toneAudio.autoplay = true;
@@ -103,6 +111,12 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         resultsObj.toneCompleted = false;
         tone.testCompleted = resultsObj.testComplete('tone');
     };
+    
+     tone.startToneTest = function(){
+        tone.startTest = true;
+        tone.toneAudio.play();
+        
+    }
 
 
     ////////////////////////////

@@ -1,5 +1,10 @@
 <div class="stage-tone-test" ng-controller="toneTestController as tone">
     <div class="header">
+       <div ng-hide="tone.startTest">
+          <p class="lead-text">This section will help identify which pitches you might have trouble hearing.</p>
+           <button ng-click="tone.startToneTest()" class="btn-submit">Start Audio</button>
+       </div>
+        <div ng-show="tone.startTest">
         <div ng-hide="tone.testCompleted">
             <div class="tone-test-body">
                 <p class="lead-text">Do you hear the tone playing?</p>
@@ -33,3 +38,5 @@
 
     </div>
 </div>
+    </div>
+

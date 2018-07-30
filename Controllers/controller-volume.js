@@ -1,10 +1,21 @@
 angular.module('formApp').controller('volumeController', ['$scope', function($scope) {
-  var volume = this;
-volume.noise = document.querySelector('#volumeAudio');
+var volume = this;
+    volume.tonePlaying = false;
+    volume.noise = document.querySelector('#volumeAudio');
     volume.noise.volume = 0.5;
+    
+        volume.noise.pause();
+     volume.startNoise = function(){
+        volume.noise.play();
+                  volume.tonePlaying = true;
+
+    }
+
     
     volume.stopNoise = function(){
         volume.noise.pause();
+                volume.tonePlaying = false;
+
     }
    
 

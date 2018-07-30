@@ -123,7 +123,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             speech.bgNoise.autoplay = true;
         // establish how many rounds here
         if(speech.curRound < 4){
-            speech.bgNoise.volume += 0.125;
+            speech.bgNoise.volume += 0.1;
             speech.bgNoise.play();
             // 1. add one to curRound counter
             speech.curRound++;
