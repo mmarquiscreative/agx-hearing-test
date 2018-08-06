@@ -38,6 +38,11 @@
 
   <!-- apply our angular app -->
   <body ng-app="formApp">
+
+    <div id="agx-ohq-container" ng-controller="modalController">
+        <button id="agx-ohq-modal" ng-click="showOHQModal()">Take The AGX Online Hearing Quiz</button>
+    </div>
+
     <div class="container" ng-controller="stageController as stage">
       <!-- doesn't currently have access to testBool function -->
       <button ui-sref="stage.exit" ng-class="stage.testBool('results') ? 'btn-exit' : 'hidden'">X</button>
