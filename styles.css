@@ -99,6 +99,9 @@ GLOBAL STYLES
 }
 
 body {
+  background: url(/img/BaldwinSiteHomeScreenshot.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Open Sans';
 }
 
