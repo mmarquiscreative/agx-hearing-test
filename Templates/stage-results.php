@@ -36,10 +36,10 @@
             </div>
         </div>
 
-        <button class="btn-submit">Action Button</button>
+        <button class="btn-submit">Schedule Your Appointment</button>
     </div>
 
-    <div class="results-body">
+    <!-- <div class="results-body">
         <div class="results-row">
             <div class="results-col results-quiz">
                 <p class="results-head">Environments in which you may struggle to hear:</p>
@@ -76,6 +76,6 @@
                     <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </div></div>
+    --> 
 </div>
