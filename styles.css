@@ -621,20 +621,20 @@ BUTTONS
 ******************************************************************/
 
 .btn-exit {
-    background: #fff !important;
-    border: 1px solid #288dc2 !important;
-    border-radius: 100% !important;
-    color: #288dc2 !important;
+    background: #fff;
+    border: 1px solid #288dc2;
+    border-radius: 100%;
+    color: #288dc2;
     width: 2rem;
-    height: 2rem !important;
-    outline: none !important;
-    position: absolute !important;
-    right: .5rem !important;
-    top: .5rem !important;
-    width: 2rem !important;
-    padding: 0rem !important;
-    line-height: 2rem !important;
-    white-space: nowrap !important;
+    height: 2rem;
+    outline: none;
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    width: 2rem;
+    padding: 0rem;
+    line-height: 2rem;
+    white-space: nowrap;
     text-align: center;
     box-sizing: content-box;
     font-family: 'Open Sans';
@@ -692,7 +692,7 @@ BUTTONS
 .btn-yn-no  { background: #008aab;  color: #fff; }
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover { background: #b6d8e4 !important;  border: none; }
+.btn-yn-no:hover { background: #00738f;  border: none; }
 
 .speechBtn:hover { background: #afa0bd !important;  border: 2px solid #afa0bd; }
 
