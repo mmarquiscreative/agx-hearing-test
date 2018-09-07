@@ -32,7 +32,7 @@ angular.module('formApp').controller('quizController', ['$scope', '$state', 'res
 
     // Array of question/answer objects
     quiz.questions = [{
-        question: 'Do you ever have difficulty understanding people with high-pitched speaking voices?',
+        question: 'Do you ever have difficulty understanding people with high pitched speaking voices?',
         answer: false,
         environment: 'High pitched voices'
     },{
