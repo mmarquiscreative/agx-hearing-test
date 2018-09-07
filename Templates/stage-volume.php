@@ -2,7 +2,7 @@
   <div class="volume-body">
         <h2 class="lead-text">Calibrate your Volume</h2>
         <p class="lead-text">
-        <p ng-hide="volume.tonePlaying" class="lead-text">Click the button below to begin playing the audio.</p>
+        <p ng-hide="volume.tonePlaying" class="lead-text">Click the button below to begin playing the audio. (Headphones recommended)</p>
         <p ng-show="volume.tonePlaying" class="lead-text">Adjust the volume of your computer to play at a comfortable level. This will establish a baseline volume for the rest of the quiz. <br/><br/>Click the 'Next Step' button when ready.</p>
     </div>
      <audio id="volumeAudio" src="/sounds/noise.mp3" loop autoplay></audio>
