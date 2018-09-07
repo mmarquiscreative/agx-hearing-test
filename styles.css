@@ -20,7 +20,6 @@ ag purple:  #532d6d
 grey:       #3d3935
 */
 
-
 /*Added by Chris*/
 #agx-hearing-test {
   position: fixed;
@@ -30,8 +29,7 @@ grey:       #3d3935
   right: 0;
   z-index: 999;
 }
-
-
+ 
 /******************************************************************
 ANIMATIONS
 ******************************************************************/
@@ -114,7 +112,7 @@ GLOBAL STYLES
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans' !important;
 }
 
 button {
@@ -123,7 +121,7 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   color: #532d6d;
-  font-family: 'Noto Serif';
+  font-family: 'Noto Serif' !important;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -623,21 +621,29 @@ BUTTONS
 ******************************************************************/
 
 .btn-exit {
-  background: #fff;
-  border: 1px solid #288dc2;
-  border-radius: 100%;
-  color: #288dc2;
-  height: 2rem;
-  outline: none;
-  position: absolute;
-  right: .5rem;
-  top: .5rem;
-  width: 2rem;
+    background: #fff !important;
+    border: 1px solid #288dc2 !important;
+    border-radius: 100% !important;
+    color: #288dc2 !important;
+    width: 2rem;
+    height: 2rem !important;
+    outline: none !important;
+    position: absolute !important;
+    right: .5rem !important;
+    top: .5rem !important;
+    width: 2rem !important;
+    padding: 0rem !important;
+    line-height: 2rem !important;
+    white-space: nowrap !important;
+    text-align: center;
+    box-sizing: content-box;
+    font-family: 'Open Sans';
+    font-weight: 100;
 }
 
 .btn-exit:hover {
-  background: #288dc2;
-  color: #fff;
+  background: #288dc2 !important;
+  color: #fff !important;
 }
 
 .btn-submit {
@@ -683,10 +689,13 @@ BUTTONS
 }
 
 .btn-yn-yes { background: #532d6d;  color: #fff; }
-.btn-yn-no  { background: #b9aac8;  color: #555; }
+.btn-yn-no  { background: #008aab;  color: #fff; }
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover, .speechBtn:hover { background: #afa0bd;  border: none; }
+.btn-yn-no:hover { background: #b6d8e4 !important;  border: none; }
+
+.speechBtn:hover { background: #afa0bd !important;  border: 2px solid #afa0bd; }
+
 
 .speechBtn:active {
   background: #3d214f;
@@ -694,24 +703,26 @@ BUTTONS
   box-shadow: none;
   color: #fff;
   top: 0;
+    margin-bottom: -2px;
 }
 
-.speechBtn {
-  border: 2px solid #e0e0e0;
-  border-radius: 10rem;
-  box-shadow: 1px 1px 3px grey;
-  display: table-cell;
-  font-size: 1rem;
-  font-weight: 200;
-  height: 6vh;
-  letter-spacing: .05em;
-  margin: 1.25%;
-  outline: none;
-  position: relative;
-  top: -2px;
-  width: 30%;
+button.speechBtn {
+    border: 2px solid #e0e0e0;
+    background: #fff;
+    color: #3d3935;
+    border-radius: 10rem;
+    box-shadow: 1px 1px 3px grey;
+    display: table-cell;
+    font-size: 1rem;
+    font-weight: 200;
+    height: 6vh;
+    letter-spacing: .05em;
+    margin: 1.25%;
+    outline: none;
+    position: relative;
+    top: -2px;
+    width: 30%;
 }
-
 #toneAnswer {
   margin-top: .25rem;
   padding: 1rem;
