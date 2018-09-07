@@ -17,7 +17,7 @@ function agx_hearing_test($content) {
     <div id="agx-hearing-test" ng-app="formApp">
       <div class="container" ng-controller="stageController as stage">
         <button ui-sref="stage.exit" ng-class="stage.testBool(&#39;results&#39;) ? &#39;btn-exit&#39; : &#39;hidden&#39;">X</button>
-        <button ng-click="" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">XX</button>
+        <button ng-click="" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
 
         <!-- views will be injected here -->
         <div ui-view></div>
