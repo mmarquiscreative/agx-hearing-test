@@ -983,6 +983,10 @@ RESPONSIVE STYLES
     font-size: 1.2rem;
   }
 
+    .lead-text {
+        color: #874fb2;
+    }
+    
   .btn-submit {
     min-width: 12rem;
   }
