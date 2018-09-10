@@ -39,7 +39,7 @@
         <button class="btn-submit">Schedule Your Appointment</button>
     </div>
 
-    <!-- <div class="results-body">
+<div class="results-body">
         <div class="results-row">
             <div class="results-col results-quiz">
                 <p class="results-head">Environments in which you may struggle to hear:</p>
@@ -77,5 +77,4 @@
                 </div>
             </div>
         </div></div>
-    --> 
 </div>
