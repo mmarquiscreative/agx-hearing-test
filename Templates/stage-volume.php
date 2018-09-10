@@ -7,6 +7,7 @@
     </div>
      <audio id="volumeAudio" src="../sounds/noise.mp3" loop autoplay></audio>
          <div class="btns-yn">
-     <button ng-hide="volume.tonePlaying" ng-click="volume.startNoise()" ui- class="btn-yn-vol-tone"> Play Audio<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+     <button ng-hide="volume.tonePlaying" ng-click="volume.startNoise()" ui-class="btn-yn-vol-tone"> Play Audio<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
     	<button ng-show="volume.tonePlaying" ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-yn-vol-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
     </div>
+</div>
