@@ -38,7 +38,7 @@
 
         <button class="btn-submit">Schedule Your Appointment</button>
     </div>
-
+<!--
 <div class="results-body">
         <div class="results-row">
             <div class="results-col results-quiz">
@@ -76,5 +76,5 @@
                     <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p>
                 </div>
             </div>
-        </div></div>
+        </div></div> -->
 </div>

@@ -694,7 +694,7 @@ BUTTONS
 .btn-yn-yes:hover { background: #3d214f; }
 .btn-yn-no:hover { background: #00738f;  border: none; }
 
-.speechBtn:hover { background: #afa0bd !important;  border: 2px solid #afa0bd; }
+.speechBtn:hover { background: #afa0bd;  border: 2px solid #afa0bd; }
 
 
 .speechBtn:active {
@@ -706,7 +706,7 @@ BUTTONS
     margin-bottom: -2px;
 }
 
-button.speechBtn {
+.speechBtn {
     border: 2px solid #e0e0e0;
     background: #fff;
     color: #3d3935;
@@ -723,6 +723,11 @@ button.speechBtn {
     top: -2px;
     width: 30%;
 }
+
+.speechBtn:disabled {
+ color: #afaba7;   
+}
+
 #toneAnswer {
   margin-top: .25rem;
   padding: 1rem;
@@ -983,9 +988,7 @@ RESPONSIVE STYLES
     font-size: 1.2rem;
   }
 
-    .lead-text {
-        color: #874fb2;
-    }
+    
     
   .btn-submit {
     min-width: 12rem;
