@@ -366,6 +366,13 @@ LAYOUT ELEMENTS
 OBJECT ELEMENTS
 ******************************************************************/
 
+#calVol {
+    
+    color: #532d6d;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 .calib-body {
   margin: 2rem auto;
 }
