@@ -6,7 +6,7 @@
 
     <input type="email" placeholder="example@email.com">
 
-    <button ng-click="exit.reportSubmit()" ui-sref="stage.toneTest" class="btn-submit">Send My Results</button>
+    <button ng-click="exit.reportSubmit()" class="btn-submit">Send My Results</button>
 
     <div class="disclaimer">
       Add checkbox about signing up for enewsletter.
