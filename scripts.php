@@ -17,6 +17,7 @@ if(!is_admin()) {
 	wp_register_script('agx-hearing-test-controller-tone', plugins_url('Controllers/controller-toneTest.js', __FILE__) );
 	wp_register_script('agx-hearing-test-controller-speech', plugins_url('Controllers/controller-speechTest.js', __FILE__) );
 	wp_register_script('agx-hearing-test-controller-results', plugins_url('Controllers/controller-results.js', __FILE__) );
+	wp_register_script('agx-hearing-test-controller-modal', plugins_url('Controllers/controller-modal.js', __FILE__) );
 
 
 
@@ -37,6 +38,7 @@ if(!is_admin()) {
 	wp_localize_script('agx-hearing-test-controller-tone', 'postfollow', $localize_array );
 	wp_localize_script('agx-hearing-test-controller-speech', 'postfollow', $localize_array );
 	wp_localize_script('agx-hearing-test-controller-results', 'postfollow', $localize_array );
+	wp_localize_script('agx-hearing-test-controller-modal', 'postfollow', $localize_array );
 
 
 
@@ -54,6 +56,7 @@ if(!is_admin()) {
 	wp_enqueue_script('agx-hearing-test-controller-tone');
 	wp_enqueue_script('agx-hearing-test-controller-speech');
 	wp_enqueue_script('agx-hearing-test-controller-results');
+	wp_enqueue_script('agx-hearing-test-controller-modal');
 }
 
 

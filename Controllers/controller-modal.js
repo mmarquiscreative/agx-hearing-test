@@ -1,4 +1,4 @@
-/*(angular.module('formApp').controller('modalController', ['$scope', function($scope) {
+angular.module('formApp').controller('modalController', ['$scope', function($scope) {
   var pop = this;
 
   pop.modalClass = 'ohq-modal';
@@ -22,4 +22,4 @@
     console.log(pop.modalClass);
   }
 
-}]);*/
+}]);
