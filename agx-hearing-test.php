@@ -20,13 +20,15 @@ function agx_hearing_test($content) {
       <div ng-controller="modalController as pop">
         <button class="btn-ohq-modal" ng-class="pop.modalBtnOpen" ng-click="pop.updateDisplay()">Take The Quiz</button>
 
-        <div id="ohq-container" ng-class="pop.ModalClass" ng-controller="stageController as stage">
-          <!-- views will be injected here -->
-          <div ui-view></div>
-        </div>
+        <div id="ohq-container" ng-class="pop.ModalClass">
+          <div ng-controller="stageController as stage">
+            <!-- views will be injected here -->
+            <div ui-view></div>
+          </div>
 
-        <button ui-sref="stage.exit" ng-class="stage.testBool(&#39;results&#39;) ? &#39;btn-exit&#39; : &#39;hidden&#39;">X</button>
-        <button ng-click="pop.updateDisplay()" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
+          <button ui-sref="stage.exit" ng-class="stage.testBool(&#39;results&#39;) ? &#39;btn-exit&#39; : &#39;hidden&#39;">X</button>
+          <button ng-click="pop.updateDisplay()" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
+        </div>
       </div>
     </div>
   ';
