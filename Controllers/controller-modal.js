@@ -1,7 +1,6 @@
-angular.module('formApp').controller('modalController', ['$scope', function($scope) {
+/*(angular.module('formApp').controller('modalController', ['$scope', function($scope) {
   var pop = this;
 
-  pop.isHidden = true;
   pop.modalClass = 'ohq-modal';
   pop.modalBtnOpen = 'btn-open';
   pop.modalBtnClose = 'btn-close';
@@ -23,4 +22,4 @@ angular.module('formApp').controller('modalController', ['$scope', function($sco
     console.log(pop.modalClass);
   }
 
-}]);
+}]);*/

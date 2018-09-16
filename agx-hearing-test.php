@@ -18,14 +18,12 @@ function agx_hearing_test($content) {
       <h2>Some blurb about the AGX Online Hearing Quiz</h2>
       
       <div ng-controller="modalController as pop">
-        <button class="btn-ohq-modal" ng class="pop.modalBtn" ng-click="pop.updateDisplay()">Take The Quiz</button>
+        <button class="btn-ohq-modal" ng-class="pop.modalBtnOpen" ng-click="pop.updateDisplay()">Take The Quiz</button>
 
-        <div id="ohq-container" class="ohq-modal" ng-controller="stageController as stage">
+        <div id="ohq-container" ng-class="pop.ModalClass" ng-controller="stageController as stage">
           <!-- views will be injected here -->
           <div ui-view></div>
         </div>
-
-        <button ng-click="pop.updateDisplay()">exit</button>
 
         <button ui-sref="stage.exit" ng-class="stage.testBool(&#39;results&#39;) ? &#39;btn-exit&#39; : &#39;hidden&#39;">X</button>
         <button ng-click="pop.updateDisplay()" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
