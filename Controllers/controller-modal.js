@@ -1,6 +1,8 @@
 angular.module('formApp').controller('modalController', ['$scope', function($scope) {
   var pop = this;
 
+    console.log('modal running controller');
+    
   pop.modalClass = 'ohq-modal';
   pop.modalBtnOpen = 'btn-open';
   pop.modalBtnClose = 'btn-close';
