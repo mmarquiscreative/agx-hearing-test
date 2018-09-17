@@ -11,7 +11,8 @@ define ("DIR", __FILE__);
 require_once 'scripts.php';
 // require_once 'wp/template.php';
 
-
+<h2>Testing Testing Testing</h2>
+    <?php echo do_shortcode('[ninja_form id=1]'); ?>
 function agx_hearing_test($content) {
   echo '
     <div id="agx-ohq" ng-app="formApp">
