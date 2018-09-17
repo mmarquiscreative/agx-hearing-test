@@ -13,10 +13,10 @@ require_once 'scripts.php';
 
 
 function agx_hearing_test($content) {
-  echo '<div id="agx-ohq" ng-app="formApp">
+  echo '<div ng-app="formApp"><div ng-controller="modalController as pop"><div id="agx-ohq">
       <h2>Some blurb about the AGX Online Hearing Quiz</h2>
       
-      <div ng-controller="modalController as pop">
+      <div>
         <button class="btn-ohq-modal" ng-class="pop.modalBtnOpen" ng-click="pop.updateDisplay()">Take The Quiz</button>
 
         <div id="ohq-container" ng-class="pop.modalClass">
@@ -29,6 +29,8 @@ function agx_hearing_test($content) {
           <button ng-click="pop.updateDisplay()" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   ';
 }
