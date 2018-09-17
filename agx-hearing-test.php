@@ -20,7 +20,7 @@ function agx_hearing_test($content) {
       <div ng-controller="modalController as pop">
         <button class="btn-ohq-modal" ng-class="pop.modalBtnOpen" ng-click="pop.updateDisplay()">Take The Quiz</button>
 
-        <div id="ohq-container" ng-class="pop.ModalClass">
+        <div id="ohq-container" ng-class="pop.modalClass">
           <div ng-controller="stageController as stage">
             <!-- views will be injected here -->
             <div ui-view></div>
