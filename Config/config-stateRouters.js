@@ -58,7 +58,8 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
 
     .state('stage.results', {
         url: '/results',
-        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-results.php'
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage-results.php',
+        controller: 'resultsController'
     })
 
     // url will be /stage/exit
