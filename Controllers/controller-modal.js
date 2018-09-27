@@ -1,4 +1,4 @@
-angular.module('formApp').controller('modalController', ['$scope', function($scope) {
+angular.module('formApp').controller('modalController', ['$scope', '$state', 'resultsObj', function ($scope, $state, resultsObj) {
   var pop = this;
 
     console.log('modal running controller');
@@ -17,11 +17,16 @@ angular.module('formApp').controller('modalController', ['$scope', function($sco
       console.log('testing');
     } else if(testClass === 'ohq-modal-active') {
       pop.modalClass = 'ohq-modal';
+		console.log('test2');
+		console.log($state);
+		resultsObj.restartTest();
+        $state.go('stage.intro');
     } else {
       console.log('No match. Current style is ' + pop.modalClass);
-    }
+    };
 
     console.log(pop.modalClass);
-  }
-
+	  
+  };
+  
 }]);
