@@ -1,8 +1,8 @@
-angular.module('formApp').controller('volumeController', ['$scope', function($scope) {
+angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var volume = this;
     volume.tonePlaying = false;
     volume.noise = document.querySelector('#volumeAudio');
-    volume.noise.volume = 0.5;
+    volume.noise.volume = resultsObj.globalVolume;
     volume.noise.pause();
 
     volume.startNoise = function(){

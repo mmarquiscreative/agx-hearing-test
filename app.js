@@ -8,6 +8,8 @@ formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page'
 
 // results object to save individual sections wrong answers to
 formApp.value('resultsObj', {
+    bgNoiseIncrease: 0.05,
+    globalVolume: 0.2,
     quizScore: 0,
     quizPerfectScore: 4,
     quizAns: [],

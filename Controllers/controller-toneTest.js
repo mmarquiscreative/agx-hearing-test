@@ -10,7 +10,7 @@ tone.startTest = false;
     tone.toneAudio = document.querySelector('#toneAudio');
 
     // set volume of audio
-    tone.toneAudio.volume = 0.5;
+    tone.toneAudio.volume = resultsObj.globalVolume;
 
     // sets loop
     tone.toneAudio.loop = true;
