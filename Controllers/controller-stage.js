@@ -25,11 +25,15 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
             if(testClass === 'ohq-modal') {
                 stage.modalClass = 'ohq-modal-active';
                 console.log('ohq-modal ===> ohq-modal-active');
+                                $state.go('stage.intro');
+
             } else if(testClass === 'ohq-modal-active') {
                 stage.modalClass = 'ohq-modal';
                 console.log('ohq-modal-active ===> ohq-modal');
                 resultsObj.restartTest();
-                $state.go('stage.intro');
+                $state.go('stage');
+                $state.go('^');
+
             } else {
                 console.log('No match. Current style is ' + stage.modalClass);
             };
@@ -77,7 +81,8 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
 
     stage.restart = function(){
         resultsObj.restartTest();
-        $state.go('^.intro');
+        $state.go('stage.intro');
+        
     };
 
 }])

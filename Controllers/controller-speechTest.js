@@ -30,7 +30,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     speech.bgNoiseSettings = {
         loopBool: 'true',
-        srcPath: '/wp-content/plugins/AGX_OHT_Mach2_AngularJS/sounds/BackgroundNoise.mp3'
+        srcPath: '/wp-content/plugins/agx-hearing-test/sounds/BackgroundNoise.mp3'
     }
 
     // Pulls array of strings from global namespace
@@ -152,7 +152,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             resultsObj.speechCompleted = true;
             speech.bgNoise.pause();
             $state.go('^.results');
-        }
+            console.log($state);
+        };
 
     };
 
@@ -195,7 +196,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         for(i=0; i < 3; i++){
 
             // Push file paths to audio file which corresponds to the round answers
-             tempAudio.push(new Audio('/wp-content/plugins/AGX_OHT_Mach2_AngularJS/sounds/Speech_' +  speech.answerKey[i] + '.mp3'));
+             tempAudio.push(new Audio('/wp-content/plugins/agx-hearing-test/sounds/Speech_' +  speech.answerKey[i] + '.mp3'));
         }
 
             // play first audio

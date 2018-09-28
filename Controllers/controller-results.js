@@ -1,4 +1,4 @@
-angular.module('formApp').controller('resultsController', ['$scope', 'resultsObj', function($scope, resultsObj){
+angular.module('formApp').controller('resultsController', ['$scope', '$state', 'resultsObj', function ($scope,  $state, resultsObj) {
     
     // Uses keyword to keep $scope specific to this controller
     var results = this;

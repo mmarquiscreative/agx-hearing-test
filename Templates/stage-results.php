@@ -1,4 +1,4 @@
-<div ng-controller = "resultsController as results" class="stage-results">
+<div ng-controller="resultsController as results" class="stage-results">
     <div class="header">
         <h3>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h3>
     </div>
