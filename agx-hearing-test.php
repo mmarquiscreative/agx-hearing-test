@@ -12,28 +12,30 @@ require_once 'scripts.php';
 // require_once 'wp/template.php';
 
 
+
 function agx_hearing_test($content) {
-  echo '
-    <div id="agx-ohq" ng-app="formApp">
-      <h2>Some blurb about the AGX Online Hearing Quiz</h2>
-      
-      <div ng-controller="modalController as pop">
-        <button class="btn-ohq-modal" ng-class="pop.modalBtnOpen" ng-click="pop.updateDisplay()">Take The Quiz</button>
+  echo '<div id="agx-ohq" ng-app="formApp">
+      <div ng-controller="stageController as stage">
+  
+   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen">Start Quiz</button>
+   
+   <!-- Modal pop-up -->
+    <div id="ohq-container" ng-class="stage.modalClass">
+     
+      <!-- doesn\'t currently have access to testBool function -->
+      <button ui-sref="stage.exit" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
+      <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'results\') ? \'hidden\' : \'btn-exit\'">X</button>
 
-        <div id="ohq-container" ng-class="pop.modalClass">
-          <div ng-controller="stageController as stage">
-            <!-- views will be injected here -->
-            <div ui-view></div>
-          </div>
-
-          <button ui-sref="stage.exit" ng-class="stage.testBool(&#39;results&#39;) ? &#39;btn-exit&#39; : &#39;hidden&#39;">X</button>
-          <button ng-click="pop.updateDisplay()" ng-class="stage.testBool(&#39;results&#39;) ? &#39;hidden&#39; : &#39;btn-exit&#39;">X</button>
-        </div>
+      <!-- views will be injected here -->
+      <div ui-view>
       </div>
     </div>
-  ';
+    </div>
+      </div>';
+	
+
 }
 
 add_shortcode( 'agxtest', 'agx_hearing_test' );
-add_filter('wp_footer','agx_hearing_test');
-add_filter('wp_agx_quiz_btn', 'agx_hearing_test');
+// add_filter('wp_footer','agx_hearing_test');
+// add_filter('wp_agx_quiz_btn', 'agx_hearing_test');
