@@ -210,6 +210,15 @@ LAYOUT ELEMENTS
   width: 30vw;
 }
 
+.ohq-modal {
+    
+  display: none;
+}
+
+.ohq-modal-active {
+  display: block;
+}
+
 .nav {
   display:table;
   width: 100%;

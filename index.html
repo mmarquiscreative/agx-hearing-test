@@ -38,14 +38,41 @@
 
   <!-- apply our angular app -->
   <body ng-app="formApp">
-    <div class="container" ng-controller="stageController as stage">
+  <div ng-controller="stageController as stage">
+  
+   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen">Start Quiz</button>
+   
+   <!-- Modal pop-up -->
+    <div class="container" ng-class="stage.modalClass">
+     
       <!-- doesn't currently have access to testBool function -->
       <button ui-sref="stage.exit" ng-class="stage.testBool('results') ? 'btn-exit' : 'hidden'">X</button>
-      <button ng-click="" ng-class="stage.testBool('results') ? 'hidden' : 'btn-exit'">X</button>
+      <button ng-click="stage.updateDisplay()" ng-class="stage.testBool('results') ? 'hidden' : 'btn-exit'">X</button>
 
       <!-- views will be injected here -->
       <div ui-view>
       </div>
     </div>
+    </div>
+    
+    '<div id="agx-ohq" ng-app="formApp">
+      <div ng-controller="stageController as stage">
+  
+   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen">Start Quiz</button>
+   
+   <!-- Modal pop-up -->
+    <div id="ohq-container" ng-class="stage.modalClass">
+     
+      <!-- doesn\'t currently have access to testBool function -->
+      <button ui-sref="stage.exit" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
+      <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'results\') ? \'hidden\' : \'btn-exit\'">X</button>
+
+      <!-- views will be injected here -->
+      <div ui-view>
+      </div>
+    </div>
+    </div>
+      </div>'
+    
   </body>
 </html>
