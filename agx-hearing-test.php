@@ -34,4 +34,6 @@ function agx_hearing_test($content) {
   ';
 }
 
+add_shortcode( 'agxtest', 'agx_hearing_test' );
 add_filter('wp_footer','agx_hearing_test');
+add_filter('wp_agx_quiz_btn', 'agx_hearing_test');
