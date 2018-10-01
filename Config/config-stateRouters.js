@@ -4,6 +4,16 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     $stateProvider
 
     // route to show our basic form
+    .state('pre-stage', {
+        url: '',
+        templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage.php',
+        controller: 'stageController',
+        data: {
+            testClass: 'stepNavItem active'
+        }
+    })
+    
+    // route to show our basic form
     .state('stage', {
         url: '/stage',
         templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage.php',
@@ -73,5 +83,6 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     // catch all route
     // send users to the form page
 
-    $urlRouterProvider.otherwise('/stage/intro');
+    $urlRouterProvider.otherwise('/pre-stage');
+    $urlRouterProvider.when('/pre-stage', '')
 }])

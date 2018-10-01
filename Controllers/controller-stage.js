@@ -1,12 +1,10 @@
 // CONTROLLERS
-angular.module('formApp').controller('stageController', ['$scope', '$state', 'resultsObj', function ($scope,  $state, resultsObj) {
+angular.module('formApp').controller('stageController', ['$scope', '$state', 'resultsObj', '$location', function ($scope,  $state, resultsObj, $location) {
     var stage = this;
     
     /* START: Modal Functionality */
-
-
+	
         // Modal Classes
-        
         stage.modalClass = 'ohq-modal';
         stage.modalBtnOpen = 'btn-open';
         stage.modalBtnClose = 'btn-close';
@@ -23,17 +21,19 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
             var testClass = stage.modalClass;
 
             if(testClass === 'ohq-modal') {
+				/* document.querySelector('#ohq-container').style.display = 'block'; */
                 stage.modalClass = 'ohq-modal-active';
+				
                 console.log('ohq-modal ===> ohq-modal-active');
-                                $state.go('stage.intro');
-
+				$state.go('stage.intro');
+				
             } else if(testClass === 'ohq-modal-active') {
+				/* document.querySelector('#ohq-container').style.display = 'hidden'; */
                 stage.modalClass = 'ohq-modal';
+				
                 console.log('ohq-modal-active ===> ohq-modal');
                 resultsObj.restartTest();
-                $state.go('stage');
-                $state.go('^');
-
+				
             } else {
                 console.log('No match. Current style is ' + stage.modalClass);
             };
@@ -81,8 +81,7 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
 
     stage.restart = function(){
         resultsObj.restartTest();
-        $state.go('stage.intro');
-        
+		$state.go('^');
     };
-
+	
 }])
