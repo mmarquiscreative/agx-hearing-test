@@ -1,4 +1,4 @@
-// New Angular Module
+// // New Angular Module
 var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
 
 //// Global VALUES ////
@@ -8,6 +8,8 @@ formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page'
 
 // results object to save individual sections wrong answers to
 formApp.value('resultsObj', {
+	cta_text: '',
+	cta_url: '',
 	bgNoiseIncrease: 0.05,
     globalVolume: 0.2,
     quizScore: 0,
