@@ -14,26 +14,34 @@ require_once 'scripts.php';
 
 
 function agx_hearing_test($content) {
+
 	
 	$ninjaNum = get_option('ninja_number');
+	$cta_text = get_option('cta_text');
+	$cta_url = get_option('cta_url');
 	
+	echo do_shortcode('[ninja_form id='.$ninjaNum.']');
 	
-	echo '<p>Testing</p>';
 		echo '<div id="agx-ohq" ng-app="formApp">
       		<div ng-controller="stageController as stage">
-  
+  <p style="display: none;" id="cta_text">';
+		echo $cta_text;
+		echo '</p> <p style="display: none;" id="cta_url">';
+		echo $cta_url;
+		echo '<h2>{{stage.cta_test}}</h2>
+  <button ng-click="stage.loadForm()">Test Form</button>
    <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen">Start Quiz</button>
    
    <!-- Modal pop-up -->
     <div id="ohq-container" class="hidden" ng-class="stage.modalClass">
 	  <div ng-class="stage.testBool(\'exit\') ? \'visible\' : \'hidden\'">';
-	
 	echo do_shortcode('[ninja_form id='.$ninjaNum.']');
+	
 	
 	echo '</div>
       <!-- modular display buttons -->
 	  <button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'">X</button>
-		  <button ui-sref="stage.exit" 			   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
+		  <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
 	  <button ng-click="stage.updateDisplay()"     ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
 	 
       <!-- views will be injected here -->
@@ -96,17 +104,22 @@ class AGX_OHQ_Plugin {
     }
     
     public function setup_sections(){
-        
-                register_setting( 'agx-hearing-test', 'ninja_shortcode_id');
-
-        
+      
         add_settings_section( 'ninja_shortcode', 'Link your Ninja Form', array( $this, 'section_callback'), 'agx-hearing-test' );
+		add_settings_section( 'cta_url_section', 'Call To Action', array( $this, 'section_callback'), 'agx-hearing-test' );
         
     }
     
     public function section_callback( $arguments ){
+        switch( $arguments['id'] ){
+    		case 'ninja_shortcode':
+    			echo 'Enter in the id number from the Ninja Form shortcode you wish to link.</br> <em>For example, if your shortcode was [ninja_form id=<strong>2</strong>] you would enter <strong>"2"</strong>.</em>';
+    			break;
+    		case 'cta_url_section':
+    			echo 'Set your CTA text and the button URL.';
+    			break;
+    	}
         
-        echo 'Enter in the id number from the Ninja Form shortcode you wish to link.</br> <em>For example, if your shortcode was [ninja_form id=<strong>2</strong>] you would enter <strong>"2"</strong>.</em>';
     }
     
     public function setup_fields() {
@@ -116,6 +129,21 @@ class AGX_OHQ_Plugin {
         		'label' => 'Shortcode ID',
         		'section' => 'ninja_shortcode',
         		'type' => 'number',
+        	),
+			array(
+        		'uid' => 'cta_text',
+        		'label' => 'Call to action text:',
+        		'section' => 'cta_url_section',
+        		'type' => 'textarea',
+        	),
+			array(
+        		'uid' => 'cta_url',
+        		'label' => 'Call to action URL',
+        		'section' => 'cta_url_section',
+        		'type' => 'text',
+        		'placeholder' => 'URL here...',
+        		'helper' => 'https://www...ect',
+        		'supplimental' => 'I am underneath!',
         	)
         	
         );

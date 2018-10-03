@@ -20,6 +20,9 @@ ag purple:  #532d6d
 grey:       #3d3935
 */
 
+.active {
+	display: block;
+}
 
  
 /******************************************************************
@@ -104,7 +107,7 @@ body {
   font-family: 'Open Sans' !important;
 }
 
-button {
+button, a {
   display: block;
 }
 
@@ -113,6 +116,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Noto Serif' !important;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+a {
+	text-decoration: none !important;
 }
 
 h1 { font-size: 2rem; }
@@ -126,6 +133,10 @@ input {
   margin: 2rem auto 1rem auto;
   padding: 1rem;
   text-align: center;
+}
+
+.visible{
+	display: block;
 }
 
 input:focus::-webkit-input-placeholder { color:transparent; }
@@ -151,9 +162,9 @@ LAYOUT ELEMENTS
 }
 
 #agx-ohq {
-  background: #ccc;
+  background: none;
   width: 100%;
-  height: 20rem;
+  height: 100%;
   text-align: center;
 }
 
@@ -660,6 +671,7 @@ BUTTONS
 }
 
 .btn-modal, .btn-submit {
+	width: 30%;
   background: #008aab;
   border: none;
   color: #fff;
@@ -734,11 +746,11 @@ BUTTONS
     outline: none;
     position: relative;
     top: -2px;
-    width: 30%;
+    width: 30% !important;
 }
 
-.speechBtn:disabled {
- color: #afaba7;   
+.speechBtn:disabled, .btn-yn-no:disabled {
+opacity: 0.5;
 }
 
 #toneAnswer {

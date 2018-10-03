@@ -1,8 +1,13 @@
 // CONTROLLERS
 angular.module('formApp').controller('stageController', ['$scope', '$state', 'resultsObj', '$location', function ($scope,  $state, resultsObj, $location) {
     var stage = this;
-    
+	
     /* START: Modal Functionality */
+		stage.cta_text = document.querySelector('#cta_text').textContent;
+		stage.cta_url = document.querySelector('#cta_url').textContent;
+	
+		resultsObj.cta_text = stage.cta_text;
+		resultsObj.cta_url = stage.cta_url;
 	
         // Modal Classes
         stage.modalClass = 'ohq-modal';
@@ -15,8 +20,7 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
         
         // Toggle between stage-up and button
         stage.updateDisplay = function() {
-            
-            console.log('Testing ' + stage.modalClass);
+            console.log('Taesting ' + stage.modalClass);
             
             var testClass = stage.modalClass;
 
@@ -83,5 +87,29 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
         resultsObj.restartTest();
 		$state.go('^');
     };
+	
+	stage.loadForm = function(){
+		
+	console.log('running test form');
+   
+	var resultsMessage = document.querySelector("#nf-field-5");
+	var quizResults = document.querySelector(".ninja-forms-field.nf-hearing-results.nf-element");
+	var toneResults = document.querySelector(".ninja-forms-field.nf-tone-results.nf-element");
+	var speechResults = document.querySelector(".ninja-forms-field.nf-speech-results.nf-element");
+		resultsMessage.onchange = function(){
+        console.log('change noted');
+    };
+	console.log(resultsMessage);
+		
+		
+        
+     resultsMessage.value = 'test';
+		resultsMessage.textContent = 'test';
+		resultsMessage.dispatchEvent(new Event('change'));
+
+   
+	
+		console.log(resultsMessage.value);
+	}
 	
 }])

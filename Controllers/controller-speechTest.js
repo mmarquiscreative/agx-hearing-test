@@ -152,8 +152,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             resultsObj.speechCompleted = true;
             speech.bgNoise.pause();
             $state.go('^.results');
-            console.log($state);
-        };
+        }
 
     };
 

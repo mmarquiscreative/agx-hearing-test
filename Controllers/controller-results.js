@@ -1,4 +1,4 @@
-angular.module('formApp').controller('resultsController', ['$scope', '$state', 'resultsObj', function ($scope,  $state, resultsObj) {
+angular.module('formApp').controller('resultsController', ['$scope', 'resultsObj', function($scope, resultsObj){
     
     // Uses keyword to keep $scope specific to this controller
     var results = this;
@@ -8,6 +8,10 @@ angular.module('formApp').controller('resultsController', ['$scope', '$state', '
     results.wrongAns.speechAnsClean = removeDuplicates(results.wrongAns.speechAns);
     results.score = 0;
     results.testRotate = 180;
+	
+	results.cta_text = resultsObj.cta_text;
+	console.log(results.cta_url);
+	results.cta_url = resultsObj.cta_url;
     
     results.totalScore = {
         name: 'totalScore',
