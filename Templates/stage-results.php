@@ -1,4 +1,4 @@
-<div ng-controller="resultsController as results" class="stage-results">
+<div ng-controller = "resultsController as results" class="stage-results">
     <div class="header">
         <h3>Your AGX<sup>&reg;</sup> Online Hearing Quiz Results</h3>
     </div>
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <button class="btn-submit">Schedule Your Appointment</button>
+        <a class="btn-submit" ng-href="{{results.cta_url}}" >{{results.cta_text}}</a>
     </div>
 <!--
 <div class="results-body">
