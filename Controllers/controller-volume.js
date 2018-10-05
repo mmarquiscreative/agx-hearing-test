@@ -1,6 +1,7 @@
 angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
 var volume = this;
     volume.tonePlaying = false;
+	volume.nextButton = false;
     volume.noise = document.querySelector('#volumeAudio');
     volume.noise.volume = resultsObj.globalVolume;
     
@@ -8,6 +9,7 @@ var volume = this;
      volume.startNoise = function(){
         volume.noise.play();
                   volume.tonePlaying = true;
+		 volume.nextButton = true;
 
     }
 

@@ -17,7 +17,7 @@
       <button ng-click="quiz.nextQuestion(false)" class="btn-yn-no">No</button>
     </div>
     
-    <button ng-show="quiz.curQuestion >= quiz.questions.length" ui-sref="stage.volume" class="btn-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    <!-- <button ng-show="quiz.curQuestion >= quiz.questions.length" ui-sref="stage.volume" class="btn-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button> -->
   </div>
 
   <!-- Test Completed Section -->

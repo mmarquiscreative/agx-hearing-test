@@ -19,9 +19,7 @@ function agx_hearing_test($content) {
 	$ninjaNum = get_option('ninja_number');
 	$cta_text = get_option('cta_text');
 	$cta_url = get_option('cta_url');
-	
-	echo do_shortcode('[ninja_form id='.$ninjaNum.']');
-	
+		
 		echo '<div id="agx-ohq" ng-app="formApp">
       		<div ng-controller="stageController as stage">
   <p style="display: none;" id="cta_text">';
@@ -29,8 +27,7 @@ function agx_hearing_test($content) {
 		echo '</p> <p style="display: none;" id="cta_url">';
 		echo $cta_url;
 		echo '<h2>{{stage.cta_test}}</h2>
-  <button ng-click="stage.loadForm()">Test Form</button>
-   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen">Start Quiz</button>
+   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen" id="0_btn_start_quiz" >Start Quiz</button>
    
    <!-- Modal pop-up -->
     <div id="ohq-container" class="hidden" ng-class="stage.modalClass">
@@ -40,8 +37,8 @@ function agx_hearing_test($content) {
 	
 	echo '</div>
       <!-- modular display buttons -->
-	  <button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'">X</button>
-		  <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
+	  <button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
+		 <!-- <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button> -->
 	  <button ng-click="stage.updateDisplay()"     ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
 	 
       <!-- views will be injected here -->

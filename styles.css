@@ -24,6 +24,12 @@ grey:       #3d3935
 	display: block;
 }
 
+/* wp workaround style */
+.page-header{
+	border-top-color: #fff;
+	border-top-style: none;
+	border-top-width: 0px;
+}
  
 /******************************************************************
 ANIMATIONS
@@ -45,9 +51,9 @@ ANIMATIONS
 
 /* enter animation */
 #form-views.ng-enter {
-  -webkit-animation: slideInRight 1s both ease;
-  -moz-animation: slideInRight 1s both ease;
-  animation: slideInRight 1s both ease;
+  -webkit-animation: slideInRight 0.5s both ease;
+  -moz-animation: slideInRight 0.5s both ease;
+  animation: slideInRight 0.5s both ease;
 }
 
 /* leave animation */
@@ -90,7 +96,7 @@ ANIMATIONS
 
 /*---------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700');
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700'); */
 
 
 /******************************************************************
@@ -714,7 +720,7 @@ BUTTONS
 }
 
 .btn-yn-yes { background: #532d6d;  color: #fff; }
-.btn-yn-no  { background: #008aab;  color: #fff; }
+.btn-yn-no, .btn-yn-no[disabled], .btn-yn-no[disabled]:hover, .btn-yn-no[disabled]:active { background: #008aab;  color: #fff; }
 
 .btn-yn-yes:hover { background: #3d214f; }
 .btn-yn-no:hover { background: #00738f;  border: none; }
@@ -749,8 +755,27 @@ BUTTONS
     width: 30% !important;
 }
 
-.speechBtn:disabled, .btn-yn-no:disabled {
-opacity: 0.5;
+.speechBtn[disabled], .speechBtn[disabled]:hover, .speechBtn[disabled]:active  {
+	    border: 2px solid #e0e0e0;
+    background: #fff;
+    
+    border-radius: 10rem;
+    box-shadow: 1px 1px 3px grey;
+    display: table-cell;
+    font-size: 1rem;
+    font-weight: 200;
+    height: 6vh;
+    letter-spacing: .05em;
+    margin: 1.25%;
+    outline: none;
+    position: relative;
+    top: -2px;
+    width: 30% !important;
+}
+
+.speechBtn[disabled], .btn-yn-no[disabled], .btn-yn-no[disabled]:hover, .btn-yn-no[disabled]:active, .speechBtn[disabled]:hover, .speechBtn[disabled]:active{
+	opacity: 0.5;
+	filter: blur(3px);
 }
 
 #toneAnswer {

@@ -1,9 +1,9 @@
 //CONFIG
-angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $location){
 
     $stateProvider
 
-    // route to show our basic form
+	// route on innit page load
     .state('pre-stage', {
         url: '',
         templateUrl: '/wp-content/plugins/agx-hearing-test/Templates/stage.php',
@@ -12,7 +12,7 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
             testClass: 'stepNavItem active'
         }
     })
-    
+	
     // route to show our basic form
     .state('stage', {
         url: '/stage',
@@ -83,6 +83,6 @@ angular.module('formApp').config(['$stateProvider', '$urlRouterProvider', functi
     // catch all route
     // send users to the form page
 
-    $urlRouterProvider.otherwise('/pre-stage');
-    $urlRouterProvider.when('/pre-stage', '')
+	$urlRouterProvider.otherwise('/pre-stage');
+	 $urlRouterProvider.when('/pre-stage', '');
 }])

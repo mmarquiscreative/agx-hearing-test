@@ -48,6 +48,23 @@ formApp.value('resultsObj', {
         this.speechAns = [];
         this.speechCompleted = false;
         
+        // 4. Stop audio
+        var idArray = ['#volumeAudio', '#toneAudio', '#bgNoise'];
+		
+		idArray.forEach(function(cur){
+			console.log(cur);
+			console.log(document.querySelector(cur));
+			if(document.querySelector(cur) !== null){
+				document.querySelector(cur).autoplay = false;
+        document.querySelector(cur).currentTime = 0;
+		document.querySelector(cur).loop = false;
+		document.querySelector(cur).pause();}
+			else {
+				console.log(cur + ' query came back as null');
+			}
+		});
+		
+        
     }
     });
 

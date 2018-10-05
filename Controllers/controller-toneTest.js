@@ -88,7 +88,7 @@ tone.startTest = false;
             tone.buttonHide_YN = true;
             tone.buttonHide_Next = false;
             resultsObj.toneCompleted = true;
-            $state.go('^.speechTest');
+            $state.go('^.speechTest')
             console.log(resultsObj.toneAns);
 
         } else {
@@ -115,11 +115,8 @@ tone.startTest = false;
      tone.startToneTest = function(){
         tone.startTest = true;
         tone.toneAudio.play();
-         console.log(tone.toneAudio);
         
     }
-     
-     console.log(tone.startTest);
 
 
     ////////////////////////////

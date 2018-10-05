@@ -10,13 +10,14 @@
 
                 <div id="status-buttons" ng-class="stage.testBool('intro') || stage.testBool('exit') ? 'hidden' : 'text-center nav'">
                     <button id="btn-restart" ng-click="stage.restart()">Restart Quiz</button>
+					
                     <img class="agx-hearing-logo logo-stage" src="/wp-content/plugins/agx-hearing-test/img/AGX-Hearing-Color.png" />
 
                     <div id="stepNavBar">
-                        <div ng-class="stage.testBool('quiz') ? 'stepNavItem active' : 'stepNavItem'">Quiz</div>
-                        <div ng-class="stage.testBool('volume') ? 'stepNavItem active' : 'stepNavItem'" >Volume</div>
-                        <div ng-class="stage.testBool('tone') ? 'stepNavItem active' : 'stepNavItem'" >Tone Quiz</div>
-                        <div ng-class="stage.testBool('speech') ? 'stepNavItem active' : 'stepNavItem'" >Speech Quiz</div>
+                        <div ng-class="stage.testBool('quiz') ? 'stepNavItem active' : 'stepNavItem'">Listening Situations</div>
+                        <div ng-class="stage.testBool('volume') ? 'stepNavItem active' : 'stepNavItem'" >Calibrate Volume</div>
+                        <div ng-class="stage.testBool('tone') ? 'stepNavItem active' : 'stepNavItem'" >Frequency Range</div>
+                        <div ng-class="stage.testBool('speech') ? 'stepNavItem active' : 'stepNavItem'" >Speech-in-noise</div>
                         <div ng-class="stage.testBool('results') ? 'stepNavItem active' : 'stepNavItem'" >Results</div>
                     </div>
 
@@ -41,6 +42,7 @@
                 <!-- our nested state views will be injected here -->
                 <div id="form-views" ui-view></div>
             </form>
+		
         </div>
 
     </div>

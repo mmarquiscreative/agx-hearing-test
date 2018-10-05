@@ -5,7 +5,6 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     var speech = this;
 
-
     // TEST COMPLETED SECTION //
     speech.testCompleted = resultsObj.testComplete('speech');
 
