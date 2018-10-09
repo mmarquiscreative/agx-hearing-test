@@ -14,12 +14,28 @@ require_once 'scripts.php';
 
 
 function agx_hearing_test($content) {
-
+$agx_useNinja_no = '<button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
+		 <!-- <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button> -->';
+	
+	$agx_useNinja_yes = '<button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'results\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
+		 <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>';
+	
+	$agx_useNinja_string = '';
 	
 	$ninjaNum = get_option('ninja_number');
 	$cta_text = get_option('cta_text');
 	$cta_url = get_option('cta_url');
 	$font_baseline = get_option('agx_font_percent');
+	$agx_useNinjaForm = get_option('agx_useNinjaForm');
+	
+	if($agx_useNinjaForm === 'agx_useNinjaForm_Yes'){
+		$agx_useNinja_string = $agx_useNinja_yes;
+	} else {
+		$agx_useNinja_string = $agx_useNinja_no;
+	};
+	
+	
+	
 		echo '<div style="font-size: ';
 	echo $font_baseline;
 	echo '% !important;"><p>TestingTesting</p>';
@@ -28,8 +44,8 @@ function agx_hearing_test($content) {
 			<div id="ohq-overlay-parent" class="hidden" ng-class="stage.modalClass" ><div id="ohq-overlay" ></div></div>
   <p style="display: none;" id="cta_text">';
 		echo $cta_text;
-		echo '</p> <p style="display: none;" id="cta_url">';
-		echo $cta_url;
+		echo '</p> <p style="display: block;" id="cta_url">';
+		echo $agx_useNinjaForm[0];
 		echo '</p>
    <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen" id="0_btn_start_quiz" >Start Quiz</button>
    
@@ -43,9 +59,9 @@ function agx_hearing_test($content) {
 	
 	echo '</div>
       <!-- modular display buttons -->
-	  <button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
-		 <!-- <button ui-sref="stage.exit" ng-click="stage.loadForm()"		   ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button> -->
-	  <button ng-click="stage.updateDisplay()"     ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
+	 ';
+	echo $agx_useNinja_string;
+	echo '<button ng-click="stage.updateDisplay()"     ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
 	 
       <!-- views will be injected here -->
       <div ui-view></div>
@@ -108,23 +124,33 @@ class AGX_OHQ_Plugin {
     
     public function setup_sections(){
       
-        add_settings_section( 'ninja_shortcode', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Link your Ninja Form</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
-		add_settings_section( 'cta_url_section', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Call To Action</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
+        
 		add_settings_section( 'agx_font_size', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Font-sizing</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
+		
+		add_settings_section( 'agx_user_action', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Include Contact Form</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
+		add_settings_section( 'ninja_shortcode', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Link your Ninja Form</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
+		add_settings_section( 'cta_url_section', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Call To Action</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
         
     }
     
     public function section_callback( $arguments ){
         switch( $arguments['id'] ){
-    		case 'ninja_shortcode':
-    			echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Enter in the id number from the Ninja Form shortcode you wish to link.</br> <em>For example, if your shortcode was [ninja_form id=<strong>2</strong>] you would enter <strong>"2"</strong>.</em></p>';
-    			break;
-    		case 'cta_url_section':
-    			echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Set the text you wish to appear on the results page button and the URL you wish it to go to.</p>';
-    			break;
+    		
     	
 			case 'agx_font_size':
     			echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Set the base percentage for font-sizes which the rest of the AGX Online Hearing Quiz will base the sizing off of.</p>';
+    			break;
+				
+				case 'agx_user_action':
+    			echo '<p style="font-size: .85rem; margin-top: -0.75rem;">If checked, a form will appear when the user clicks the \'X\' exit button on the results page, offering to send their results and add them to an email list.</p>';
+    			break;
+				
+				case 'ninja_shortcode':
+    			echo '<p style="font-size: .85rem; margin-top: -0.75rem;"><em>If including the contact form</em></br></br>Enter in the id number from the Ninja Form shortcode you wish to link.</br> <em>For example, if your shortcode was [ninja_form id=<strong>2</strong>] you would enter <strong>"2"</strong>.</em></p>';
+    			break;
+				
+				case 'cta_url_section':
+    			echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Set the text you wish to appear on the results page button and the URL you wish it to take the user to.</p>';
     			break;
 		}
     	}
@@ -133,7 +159,28 @@ class AGX_OHQ_Plugin {
     
     public function setup_fields() {
         $fields = array(
-        	array(
+        	
+			
+			array(
+        		'uid' => 'agx_font_percent',
+        		'label' => 'Font-size Baseline </br><em>(as percentage)<em>',
+        		'section' => 'agx_font_size',
+        		'type' => 'number',
+				'helper' => '%'
+        	),
+			array(
+        		'uid' => 'agx_useNinjaForm',
+        		'label' => 'Add \'Send Results\' form?',
+        		'section' => 'agx_user_action',
+        		'type' => 'checkbox',
+        		'options' => array(
+        			'agx_useNinjaForm_Yes' => 'Add Form'
+					
+        		),
+                'default' => array()
+        	),
+			
+			array(
         		'uid' => 'ninja_number',
         		'label' => 'Shortcode ID',
         		'section' => 'ninja_shortcode',
@@ -153,13 +200,6 @@ class AGX_OHQ_Plugin {
         		'placeholder' => 'URL here...',
         		'helper' => 'https://www...ect',
         		'supplimental' => 'I am underneath!',
-        	),
-			array(
-        		'uid' => 'agx_font_percent',
-        		'label' => 'Font-size Baseline </br><em>(as percentage)<em>',
-        		'section' => 'agx_font_size',
-        		'type' => 'number',
-				'helper' => '%'
         	)
         	
         );
