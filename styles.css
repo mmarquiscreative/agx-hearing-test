@@ -26,6 +26,7 @@ grey:       #3d3935
 
 /* wp workaround style */
 .page-header{
+	float: none !important;
 	border-top-color: #fff;
 	border-top-style: none;
 	border-top-width: 0px;
@@ -128,14 +129,15 @@ a {
 	text-decoration: none !important;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
+h1 { font-size: 200% !important; }
+h2 { font-size: 150% !important; }
+h3 { font-size: 137% !important; }
 
 input {
   border: 1px solid #666;
   color: #666;
   display: block;
-  font-size: 1.2rem;
+  font-size: 120%;
   margin: 2rem auto 1rem auto;
   padding: 1rem;
   text-align: center;
@@ -167,6 +169,7 @@ LAYOUT ELEMENTS
   display: block;
 }
 
+
 #agx-ohq {
   background: none;
   width: 100%;
@@ -195,7 +198,7 @@ LAYOUT ELEMENTS
 }
 
 .lead-text, .quiz-question-text {
-  font-size: 1.2rem;
+  font-size: 120%;
   margin: .5rem 1rem;
   text-align: center;
 }
@@ -222,18 +225,44 @@ LAYOUT ELEMENTS
 
 #ohq-container {
   background: #fff;
-  box-shadow: 0 .2rem 1rem #666;
-  height: 70vh;
+  box-shadow: 0 .2rem 1rem #222;
+  height: 70%;
   left: 50%;
   margin: auto;
-  min-width: 200px;
   overflow-y: auto;
   padding: 4vw;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 70vw;
-  z-index: 999;
+  width: 80%;
+  z-index: 2010;
+	
+	
+}
+
+#ohq-overlay-parent{
+	opacity: 0.7;
+	position: fixed;
+	top: 0;
+	left: 0;
+z-index: 100;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+#ohq-overlay {
+	z-index: 2000;
+	width: 100%;
+	height: 100%;
+  background-color: black;
+	-webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 [class*='prog-bar-'] {
@@ -310,7 +339,7 @@ LAYOUT ELEMENTS
 }
 
 .summary-col p {
-  font-size: 1rem;
+  font-size: 100%;
   margin: .25rem 0 0 0;
 }
 
@@ -362,7 +391,7 @@ LAYOUT ELEMENTS
 }
 
 .tone-test-frequencies p {
-  font-size: 1.5rem;
+  font-size: 150%;
   margin: 0;
 }
 
@@ -380,7 +409,7 @@ LAYOUT ELEMENTS
 
 .vol-text {
   color: #532d6d;
-  font-size: 1.2rem;
+  font-size: 120%;
   font-weight: 700;
 }
 
@@ -393,7 +422,7 @@ OBJECT ELEMENTS
     
     color: #532d6d;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 120%;
 }
 
 .calib-body {
@@ -413,7 +442,7 @@ OBJECT ELEMENTS
 [class*='calib-tone-'] {
   border-radius: 10rem;
   color: #888;
-  font-size: .8rem;
+  font-size: 80%;
   margin: .5rem 0;
   padding: .2rem;
   text-align: center;
@@ -434,7 +463,7 @@ OBJECT ELEMENTS
 [class*='calib-label-'] {
   background: #b6d8e4;
   border-radius: 100%;
-  font-size: 1.2rem;
+  font-size: 120%;
   height: 4rem;
   line-height: 320%;
   margin: .5rem 0;
@@ -474,14 +503,14 @@ OBJECT ELEMENTS
 
 .disclaimer {
   color: #666;
-  font-size: .8rem;
+  font-size: 80%;
   margin: 3rem auto 0 auto;
   text-align: center;
 }
 
 .summary-score {
   color: #532d6d;
-  font-size: 1.2rem;
+  font-size: 120%;
 }
 
 .mobile-summary-score {
@@ -491,7 +520,7 @@ OBJECT ELEMENTS
 
 [class*='score-'] {
   color: #532d6d;
-  font-size: 2.2rem;
+  font-size: 220%;
   left: 50%;
   line-height: 105%;
   margin: 0;
@@ -502,7 +531,7 @@ OBJECT ELEMENTS
 
 .results-head {
   color: #532d6d;
-  font-size: 1em;
+  font-size: 100%;
   font-weight: 700;
 }
 
@@ -511,7 +540,7 @@ OBJECT ELEMENTS
 }
 
 .environment {
-  font-size: 1rem;
+  font-size: 100%;
 }
 
 [id*='ans'] {
@@ -639,7 +668,7 @@ mask.full fill {
   display: -webkit-flex;
   display: -ms-flexbox;
   flex-grow: 1.5;
-  font-size: 1.2rem;
+  font-size: 120%;
   margin: .5rem;;
   text-align: center;
 }
@@ -682,7 +711,7 @@ BUTTONS
   border: none;
   color: #fff;
   display: block;
-  font-size: 1.2rem;
+  font-size: 120%;
   font-weight: 200;
   letter-spacing: .05em;
   margin: auto;
@@ -710,7 +739,7 @@ BUTTONS
 [class*='btn-yn-'] {
   border: none;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 120%;
   font-weight: 200;
   letter-spacing: .05em;
   margin: .5rem;
@@ -744,7 +773,7 @@ BUTTONS
     border-radius: 10rem;
     box-shadow: 1px 1px 3px grey;
     display: table-cell;
-    font-size: 1rem;
+    font-size: 100%;
     font-weight: 200;
     height: 6vh;
     letter-spacing: .05em;
@@ -762,7 +791,7 @@ BUTTONS
     border-radius: 10rem;
     box-shadow: 1px 1px 3px grey;
     display: table-cell;
-    font-size: 1rem;
+    font-size: 100%;
     font-weight: 200;
     height: 6vh;
     letter-spacing: .05em;
@@ -790,7 +819,7 @@ BUTTONS
   border-radius: 100%;
   color: #fff;
   display: block;
-  font-size: 1.2rem;
+  font-size: 120%;
   height: 2rem;
   margin: 1rem 0;
   outline: 0;
@@ -808,7 +837,7 @@ BUTTONS
   border: lightgrey 1px solid;
   box-shadow: none;
   color: lightgray;
-  font-size: .8rem;
+  font-size: 80%;
   outline: none;
   padding: .75rem;
   position: absolute;
@@ -874,7 +903,7 @@ RESPONSIVE STYLES
   }
 
   .stepNavItem {
-    font-size: .6rem;
+    font-size: 60%;
   }
 
   .intro-body,
@@ -982,7 +1011,7 @@ RESPONSIVE STYLES
   }
 
   .stepNavItem {
-    font-size: .7rem;
+    font-size: 70%;
   }
 
   .results-summary {
@@ -1035,7 +1064,7 @@ RESPONSIVE STYLES
   }
 
   .lead-text, .quiz-question-text {
-    font-size: 1.2rem;
+    font-size: 120%;
   }
 
     
