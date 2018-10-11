@@ -1,0 +1,96 @@
+table{
+    width: 100%;
+    font-size: 100%;
+    font-family: sans-serif;
+    max-width: 600px;
+    /*border: 1px solid black;*/
+    
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+header{
+    font-size: 200%;
+    text-align: center;
+}
+
+td{
+    padding: 0.25em;
+    vertical-align: top;
+}
+
+
+.agx_score {
+    margin: auto;
+    text-align: center;
+    width: 6em;
+    height: 6em;
+    border: 0.15em solid #008aab;
+    color: black;
+    border-radius: 100%;
+    padding-bottom: 0em;
+    
+}
+
+
+.agx_percent {
+    text-align: center;
+    text-align: center;
+    margin-top: 0;
+   padding-top: 29%;
+}
+
+.agx_your_score {
+    font-size: .85em;
+    text-align: center;
+    
+}
+
+hr {
+    margin: 0.75em 0em;
+    margin-top: 0.9em;
+    border: 0.05em solid #008aab;
+}
+
+ h4 + p {
+    line-height: 0.5em;
+}
+
+.agx_results_icon + p {
+    display: inline-block;
+    line-height: 4em;
+}
+.agx_results_icon {
+    vertical-align: middle;
+    border-radius: 100px;
+    display: inline-block;
+    padding: 1.5em;
+    background-color: #008aab;
+    margin-right: 0.5em;
+}
+.agx_percent_symbol {
+    font-size: 0.75em;
+}
+
+#agx_ohq_cta_text {
+    padding: 2em;
+}
+
+#agx_ohq_cta_text > p{
+    font-size: 1.25em;
+    margin-bottom: 2em;
+}
+
+#agx_ohq_cta_button {
+    font-size: 1.4em;
+    text-decoration: none;
+    padding: 1em;
+    background-color: #008aab;
+    color: #fff;
+}
