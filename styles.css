@@ -372,6 +372,9 @@ z-index: 100;
 }
 
 .stepNavItem {
+    font-size: 80%;
+    line-height: 125%;
+    padding: 1.5%;
   background: #b6d8e4;
   color: #555;
   display: flex;
@@ -904,6 +907,7 @@ RESPONSIVE STYLES
 
   .stepNavItem {
     font-size: 60%;
+    line-height: 125%;
   }
 
   .intro-body,
@@ -1011,7 +1015,9 @@ RESPONSIVE STYLES
   }
 
   .stepNavItem {
-    font-size: 70%;
+    font-size: 80%;
+      line-height: 125%;
+      padding: 1.5%
   }
 
   .results-summary {

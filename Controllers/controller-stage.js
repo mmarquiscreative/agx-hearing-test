@@ -2,7 +2,11 @@
 angular.module('formApp').controller('stageController', ['$scope', '$state', 'resultsObj', '$location', function ($scope,  $state, resultsObj, $location) {
     var stage, headerEl, headerStyles, themePageStyles, starterZIndex;
     stage = this;
-
+    
+    
+    /* var OHQ_HTML = document.querySelector('#agx-ohq').innerHTML;
+    document.querySelector('#top-of-page').outerHTML = OHQ_HTML + document.querySelector('#top-of-page').outerHTML;
+    */ 
     /* START: Modal Functionality */
     stage.cta_text = document.querySelector('#cta_text').textContent;
     stage.cta_url = document.querySelector('#cta_url').textContent;
@@ -18,20 +22,23 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
     // Node
     stage.modal = document.querySelector('.ohq-modal');
 
+    document.querySelector('#OHQ_Button_Start').addEventListener('click', firstStage, false);
     
-    
+    function firstStage() {
+        $state.go('stage.intro');
+    }
     ///////////////////////////////////////////////////////////////
     // ::AGXHearing.com::START AGX Hearing Floating Header Workaround 
     ///////////////////////////////////////////////////////////////
     
-    headerEl = document.querySelector('.mk-header');
+    /* headerEl = document.querySelector('.mk-header');
     headerStyles = window.getComputedStyle(headerEl, null);
 
     themePageEl = document.querySelector('#theme-page');
     themePageStyles = window.getComputedStyle(themePageEl, null);
     starterZIndex = headerStyles.zIndex;
     
-    console.log(headerEl);
+    console.log(headerEl); */
     
     ///////////////////////////////////////////////////////////////
     // ::AGXHearing.com::END AGX Hearing Floating Header Workaround 
@@ -42,66 +49,54 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
     
     // Toggle between stage-up and button
     stage.updateDisplay = function() {
-        var testClass, themePageZIndex, tempHeaderIndex;
+        // var testClass, themePageZIndex, tempHeaderIndex;
         
-        testClass = stage.modalClass;
-        themePageZIndex = themePageStyles.zIndex;
+        document.querySelector('#ohq-container').style.display = 'none';
+    
+    document.querySelector('#ohq-overlay-parent').style.display = 'none';
+        
+        console.log('ohq-modal-active ===> ohq-modal');
+        $state.go('stage.intro');
+        resultsObj.restartTest();
+        
+       /*  themePageZIndex = themePageStyles.zIndex;
         tempHeaderIndex = (themePageZIndex - 1);
 
         console.log('headerEL is: ' + headerEl +
             'starterZIndex: ' + starterZIndex +
             '\nthemePageZIndex: ' + themePageZIndex + 
-            '\ntempHeaderIndex: ' + tempHeaderIndex);
+            '\ntempHeaderIndex: ' + tempHeaderIndex); */
 
-        if(testClass === 'ohq-modal') {
-            /* document.querySelector('#ohq-container').style.display = 'block'; */
-            $state.go('stage.intro');
-
-            stage.modalClass = 'ohq-modal-active';
-
-            console.log('ohq-modal ===> ohq-modal-active');
-
-            
-            
         ///////////////////////////////////////////////////////////////
         // ::AGXHearing.com::START AGX Hearing Floating Header Workaround 
         ///////////////////////////////////////////////////////////////
 
-            if(headerEl){
+           /* if(headerEl){
                 headerEl.style.zIndex = tempHeaderIndex;
+                var nodeList = document.querySelectorAll('.mk-page-section-wrapper');
+                
+                console.log(nodeList);
+                nodeList.forEach(function(cur){
+                    
+                   cur.style.zIndex = 10; 
+                    
+                });
+                
             } else {
                 console.log('headerEl returned false. HeaderEl was ' + headerEl);
-            };
+            }; */
             
-        ///////////////////////////////////////////////////////////////
-        // ::AGXHearing.com::END AGX Hearing Floating Header Workaround 
-        ///////////////////////////////////////////////////////////////
-
-        } else if(testClass === 'ohq-modal-active') {
-            /* document.querySelector('#ohq-container').style.display = 'hidden'; */
-            stage.modalClass = 'ohq-modal';
-
-            console.log('ohq-modal-active ===> ohq-modal');
-            $state.go('stage.intro');
-            resultsObj.restartTest();
-        
-        ///////////////////////////////////////////////////////////////
-        // ::AGXHearing.com::START AGX Hearing Floating Header Workaround 
-        ///////////////////////////////////////////////////////////////
-            
-            if(headerEl){
+           /* if(headerEl){
                 console.log(starterZIndex);
                 headerEl.style.zIndex = starterZIndex;
             } else {
                 console.log('headerEl returned false. HeaderEl was ' + headerEl);
-            };
+            }; */
             
         ///////////////////////////////////////////////////////////////
         // ::AGXHearing.com::END AGX Hearing Floating Header Workaround 
         ///////////////////////////////////////////////////////////////
-        } else {
-            console.log('No match. Current style is ' + stage.modalClass);
-        };
+        
     };
 
 

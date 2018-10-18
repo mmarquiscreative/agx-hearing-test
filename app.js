@@ -79,3 +79,28 @@ reload: function(){
     return this;
 }
 });
+
+jQuery(document).ready(function($) {
+  $("#OHQ_Button_Start").on("click", function(e){
+  console.log('ohq button start: start');
+      e.preventDefault();
+AGX_OHQ_toggleClass();
+      
+      console.log('ohq button start: end');
+      
+  });
+});
+
+function AGX_OHQ_toggleClass(){
+        console.log('toggle class running');
+    
+    document.querySelector('#ohq-container').style.display = 'block';
+    
+    document.querySelector('#ohq-overlay-parent').style.display = 'block';
+        
+        console.log('ohq-modal ===> ohq-modal-active');
+        
+    };
+
+
+

@@ -194,7 +194,7 @@ var formApp = angular.module('yourAngularApp', [])
     }
 
     function genEmailSection_CTA(cta, offerDisplay, offer, buttonURL, buttonCta){
-        var returnHTML = '<h4 style="display: block; margin-top: 20px; font-size:18px !important;">' + cta + '</h4><div style="display: ' + offerDisplay + '; margin-top: 20px; border: 2px dashed #008aab; padding: 30px; text-align: center; font-size: 20px; max-width: 600px;">' + offer + '</div><a style="display: block; text-align: center; padding: 15px; background-color: #532d6d; color: #fff; font-size: 20px; margin-top: 20px; text-decoration: none; max-width: 600px;" href="' + buttonURL + '">' + buttonCta + '</a></div></div>';
+        var returnHTML = '<h4 style="display: block; margin-top: 20px; font-size:18px ;">' + cta + '</h4><div style="display: ' + offerDisplay + '; margin-top: 20px; border: 2px dashed #008aab; padding: 30px; text-align: center; font-size: 20px; max-width: 600px;">' + offer + '</div><a style="display: block; text-align: center; padding: 15px; background-color: #532d6d; color: #fff; font-size: 20px; margin-top: 20px; text-decoration: none; max-width: 600px;" href="' + buttonURL + '">' + buttonCta + '</a></div></div>';
 
         return returnHTML;
     }

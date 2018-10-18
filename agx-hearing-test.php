@@ -12,6 +12,13 @@ require_once 'scripts.php';
 // require_once 'wp/template.php';
 
 
+function agx_OHQ_Button($content) {
+    add_filter('wp_footer', 'agx_hearing_test');
+    
+    echo '<div>
+   <button id="OHQ_Start_Btn" onclick="AGX_OHQ_toggleClass()" >Start Quiz</button>
+   </div>';
+};
 
 function agx_hearing_test($content) {
 $agx_useNinja_no = '<button ng-click="stage.updateDisplay()"	   ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
@@ -38,19 +45,19 @@ $agx_useNinja_no = '<button ng-click="stage.updateDisplay()"	   ng-class="stage.
 	
 		echo '<div style="font-size: ';
 	echo $font_baseline;
-	echo '% !important;"><p>TestingTesting</p>';
-		echo '<div id="agx-ohq"  ng-app="formApp">
+	echo '% ;">';
+		echo '<div id="agx-ohq"  ng-app="formApp" style="display:block;">
       		<div ng-controller="stageController as stage">
-			<div id="ohq-overlay-parent" class="hidden" ng-class="stage.modalClass" ><div id="ohq-overlay" ></div></div>
+			<div id="ohq-overlay-parent" style="display: none;" ng-class="stage.modalClass" ><div id="ohq-overlay" ></div></div>
   <p style="display: none;" id="cta_text">';
 		echo $cta_text;
 		echo '</p> <p style="display: block;" id="cta_url">';
-		echo $agx_useNinjaForm[0];
+		echo $cta_url;
 		echo '</p>
-   <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen" id="0_btn_start_quiz" >Start Quiz</button>
+   <!-- <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen" id="0_btn_start_quiz" >Start Quiz</button> -->
    
    <!-- Modal pop-up -->
-    <div id="ohq-container" class="hidden" ng-class="stage.modalClass">
+    <div id="ohq-container" class="ohq-modal" >
 	
 
 	  <div ng-class="stage.testBool(\'exit\') ? \'visible\' : \'hidden\'">';
@@ -73,8 +80,10 @@ $agx_useNinja_no = '<button ng-click="stage.updateDisplay()"	   ng-class="stage.
 	
 
 }
+add_shortcode( 'OHQ_Button', 'agx_OHQ_Button' );
 
-add_shortcode( 'agxtest', 'agx_hearing_test' );
+// add_shortcode( 'agxtest', 'agx_hearing_test' );
+
 // add_filter('wp_footer','agx_hearing_test');
 // add_filter('wp_agx_quiz_btn', 'agx_hearing_test');
 ?>
