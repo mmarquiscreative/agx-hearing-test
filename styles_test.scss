@@ -143,7 +143,7 @@ input {
   text-align: center;
 }
 
-.visible{
+.visible {
 	display: block;
 }
 
@@ -196,7 +196,8 @@ LAYOUT ELEMENTS
   display: none;
 }
 
-.lead-text, .quiz-question-text {
+.lead-text,
+.quiz-question-text {
   font-size: $fontSizeMultiplier *  1.2rem;
   margin: .5rem 1rem;
   text-align: center;
@@ -272,7 +273,8 @@ LAYOUT ELEMENTS
   margin-top: 1rem;
 }
 
-.environments-intro, .score {
+.environments-intro,
+.score {
   display: none;
 }
 
@@ -392,10 +394,9 @@ OBJECT ELEMENTS
 ******************************************************************/
 
 #calVol {
-    
-    color: #532d6d;
-    text-align: center;
-    font-size: $fontSizeMultiplier *  1.2rem;
+  color: #532d6d;
+  text-align: center;
+  font-size: $fontSizeMultiplier *  1.2rem;
 }
 
 .calib-body {
@@ -540,7 +541,9 @@ OBJECT ELEMENTS
   margin-top: 38%;
 }
 
-#quizCircle, #toneCircle, #speechCircle {
+#quizCircle,
+#toneCircle,
+#speechCircle {
   height: 6rem;
   margin: .5rem auto;
   width: 6rem;
@@ -550,7 +553,14 @@ OBJECT ELEMENTS
   margin-top: 32%;
 }
 
-.circle, .mask.full, .fill, .fill.fix, .mask.half, .shadow, .fillFixContainer, .outerfixclip {
+.circle,
+.mask.full,
+.fill,
+.fill.fix,
+.mask.half,
+.shadow,
+.fillFixContainer,
+.outerfixclip {
   backface-visibility: hidden;
   border-radius: 50%;
   height: 100%;
@@ -616,8 +626,7 @@ OBJECT ELEMENTS
 }
 
 .radial-progress .circle .mask,
-.radial-progress .circle .fill
-{
+.radial-progress .circle .fill {
   backface-visibility: hidden;
   transition: transform 2s, background-color 1s;
   -ms-transition: transform 2s, background-color 1s;
@@ -653,24 +662,24 @@ BUTTONS
 ******************************************************************/
 
 .btn-exit {
-    background: #fff;
-    border: 1px solid #288dc2;
-    border-radius: 100%;
-    color: #288dc2;
-    width: 2rem;
-    height: 2rem;
-    outline: none;
-    position: absolute;
-    right: .5rem;
-    top: .5rem;
-    width: 2rem;
-    padding: 0rem;
-    line-height: 2rem;
-    white-space: nowrap;
-    text-align: center;
-    box-sizing: content-box;
-    font-family: 'Open Sans';
-    font-weight: 100;
+  background: #fff;
+  border: 1px solid #288dc2;
+  border-radius: 100%;
+  color: #288dc2;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  width: 2rem;
+  padding: 0rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: content-box;
+  font-family: 'Open Sans';
+  font-weight: 100;
 }
 
 .btn-exit:hover {
@@ -678,7 +687,8 @@ BUTTONS
   color: #fff !important;
 }
 
-.btn-modal, .btn-submit {
+.btn-modal,
+.btn-submit {
 	width: 30%;
   background: #008aab;
   border: none;
@@ -698,7 +708,8 @@ BUTTONS
   -webkit-transition: 0.2s all ease;
 }
 
-.btn-modal:hover, .btn-submit:hover {
+.btn-modal:hover,
+.btn-submit:hover {
   background: #532d6d;
 }
 
@@ -721,14 +732,23 @@ BUTTONS
   width: 8rem;
 }
 
-.btn-yn-yes { background: #532d6d;  color: #fff; }
-.btn-yn-no, .btn-yn-no[disabled], .btn-yn-no[disabled]:hover, .btn-yn-no[disabled]:active { background: #008aab;  color: #fff; }
+.btn-yn-yes {
+  background: #532d6d;
+  color: #fff;
+}
+
+.btn-yn-no,
+.btn-yn-no[disabled],
+.btn-yn-no[disabled]:hover,
+.btn-yn-no[disabled]:active {
+  background: #008aab;
+  color: #fff;
+}
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover { background: #00738f;  border: none; }
+.btn-yn-no:hover  { background: #00738f;  border: none; }
 
-.speechBtn:hover { background: #afa0bd;  border: 2px solid #afa0bd; }
-
+.speechBtn:hover  { background: #afa0bd;  border: 2px solid #afa0bd; }
 
 .speechBtn:active {
   background: #3d214f;
@@ -736,46 +756,52 @@ BUTTONS
   box-shadow: none;
   color: #fff;
   top: 0;
-    margin-bottom: -2px;
+  margin-bottom: -2px;
 }
 
 .speechBtn {
-    border: 2px solid #e0e0e0;
-    background: #fff;
-    color: #3d3935;
-    border-radius: 10rem;
-    box-shadow: 1px 1px 3px grey;
-    display: table-cell;
-    font-size: $fontSizeMultiplier *  1rem;
-    font-weight: 200;
-    height: 6vh;
-    letter-spacing: .05em;
-    margin: 1.25%;
-    outline: none;
-    position: relative;
-    top: -2px;
-    width: 30% !important;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  color: #3d3935;
+  border-radius: 10rem;
+  box-shadow: 1px 1px 3px grey;
+  display: table-cell;
+  font-size: $fontSizeMultiplier *  1rem;
+  font-weight: 200;
+  height: 6vh;
+  letter-spacing: .05em;
+  margin: 1.25%;
+  outline: none;
+  position: relative;
+  top: -2px;
+  width: 30% !important;
 }
 
-.speechBtn[disabled], .speechBtn[disabled]:hover, .speechBtn[disabled]:active  {
-	    border: 2px solid #e0e0e0;
-    background: #fff;
-    
-    border-radius: 10rem;
-    box-shadow: 1px 1px 3px grey;
-    display: table-cell;
-    font-size: $fontSizeMultiplier *  1rem;
-    font-weight: 200;
-    height: 6vh;
-    letter-spacing: .05em;
-    margin: 1.25%;
-    outline: none;
-    position: relative;
-    top: -2px;
-    width: 30% !important;
+.speechBtn[disabled],
+.speechBtn[disabled]:hover,
+.speechBtn[disabled]:active {
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  border-radius: 10rem;
+  box-shadow: 1px 1px 3px grey;
+  display: table-cell;
+  font-size: $fontSizeMultiplier *  1rem;
+  font-weight: 200;
+  height: 6vh;
+  letter-spacing: .05em;
+  margin: 1.25%;
+  outline: none;
+  position: relative;
+  top: -2px;
+  width: 30% !important;
 }
 
-.speechBtn[disabled], .btn-yn-no[disabled], .btn-yn-no[disabled]:hover, .btn-yn-no[disabled]:active, .speechBtn[disabled]:hover, .speechBtn[disabled]:active{
+.speechBtn[disabled],
+.btn-yn-no[disabled],
+.btn-yn-no[disabled]:hover,
+.btn-yn-no[disabled]:active,
+.speechBtn[disabled]:hover,
+.speechBtn[disabled]:active {
 	opacity: 0.5;
 	filter: blur(3px);
 }
@@ -801,7 +827,6 @@ BUTTONS
 }
 
 .vol-icons button:hover { background: #3d214f; }
-
 .vol-minus:active { top: .05rem; }
 .vol-plus:active  { top: .1rem; }
 
@@ -834,7 +859,6 @@ BUTTONS
   color: white;
   outline: none;
 }
-
 
 
 /******************************************************************
@@ -1036,12 +1060,11 @@ RESPONSIVE STYLES
     width: auto;
   }
 
-  .lead-text, .quiz-question-text {
+  .lead-text,
+  .quiz-question-text {
     font-size: $fontSizeMultiplier *  1.2rem;
   }
 
-    
-    
   .btn-submit {
     min-width: 12rem;
   }
@@ -1052,7 +1075,7 @@ RESPONSIVE STYLES
   }
 
   .quiz-body,
-  .volume-body
+  .volume-body,
   .tone-test-body {
     margin: 3rem auto;
   }

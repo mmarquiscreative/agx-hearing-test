@@ -11,45 +11,43 @@ formApp.value('resultsObj', {
 	cta_text: '',
 	cta_url: '',
 	bgNoiseIncrease: 0.05,
-    globalVolume: 0.2,
-    quizScore: 0,
-    quizPerfectScore: 4,
-    quizAns: [],
-    quizCompleted: false,
-    toneScore: 0,
-    tonePerfectScore: 5,
-    toneAns: [],
-    toneCompleted: false,
-    speechScore: 0,
-    speechPerfectScore: 12,
-    speechAns: [],
-    speechCompleted: false,
-    testComplete: function(someString){
-        return this[(someString + 'Completed')];
-        },
-    restartTest: function(){
-        
-        console.log('running restart test');
-        // 1. reset Quiz
-        
-        this.quizScore = 0;
-        this.quizAns = [];
-        this.quizCompleted = false;
-        
-        // 2. reset Tone
-        
-        this.toneScore = 0;
-        this.toneAns = [];
-        this.toneCompleted = false;
-        
-        // 3. reset speech
-        
-        this.speechScore = 0;
-        this.speechAns = [];
-        this.speechCompleted = false;
-        
-        // 4. Stop audio
-        var idArray = ['#volumeAudio', '#toneAudio', '#bgNoise'];
+  globalVolume: 0.2,
+  quizScore: 0,
+  quizPerfectScore: 4,
+  quizAns: [],
+  quizCompleted: false,
+  toneScore: 0,
+  tonePerfectScore: 5,
+  toneAns: [],
+  toneCompleted: false,
+  speechScore: 0,
+  speechPerfectScore: 12,
+  speechAns: [],
+  speechCompleted: false,
+
+  testComplete: function(someString){
+    return this[(someString + 'Completed')];
+  },
+
+  restartTest: function(){
+    console.log('running restart test');
+    // 1. reset Quiz
+    this.quizScore = 0;
+    this.quizAns = [];
+    this.quizCompleted = false;
+    
+    // 2. reset Tone
+    this.toneScore = 0;
+    this.toneAns = [];
+    this.toneCompleted = false;
+    
+    // 3. reset speech
+    this.speechScore = 0;
+    this.speechAns = [];
+    this.speechCompleted = false;
+    
+    // 4. Stop audio
+    var idArray = ['#volumeAudio', '#toneAudio', '#bgNoise'];
 		
 		idArray.forEach(function(cur){
 			console.log(cur);
@@ -57,50 +55,42 @@ formApp.value('resultsObj', {
 			if(document.querySelector(cur) !== null){
 				document.querySelector(cur).autoplay = false;
         document.querySelector(cur).currentTime = 0;
-		document.querySelector(cur).loop = false;
-		document.querySelector(cur).pause();}
-			else {
+        document.querySelector(cur).loop = false;
+        document.querySelector(cur).pause();
+      } else {
 				console.log(cur + ' query came back as null');
 			}
-		});
-		
-        
-    }
-    });
+		});    
+  }
+});
 
 // Speech Test Words/options
 formApp.value('activeClass', {
-quiz: 'stepNavItem',
-volume: '',
-tone: '',
-speech: '',
-results: '',
-reload: function(){
+  quiz: 'stepNavItem',
+  volume: '',
+  tone: '',
+  speech: '',
+  results: '',
+  reload: function(){
     return this;
-}
+  }
 });
 
 jQuery(document).ready(function($) {
   $("#OHQ_Button_Start").on("click", function(e){
-  console.log('ohq button start: start');
-      e.preventDefault();
-AGX_OHQ_toggleClass();
-      
-      console.log('ohq button start: end');
-      
+    console.log('ohq button start: start');
+    e.preventDefault();
+    AGX_OHQ_toggleClass();
+    console.log('ohq button start: end');  
   });
 });
 
 function AGX_OHQ_toggleClass(){
-        console.log('toggle class running');
-    
-    document.querySelector('#ohq-container').style.display = 'block';
-    
-    document.querySelector('#ohq-overlay-parent').style.display = 'block';
-        
-        console.log('ohq-modal ===> ohq-modal-active');
-        
-    };
+  console.log('toggle class running');
+  document.querySelector('#ohq-container').style.display = 'block';
+  document.querySelector('#ohq-overlay-parent').style.display = 'block';
+  console.log('ohq-modal ===> ohq-modal-active');
+};
 
 
 
