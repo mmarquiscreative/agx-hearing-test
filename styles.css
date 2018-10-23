@@ -103,36 +103,43 @@ ANIMATIONS
 GLOBAL STYLES
 ******************************************************************/
 
-* {
+#agx-ohq * {
   box-sizing:         border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing:    border-box;
 }
 
-body {
-  font-family: 'Open Sans' !important;
+#agx-ohq div {
+  font-family: 'Open Sans';
 }
 
-button, a {
-  display: block;
+#agx-ohq button {
+  font-family: 'Open Sans';
+  font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
+#agx-ohq h1, 
+#agx-ohq h2, 
+#agx-ohq h3, 
+#agx-ohq h4, 
+#agx-ohq h5, 
+#agx-ohq h6 {
   color: #532d6d;
-  font-family: 'Noto Serif' !important;
+  font-family: 'Noto Serif';
   font-weight: 400;
   text-transform: uppercase;
 }
 
-a {
-	text-decoration: none !important;
+#agx-ohq a {
+  display: block;
+	text-decoration: none;
 }
 
-h1 { font-size: 200% !important; }
-h2 { font-size: 150% !important; }
-h3 { font-size: 137% !important; }
+#agx-ohq h1 { font-size: 200%; }
+#agx-ohq h2 { font-size: 150%; }
+#agx-ohq h3 { font-size: 137%; }
 
-input {
+#agx-ohq input {
   border: 1px solid #666;
   color: #666;
   display: block;
@@ -142,31 +149,20 @@ input {
   text-align: center;
 }
 
-.visible{
-	display: block;
-}
+#agx-ohq input:focus::-webkit-input-placeholder { color:transparent; }
+#agx-ohq input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+#agx-ohq input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+#agx-ohq input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+#agx-ohq sup { font-size: 50%; }
 
-sup { font-size: 50%; }
+.hidden { display: none; }
+.visible { display: block; }
 
 
 /******************************************************************
 LAYOUT ELEMENTS
 ******************************************************************/
-
-.active {
-  background: #008aab;
-  color: #fff;
-  font-weight: 700;
-}
-
-.agx-hearing-logo {
-  display: block;
-}
 
 #agx-ohq {
   background: none;
@@ -175,55 +171,61 @@ LAYOUT ELEMENTS
   text-align: center;
 }
 
-.answerGrid {
+#agx-ohq .active {
+  background: #008aab;
+  color: #fff;
+  font-weight: 700;
+}
+
+#agx-ohq .agx-hearing-logo {
+  display: block;
+}
+
+#agx-ohq .answerGrid {
   display: table;
   width: 100%;
 }
 
-.freq-2000hz  { background: #e6f0f4 }
-.freq-4000hz  { background: #e6f0f4 }
-.freq-6000hz  { background: #e6f0f4 }
-.freq-8000hz  { background: #e6f0f4 }
-.freq-10000hz { background: #e6f0f4 }
+#agx-ohq .freq-2000hz  { background: #e6f0f4 }
+#agx-ohq .freq-4000hz  { background: #e6f0f4 }
+#agx-ohq .freq-6000hz  { background: #e6f0f4 }
+#agx-ohq .freq-8000hz  { background: #e6f0f4 }
+#agx-ohq .freq-10000hz { background: #e6f0f4 }
 
-.header {
+#agx-ohq .header {
   margin: 0 auto;
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
-.lead-text,
-.quiz-question-text {
+#agx-ohq .lead-text,
+#agx-ohq .quiz-question-text {
   font-size: 120%;
   margin: .5rem 1rem;
   text-align: center;
 }
 
-.logo-intro {
-  margin: 0 auto 2rem auto;
-  max-width: 15rem;
-  width: 30vw;
+#agx-ohq .logo-intro {
+  margin: 0 auto 3% auto;
+  min-width: 100px;
+  width: 20%;
 }
 
-.ohq-modal {
+#agx-ohq .ohq-modal {
   display: none;
 }
 
-.ohq-modal-active {
+#agx-ohq .ohq-modal-active {
   display: block;
 }
 
-.nav {
+#agx-ohq .nav {
   display:table;
   width: 100%;
 }
 
-#ohq-container {
+#agx-ohq #ohq-container {
   background: #fff;
-  box-shadow: 0 .2rem 1rem #222;
+  box-shadow: 0 5px 20px #222;
   height: 70%;
   left: 50%;
   margin: auto;
@@ -546,6 +548,7 @@ OBJECT ELEMENTS
   display: inline-block;
 }
 
+
 /* Score Progress Circle */
 .radial-progress {
   background-color: #d6dadc;
@@ -688,25 +691,31 @@ mask.full fill {
 BUTTONS
 ******************************************************************/
 
+#OHQ_Button_Start {
+  background: #008aab;
+  border: 1px solid white;
+  color: #fff;
+  padding: 1rem;
+}
+
 .btn-exit {
   background: #fff;
   border: 1px solid #288dc2;
   border-radius: 100%;
-  color: #288dc2;
-  width: 2rem;
-  height: 2rem;
-  outline: none;
-  position: absolute;
-  right: .5rem;
-  top: .5rem;
-  width: 2rem;
-  padding: 0rem;
-  line-height: 2rem;
-  white-space: nowrap;
-  text-align: center;
   box-sizing: content-box;
+  color: #288dc2;
   font-family: 'Open Sans';
   font-weight: 100;
+  height: 2rem;
+  line-height: 2rem;
+  outline: none;
+  padding: 0rem;
+  position: absolute;
+  right: .5rem;
+  text-align: center;
+  top: .5rem;
+  width: 2rem;
+  white-space: nowrap; 
 }
 
 .btn-exit:hover {
@@ -716,13 +725,12 @@ BUTTONS
 
 .btn-modal,
 .btn-submit {
-	width: 30%;
   background: #008aab;
   border: none;
   color: #fff;
   display: block;
   font-size: 120%;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: .05em;
   margin: auto;
   margin-bottom: 2rem;
@@ -733,6 +741,7 @@ BUTTONS
   transition: 0.2s all ease;
   -moz-transition: 0.2s all ease;
   -webkit-transition: 0.2s all ease;
+  width: 30%;
 }
 
 .btn-modal:hover, .btn-submit:hover {
@@ -768,25 +777,25 @@ BUTTONS
 }
 
 .btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover { background: #00738f;  border: none; }
+.btn-yn-no:hover  { background: #00738f;  border: none; }
 
-.speechBtn:hover { background: #afa0bd;  border: 2px solid #afa0bd; }
+.speechBtn:hover  { background: #afa0bd;  border: 2px solid #afa0bd; }
 
 .speechBtn:active {
   background: #3d214f;
   border: none;
   box-shadow: none;
   color: #fff;
-  top: 0;
   margin-bottom: -2px;
+  top: 0;
 }
 
 .speechBtn {
   border: 2px solid #e0e0e0;
   background: #fff;
-  color: #3d3935;
   border-radius: 10rem;
   box-shadow: 1px 1px 3px grey;
+  color: #3d3935;
   display: table-cell;
   font-size: 100%;
   font-weight: 200;
@@ -802,8 +811,8 @@ BUTTONS
 .speechBtn[disabled],
 .speechBtn[disabled]:hover,
 .speechBtn[disabled]:active {
-  border: 2px solid #e0e0e0;
   background: #fff;
+  border: 2px solid #e0e0e0;
   border-radius: 10rem;
   box-shadow: 1px 1px 3px grey;
   display: table-cell;
@@ -824,8 +833,8 @@ BUTTONS
 .btn-yn-no[disabled]:active,
 .speechBtn[disabled]:hover,
 .speechBtn[disabled]:active {
+  filter: blur(3px);
 	opacity: 0.5;
-	filter: blur(3px);
 }
 
 #toneAnswer {

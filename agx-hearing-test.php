@@ -5,7 +5,6 @@
     License: GPLv3 or later
   */
 
-
   define ("DIR", __FILE__);
 
   require_once 'scripts.php';
@@ -16,20 +15,18 @@
       
     echo '
       <div>
-        <button id="OHQ_Start_Btn" onclick="AGX_OHQ_toggleClass()">Start Quiz</button>
+        <button id="OHQ_Button_Start" onclick="AGX_OHQ_toggleClass()">Start Quiz</button>
       </div>';
   };
 
   function agx_hearing_test($content) {
     $agx_useNinja_no = '
       <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'exit\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
-      <!-- <button ui-sref="stage.exit" ng-click="stage.loadForm()" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button> -->
-    ';
+      <!-- <button ui-sref="stage.exit" ng-click="stage.loadForm()" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button> -->';
     
     $agx_useNinja_yes = '
       <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'results\') ? \'hidden\' : \'btn-exit\'" id="x_btn_exit">X</button>
-      <button ui-sref="stage.exit" ng-click="stage.loadForm()" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>
-    ';
+      <button ui-sref="stage.exit" ng-click="stage.loadForm()" ng-class="stage.testBool(\'results\') ? \'btn-exit\' : \'hidden\'">X</button>';
     
     $agx_useNinja_string = '';
     
@@ -45,33 +42,29 @@
       $agx_useNinja_string = $agx_useNinja_no;
     };
     
-    
     echo '<div style="font-size: ';
     echo $font_baseline;
-    echo '% ;">';
+    echo 'rem ;">';
     echo '
       <div id="agx-ohq" ng-app="formApp" style="display:block;">
         <div ng-controller="stageController as stage">
           <div id="ohq-overlay-parent" style="display: none;" ng-class="stage.modalClass">
             <div id="ohq-overlay"></div>
           </div>
-        <p style="display: none;" id="cta_text">
-    ';
+        <p style="display: none;" id="cta_text">';
     echo $cta_text;
-    echo '</p> <p style="display: block;" id="cta_url">';
+    echo '</p> <p style="display: none;" id="cta_url">';
     echo $cta_url;
     echo '
       </p>
       <!-- <button ng-click="stage.updateDisplay()" class="btn-ohq-modal" ng-class="stage.modalBtnOpen" id="0_btn_start_quiz">Start Quiz</button> -->
       <!-- Modal pop-up -->
       <div id="ohq-container" class="ohq-modal">
-        <div ng-class="stage.testBool(\'exit\') ? \'visible\' : \'hidden\'">
-    ';
+        <div ng-class="stage.testBool(\'exit\') ? \'visible\' : \'hidden\'">';
     echo do_shortcode('[ninja_form id='.$ninjaNum.']');
     echo '
       </div>
-      <!-- modular display buttons -->
-    ';
+      <!-- modular display buttons -->';
     echo $agx_useNinja_string;
     echo '
                 <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
@@ -81,8 +74,7 @@
             </div>
           </div>
         </div>
-      </div>
-    ';
+      </div>';
 
   }
 
@@ -94,10 +86,12 @@
   // add_filter('wp_agx_quiz_btn', 'agx_hearing_test');
 ?>
 
+
 <?php
   class AGX_OHQ_Plugin {
       
     public function __construct(){
+      
       // Hook into the admin menu
       add_action('admin_menu', array($this, 'create_plugin_settings_page'));
       add_action('admin_init', array($this, 'setup_sections'));
@@ -105,7 +99,7 @@
     }
       
     public function create_plugin_settings_page(){
-        
+
       $page_title = 'AGX Hearing Quiz';
       $menu_title = 'AGX Hearing Quiz';
       $capability = 'manage_options';
@@ -117,8 +111,8 @@
       add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position);   
     }
       
-    public function plugin_settings_page_content(){ ?>
-        
+    public function plugin_settings_page_content(){
+      ?>
       <div class="wrap">
         <h2>AGX Online Hearing Quiz Settings</h2>
   
@@ -129,14 +123,15 @@
             submit_button();
           ?>
         </form>
-      </div> <?php  
+      </div>
+      <?php  
     }
       
     public function setup_sections(){
-      add_settings_section( 'agx_font_size', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Font-sizing</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
-      add_settings_section( 'agx_user_action', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Include Contact Form</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
-      add_settings_section( 'ninja_shortcode', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Link your Ninja Form</span>', array( $this, 'section_callback'), 'agx-hearing-test' );
-      add_settings_section( 'cta_url_section', '<hr><span style="color: #0073aa; font-size: 1.25rem;">Call To Action</span>', array( $this, 'section_callback'), 'agx-hearing-test' ); 
+      add_settings_section( 'agx_font_size',    '<hr><span style="color: #0073aa; font-size: 1.25rem;">Font-sizing</span>',           array( $this, 'section_callback'), 'agx-hearing-test' );
+      add_settings_section( 'agx_user_action',  '<hr><span style="color: #0073aa; font-size: 1.25rem;">Include Contact Form</span>',  array( $this, 'section_callback'), 'agx-hearing-test' );
+      add_settings_section( 'ninja_shortcode',  '<hr><span style="color: #0073aa; font-size: 1.25rem;">Link your Ninja Form</span>',  array( $this, 'section_callback'), 'agx-hearing-test' );
+      add_settings_section( 'cta_url_section',  '<hr><span style="color: #0073aa; font-size: 1.25rem;">Call To Action</span>',        array( $this, 'section_callback'), 'agx-hearing-test' ); 
     }
       
     public function section_callback( $arguments ){
@@ -260,7 +255,6 @@
           break;
       }
 
-          
       //if there is help text
       if( $helper = $arguments[ 'helper' ] ){
         printf( '<span class="helper"> %s</span>',
@@ -271,6 +265,7 @@
         printf( '<p class="description">%s</p>',
         $supplimental ); // show it
       }
+
       // echo '<input name="ninja_shortcode" id="ninja_shortcode" type="text" value="' . get_option('ninja_shortcode' ) . '" />';
       
     }

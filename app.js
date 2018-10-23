@@ -25,11 +25,11 @@ formApp.value('resultsObj', {
   speechAns: [],
   speechCompleted: false,
 
-  testComplete: function(someString){
+  testComplete: function(someString) {
     return this[(someString + 'Completed')];
   },
 
-  restartTest: function(){
+  restartTest: function() {
     console.log('running restart test');
     // 1. reset Quiz
     this.quizScore = 0;
@@ -49,10 +49,10 @@ formApp.value('resultsObj', {
     // 4. Stop audio
     var idArray = ['#volumeAudio', '#toneAudio', '#bgNoise'];
 		
-		idArray.forEach(function(cur){
+		idArray.forEach(function(cur) {
 			console.log(cur);
 			console.log(document.querySelector(cur));
-			if(document.querySelector(cur) !== null){
+			if(document.querySelector(cur) !== null) {
 				document.querySelector(cur).autoplay = false;
         document.querySelector(cur).currentTime = 0;
         document.querySelector(cur).loop = false;
@@ -85,7 +85,7 @@ jQuery(document).ready(function($) {
   });
 });
 
-function AGX_OHQ_toggleClass(){
+function AGX_OHQ_toggleClass() {
   console.log('toggle class running');
   document.querySelector('#ohq-container').style.display = 'block';
   document.querySelector('#ohq-overlay-parent').style.display = 'block';

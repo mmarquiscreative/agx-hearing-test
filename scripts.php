@@ -20,8 +20,9 @@ if(!is_admin()) {
 	wp_register_script('agx-hearing-test-controller-results', plugins_url('Controllers/controller-results.js', __FILE__) );
 	wp_register_script('agx-hearing-test-controller-modal', plugins_url('Controllers/controller-modal.js', __FILE__) );
 
-wp_register_style( 'agx-hearing-test-styles', plugins_url( 'styles.css', __FILE__ ) );
+  wp_register_style( 'agx-hearing-test-styles', plugins_url( 'styles.css', __FILE__ ) );
 
+  
 	// Localize Scripts
 	$localize_array = array(
 		'ajax_url' => admin_url( 'admin-ajax.php' )
@@ -40,9 +41,8 @@ wp_register_style( 'agx-hearing-test-styles', plugins_url( 'styles.css', __FILE_
 	wp_localize_script('agx-hearing-test-controller-tone', 'postfollow', $localize_array );
 	wp_localize_script('agx-hearing-test-controller-speech', 'postfollow', $localize_array );
 	wp_localize_script('agx-hearing-test-controller-results', 'postfollow', $localize_array );
-	wp_localize_script('agx-hearing-test-controller-modal', 'postfollow', $localize_array );
-
-
+  wp_localize_script('agx-hearing-test-controller-modal', 'postfollow', $localize_array );
+  
 
 	// Enqueue Scripts
 	wp_enqueue_script('angular');
@@ -63,20 +63,14 @@ wp_register_style( 'agx-hearing-test-styles', plugins_url( 'styles.css', __FILE_
 }
 
 
-
 // Styles
 function agx_hearing_test_styles() {
 	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Noto+Serif', false ); 
-    
-    wp_enqueue_style( 'agx-hearing-test-styles' );
+  wp_enqueue_style( 'agx-hearing-test-styles' );
 }
  
 // add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
-
 	
-	
-	
-
 add_action('wp_enqueue_scripts', 'agx_hearing_test_styles');
 
 
