@@ -88,6 +88,8 @@
 
 
 <?php
+
+
   class AGX_OHQ_Plugin {
       
     public function __construct(){
@@ -138,7 +140,7 @@
       switch( $arguments['id'] ){
         
         case 'agx_font_size':
-          echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Set the base percentage for font-sizes which the rest of the AGX Online Hearing Quiz will base the sizing off of.</p>';
+          echo '<p style="font-size: .85rem; margin-top: -0.75rem;">Set the base REM for font-sizes which the rest of the AGX Online Hearing Quiz will base the sizing off of.</p>';
           break;
           
         case 'agx_user_action':
@@ -160,10 +162,10 @@
             
         array(
           'uid' => 'agx_font_percent',
-          'label' => 'Font-size Baseline </br><em>(as percentage)<em>',
+          'label' => 'Font-size Baseline </br><em>(as REM)<em>',
           'section' => 'agx_font_size',
           'type' => 'number',
-          'helper' => '%'
+          'helper' => '(AGXHearing.com is XX — MW sites is XX)'
         ),
         array(
           'uid' => 'agx_useNinjaForm',
