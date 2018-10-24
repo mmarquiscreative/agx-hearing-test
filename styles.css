@@ -20,13 +20,9 @@ ag purple:  #532d6d
 grey:       #3d3935
 */
 
-.active {
-	display: block;
-}
-
 /* wp workaround style */
-.page-header {
-	float: none !important;
+#agx-ohq .page-header {
+	float: none;
 	border-top-color: #fff;
 	border-top-style: none;
 	border-top-width: 0px;
@@ -127,6 +123,7 @@ GLOBAL STYLES
   color: #532d6d;
   font-family: 'Noto Serif';
   font-weight: 400;
+  margin: 10px 0;
   text-transform: uppercase;
 }
 
@@ -134,10 +131,6 @@ GLOBAL STYLES
   display: block;
 	text-decoration: none;
 }
-
-#agx-ohq h1 { font-size: 200%; }
-#agx-ohq h2 { font-size: 150%; }
-#agx-ohq h3 { font-size: 137%; }
 
 #agx-ohq input {
   border: 1px solid #666;
@@ -154,7 +147,9 @@ GLOBAL STYLES
 #agx-ohq input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
 #agx-ohq input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
-#agx-ohq sup { font-size: 50%; }
+#agx-ohq sup {
+  font-size: 50%;
+}
 
 .hidden { display: none; }
 .visible { display: block; }
@@ -174,6 +169,7 @@ LAYOUT ELEMENTS
 #agx-ohq .active {
   background: #008aab;
   color: #fff;
+  display: flex;
   font-weight: 700;
 }
 
@@ -199,13 +195,12 @@ LAYOUT ELEMENTS
 
 #agx-ohq .lead-text,
 #agx-ohq .quiz-question-text {
-  font-size: 120%;
-  margin: .5rem 1rem;
+  margin: 10px 1px;
   text-align: center;
 }
 
 #agx-ohq .logo-intro {
-  margin: 0 auto 3% auto;
+  margin: 0 auto;
   min-width: 100px;
   width: 20%;
 }
@@ -238,7 +233,7 @@ LAYOUT ELEMENTS
   z-index: 2010;
 }
 
-#ohq-overlay-parent {
+#agx-ohq #ohq-overlay-parent {
 	opacity: 0.7;
 	position: fixed;
 	top: 0;
@@ -252,7 +247,7 @@ LAYOUT ELEMENTS
   transition: all 1s ease-in-out;
 }
 
-#ohq-overlay {
+#agx-ohq #ohq-overlay {
 	z-index: 2000;
 	width: 100%;
 	height: 100%;
@@ -263,34 +258,36 @@ LAYOUT ELEMENTS
   transition: all 1s ease-in-out;
 }
 
-[class*='prog-bar-'] {
+#agx-ohq [class*='prog-bar-'] {
   display: block;
-  height: .5rem;
-  margin: .2rem auto 2rem auto;
+  height: 10px;
   text-align: center;
+  vertical-align: top;
   width: 100%;
 }
 
-.page-header {
+#agx-ohq .page-header {
   position: relative;
 }
 
-.prog-bubble {
+#agx-ohq .prog-bubble {
   background-color: #b9aac8;
   border-radius: 100%;
   display: inline-block;
-  height: .5rem;
-  margin: 0 .3rem;
-  width: .5rem;
+  height: 6px;
+  margin: 0 1%;
+  vertical-align: top;
+  width: 6px;
 }
 
-.prog-current {
+#agx-ohq .prog-current {
   background-color: #532d6d;
   border-radius: 100%;
   display: inline-block;
-  height: .5rem;
-  margin: 0 .3rem;
-  width: .5rem;
+  height: 6px;
+  margin: 0 1%;
+  vertical-align: top;
+  width: 6px;
 }
 
 .quiz-environments {
@@ -355,35 +352,15 @@ LAYOUT ELEMENTS
 
 [class*='stage-'] {
   height: 100%;
-  padding: 1rem;
+  padding: 0;
   position: relative;
 }
 
-#stepNavBar {
-  border-radius: 100rem;
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  margin: 1rem auto .5rem auto;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-}
-
 .stepNavItem {
-  font-size: 80%;
-  line-height: 125%;
-  padding: 1.5%;
   background: #b6d8e4;
   color: #555;
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  flex-direction: column;
-  justify-content: center;
-  padding: .5rem;
+  line-height: 160%;
   text-align: center;
-  width: 20%;
 }
 
 .tone-test-frequencies {
@@ -393,7 +370,6 @@ LAYOUT ELEMENTS
 }
 
 .tone-test-frequencies p {
-  font-size: 150%;
   margin: 0;
 }
 
@@ -502,10 +478,10 @@ OBJECT ELEMENTS
   font-weight: 700;
 }
 
-.disclaimer {
+#agx-ohq .disclaimer {
   color: #666;
-  font-size: 80%;
-  margin: 3rem auto 0 auto;
+  line-height: 150%;
+  margin: 2% auto 0 auto;
   text-align: center;
 }
 
@@ -723,25 +699,24 @@ BUTTONS
   color: #fff !important;
 }
 
-.btn-modal,
-.btn-submit {
+#agx-ohq .btn-modal,
+#agx-ohq .btn-submit {
   background: #008aab;
   border: none;
   color: #fff;
   display: block;
-  font-size: 120%;
   font-weight: 400;
   letter-spacing: .05em;
   margin: auto;
   margin-bottom: 2rem;
   margin-top: 1rem;
+  min-width: 170px;
   outline: none;
-  padding: 1rem 1.5rem;
   position: relative;
   transition: 0.2s all ease;
   -moz-transition: 0.2s all ease;
   -webkit-transition: 0.2s all ease;
-  width: 30%;
+  width: 20%;
 }
 
 .btn-modal:hover, .btn-submit:hover {
@@ -755,33 +730,33 @@ BUTTONS
   width: 100%;
 }
 
-[class*='btn-yn-'] {
+#agx-ohq [class*='btn-yn-'] {
   border: none;
   display: inline-block;
-  font-size: 120%;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: .05em;
-  margin: .5rem;
   outline: none;
-  padding: 1rem 2rem;
-  width: 8rem;
 }
 
-.btn-yn-yes { background: #532d6d;  color: #fff; }
-.btn-yn-no,
-.btn-yn-no[disabled],
-.btn-yn-no[disabled]:hover,
-.btn-yn-no[disabled]:active {
+#agx-ohq .btn-yn-yes {
+  background: #532d6d;
+  color: #fff;
+}
+
+#agx-ohq .btn-yn-no,
+#agx-ohq .btn-yn-no[disabled],
+#agx-ohq .btn-yn-no[disabled]:hover,
+#agx-ohq .btn-yn-no[disabled]:active {
   background: #008aab;
   color: #fff;
 }
 
-.btn-yn-yes:hover { background: #3d214f; }
-.btn-yn-no:hover  { background: #00738f;  border: none; }
+#agx-ohq .btn-yn-yes:hover { background: #3d214f; }
+#agx-ohq .btn-yn-no:hover  { background: #00738f;  border: none; }
 
-.speechBtn:hover  { background: #afa0bd;  border: 2px solid #afa0bd; }
+#agx-ohq .speechBtn:hover  { background: #afa0bd;  border: 2px solid #afa0bd; }
 
-.speechBtn:active {
+#agx-ohq .speechBtn:active {
   background: #3d214f;
   border: none;
   box-shadow: none;
@@ -790,7 +765,7 @@ BUTTONS
   top: 0;
 }
 
-.speechBtn {
+#agx-ohq .speechBtn {
   border: 2px solid #e0e0e0;
   background: #fff;
   border-radius: 10rem;
@@ -808,9 +783,9 @@ BUTTONS
   width: 30% !important;
 }
 
-.speechBtn[disabled],
-.speechBtn[disabled]:hover,
-.speechBtn[disabled]:active {
+#agx-ohq .speechBtn[disabled],
+#agx-ohq .speechBtn[disabled]:hover,
+#agx-ohq .speechBtn[disabled]:active {
   background: #fff;
   border: 2px solid #e0e0e0;
   border-radius: 10rem;
@@ -827,12 +802,12 @@ BUTTONS
   width: 30% !important;
 }
 
-.speechBtn[disabled],
-.btn-yn-no[disabled],
-.btn-yn-no[disabled]:hover,
-.btn-yn-no[disabled]:active,
-.speechBtn[disabled]:hover,
-.speechBtn[disabled]:active {
+#agx-ohq .speechBtn[disabled],
+#agx-ohq .btn-yn-no[disabled],
+#agx-ohq .btn-yn-no[disabled]:hover,
+#agx-ohq .btn-yn-no[disabled]:active,
+#agx-ohq .speechBtn[disabled]:hover,
+#agx-ohq .speechBtn[disabled]:active {
   filter: blur(3px);
 	opacity: 0.5;
 }
@@ -867,12 +842,7 @@ BUTTONS
   border: lightgrey 1px solid;
   box-shadow: none;
   color: lightgray;
-  font-size: 80%;
   outline: none;
-  padding: .75rem;
-  position: absolute;
-  right: .5rem;
-  top: 1rem;
 }
 
 #btn-restart:hover {
@@ -899,16 +869,12 @@ RESPONSIVE STYLES
 
 @media (min-width: 200px) {
 
-  html {
-    font-size: 80%;
-  }
+  #agx-ohq h1 { font-size: 150%; }
+  #agx-ohq h2 { font-size: 100%; }
+  #agx-ohq h3 { font-size: 80%; }
 
-  input {
+  #agx-ohq input {
     width: 100%;
-  }
-
-  .btn-submit {
-    min-width: 8rem;
   }
 
   .quiz-window {
@@ -918,9 +884,13 @@ RESPONSIVE STYLES
     width: 90%;
   }
 
+  #agx-ohq .disclaimer {
+    font-size: 60%
+  }
+
   .logo-stage {
-    margin: 0 0 0 .5rem;
-    width: 7rem;
+    margin: 0 auto;
+    width: 20%;
   }
 
   [class*='step-'] {
@@ -928,37 +898,55 @@ RESPONSIVE STYLES
   }
 
   .steps {
-    height: 3rem;
+    height: 5%;
   }
 
-  .stepNavItem {
-    font-size: 60%;
-    line-height: 125%;
+  #agx-ohq .intro-body,
+  #agx-ohq .quiz-body,
+  #agx-ohq .volume-body,
+  #agx-ohq .tone-test-body {
+    margin: 2% auto 4% auto;
   }
 
-  .intro-body,
-  .quiz-body,
-  .volume-body,
-  .tone-test-body {
-    margin: 2rem auto 4rem auto;
+  #agx-ohq .lead-text,
+  #agx-ohq .quiz-question-text {
+    font-size: 80%;
   }
 
   .speech-test-body {
     margin: 0 auto;
   }
 
+  #stepNavBar {
+    margin: 4% auto 0 auto;
+  }
+
+  .stepNavItem {
+    border-radius: 100px;
+    display: none;
+    flex-direction: column;
+    font-size: 60%;
+    justify-content: center;
+    padding: 1%;
+  }
+
+  #agx-ohq [class*='prog-bar-'] {
+    margin: 3% auto;
+  }
+
   .tone-test-frequencies p {
     display: block;
-    margin: .5rem auto;
+    font-size: 110%;
+    margin: 1% auto;
     text-align: center;
     vertical-align: top;
   }
 
-  .freq-2000hz  { height: 2.5rem; padding-top: .2rem; width: 6rem; }
-  .freq-4000hz  { height: 2.5rem; padding-top: .2rem; width: 7rem; }
-  .freq-6000hz  { height: 2.5rem; padding-top: .2rem; width: 8rem; }
-  .freq-8000hz  { height: 2.5rem; padding-top: .2rem; width: 9rem; }
-  .freq-10000hz { height: 2.5rem; padding-top: .2rem; width: 10rem; }
+  .freq-2000hz  { height: 10%; width: 40%; }
+  .freq-4000hz  { height: 10%; width: 45%; }
+  .freq-6000hz  { height: 10%; width: 50%; }
+  .freq-8000hz  { height: 10%; width: 55%; }
+  .freq-10000hz { height: 10%; width: 60%; }
 
   .results-summary {
     flex-direction: column;
@@ -1019,19 +1007,44 @@ RESPONSIVE STYLES
   #speechCircle {
     display: none;
   }
+
+  #agx-ohq .btn-submit {
+    font-size: 100%;
+    padding: 3% 1%;
+  }
+
+  #agx-ohq #btn-restart {
+    font-size: 60%;
+    left: 1%;
+    padding: 2%;
+    position: absolute;
+    right: auto;
+    top: 0%;
+  }
+
+  #agx-ohq [class*='btn-yn-'] {
+    font-size: 110%;
+    margin: 2%;
+    padding: 2% 6%;
+    width: 30%;
+  }
 }
 
 
 @media (min-width: 600px) {
 
-  input {
+  #agx-ohq h1 { font-size: 150%; }
+  #agx-ohq h2 { font-size: 120%; }
+  #agx-ohq h3 { font-size: 90%; }
+
+  #agx-ohq input {
     min-width: 80%;
     width: auto;
   }
 
-  .logo-stage {
-    margin: 0 auto 1rem auto;
-    width: 8rem;
+  #agx-ohq .logo-stage {
+    margin: 0 auto;
+    width: 15%;
   }
 
   [class*='step-'] {
@@ -1042,11 +1055,52 @@ RESPONSIVE STYLES
     height: 2rem;
   }
 
-  .stepNavItem {
-    font-size: 80%;
-      line-height: 125%;
-      padding: 1.5%
+  #stepNavBar {
+    border-radius: 1000px;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    margin: 2% auto 0 auto;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
   }
+
+  .stepNavItem {
+    border-radius: 0;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    font-size: 80%;
+    line-height: 125%;
+    justify-content: center;
+    padding: 1.5%;
+    width: 20%;
+  }
+
+  #agx-ohq [class*='prog-bar-'] {
+    margin: 1% auto;
+  }
+
+  #agx-ohq .lead-text,
+  #agx-ohq .quiz-question-text {
+    font-size: 100%;
+  }
+
+  .tone-test-frequencies p {
+    display: block;
+    font-size: 120%;
+    margin: .5rem auto;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .freq-2000hz  { height: 5%; width: 20%; }
+  .freq-4000hz  { height: 5%; width: 25%; }
+  .freq-6000hz  { height: 5%; width: 30%; }
+  .freq-8000hz  { height: 5%; width: 35%; }
+  .freq-10000hz { height: 5%; width: 40%; }
 
   .results-summary {
     flex-direction: row;
@@ -1085,27 +1139,44 @@ RESPONSIVE STYLES
   #speechCircle {
     display: block;
   }
+
+  #agx-ohq .btn-submit {
+    font-size: 110%;
+    padding: 1.5% 1%;
+  }
+
+  #agx-ohq #btn-restart {
+    font-size: 80%;
+    left: 1%;
+    padding: 1%;
+    position: absolute;
+    right: auto;
+    top: 10%;
+  }
+
+  #agx-ohq [class*='btn-yn-'] {
+    font-size: 120%;
+    margin: 0 1%;
+    padding: 2% 4%;
+    width: 15%;
+  }
 }
 
 
 @media (min-width: 1000px) {
 
-  html {
-    font-size: 100%;
-  }
+  #agx-ohq h1 { font-size: 200%; }
+  #agx-ohq h2 { font-size: 150%; }
+  #agx-ohq h3 { font-size: 137%; }
 
   input {
     min-width: 60%;
     width: auto;
   }
 
-  .lead-text,
-  .quiz-question-text {
+  #agx-ohq .lead-text,
+  #agx-ohq .quiz-question-text {
     font-size: 120%;
-  }
-
-  .btn-submit {
-    min-width: 12rem;
   }
 
   .quiz-window {
@@ -1113,16 +1184,24 @@ RESPONSIVE STYLES
     width: 50rem;
   }
 
-  .quiz-body,
-  .volume-body,
-  .tone-test-body {
-    margin: 3rem auto;
+  #agx-ohq .disclaimer {
+    font-size: 80%
   }
 
-  .speech-test-body {
+  #agx-ohq .quiz-body,
+  #agx-ohq .volume-body,
+  #agx-ohq .tone-test-body {
+    margin: 5% auto;
+  }
+
+  #agx-ohq .speech-test-body {
     margin: 0 auto;
   }
 
+  #stepNavBar {
+    margin: 1% auto 0 auto;
+  }
+  
   .tone-test-frequencies p {
     display: inline-block;
     vertical-align: middle;
@@ -1173,4 +1252,23 @@ RESPONSIVE STYLES
   .totals-divider {
     width: 80%
   }
+
+  #agx-ohq .btn-submit {
+    font-size: 120%;
+    padding: 1% .5%;
+  }
+
+  #agx-ohq #btn-restart {
+    font-size: 80%;
+    left: 1%;
+    padding: 1%;
+    position: absolute;
+    right: auto;
+    top: 20%;
+  }
+
+  #agx-ohq [class*='btn-yn-'] {
+    margin: 0 1%;
+    padding: 1% 2%;
+    width: 20%;
 }
