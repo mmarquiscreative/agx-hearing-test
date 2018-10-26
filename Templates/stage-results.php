@@ -5,12 +5,6 @@
 
   <div class="totals-container">
     <div class="totalResults">
-      <!--
-        <div class="total-circle-col">
-          <score-circle circle-id="totalCircle" which-circle="results.totalScore"></score-circle>
-        </div>
-      -->
-
       <p id="totalCta">{{results.totalScore.copy}}</p>
     </div>
 
@@ -44,10 +38,6 @@
       <div class="results-col results-quiz">
         <p class="results-head">Environments in which you may struggle to hear:</p>
 
-        <div class="score">
-          <div class="score-quiz">{{results.wrongAns.quizScore}}</div>
-        </div>
-
         <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
           <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p>
         </div>
@@ -56,10 +46,6 @@
       <div class="results-col results-tone">
         <p class="results-head">Frequencies you may struggle to hear:</p>
 
-        <div class="score">
-          <div class="score-tone">{{results.wrongAns.toneScore}}</div>
-        </div>
-
         <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
           <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p>
         </div>
@@ -67,10 +53,6 @@
 
       <div class="results-col results-speech">
         <p class="results-head">Words you may struggle to hear:</p>
-
-        <div class="score">
-          <div class="score-speech">{{results.wrongAns.speechScore}}</div>
-        </div>
 
         <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
           <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p>
