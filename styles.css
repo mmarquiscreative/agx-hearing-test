@@ -291,7 +291,7 @@ LAYOUT ELEMENTS
 }
 
 .quiz-environments {
-  margin-top: 1rem;
+  margin-top: 5%;
 }
 
 .environments-intro,
@@ -326,7 +326,7 @@ LAYOUT ELEMENTS
   display: -ms-flexbox;
   margin: 0;
   overflow: hidden;
-  padding: .8rem 1rem;
+  padding: 5%;
   text-align: center;
 }
 
@@ -336,18 +336,18 @@ LAYOUT ELEMENTS
 
 .summary-col p {
   font-size: 100%;
-  margin: .25rem 0 0 0;
+  margin: 2% 0 0 0;
 }
 
 .score {
   background: #fff;
-  border: .2rem solid #b6d8e4;
+  border: 1px solid #b6d8e4;
   border-radius: 100%;
-  height: 6rem;
-  margin: 1rem auto 0 auto;
+  height: 10%;
+  margin: 5% auto 0 auto;
   padding: 0;
   position: relative;
-  width: 6rem;
+  width: 10%;
 }
 
 [class*='stage-'] {
@@ -870,8 +870,8 @@ RESPONSIVE STYLES
 @media (min-width: 200px) {
 
   #agx-ohq h1 { font-size: 150%; }
-  #agx-ohq h2 { font-size: 100%; }
-  #agx-ohq h3 { font-size: 80%; }
+  #agx-ohq h2 { font-size: 110%; }
+  #agx-ohq h3 { font-size: 100%; }
 
   #agx-ohq input {
     width: 100%;
@@ -1008,6 +1008,10 @@ RESPONSIVE STYLES
     display: none;
   }
 
+  #totalCta {
+    font-size: 100%;
+  }
+
   #agx-ohq .btn-submit {
     font-size: 100%;
     padding: 3% 1%;
@@ -1140,6 +1144,10 @@ RESPONSIVE STYLES
     display: block;
   }
 
+  #totalCta {
+    font-size: 110%;
+  }
+
   #agx-ohq .btn-submit {
     font-size: 110%;
     padding: 1.5% 1%;
@@ -1253,6 +1261,10 @@ RESPONSIVE STYLES
     width: 80%
   }
 
+  #totalCta {
+    font-size: 120%;
+  }
+
   #agx-ohq .btn-submit {
     font-size: 120%;
     padding: 1% .5%;
@@ -1271,4 +1283,5 @@ RESPONSIVE STYLES
     margin: 0 1%;
     padding: 1% 2%;
     width: 20%;
+  }
 }
