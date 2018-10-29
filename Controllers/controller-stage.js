@@ -22,9 +22,14 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
   // Node
   stage.modal = document.querySelector('.ohq-modal');
 
-  document.querySelector('#OHQ_Button_Start').addEventListener('click', firstStage, false);
+    
+    
+console.log(document.querySelector('#OHQ_test'));    
+  document.querySelector('#OHQ_test').addEventListener('click', openOHQ, false);
   
-  function firstStage() {
+  function openOHQ() {
+  document.querySelector('#ohq-container').style.display = 'block';
+  document.querySelector('#ohq-overlay-parent').style.display = 'block';
     $state.go('stage.intro');
   }
 

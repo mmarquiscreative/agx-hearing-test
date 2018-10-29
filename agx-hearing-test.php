@@ -14,8 +14,8 @@
     add_filter('wp_footer', 'agx_hearing_test');
       
     echo '
-      <div>
-        <button id="OHQ_Button_Start" onclick="AGX_OHQ_toggleClass()">Start Quiz</button>
+      <div id="OHQ_test">
+        <button id="OHQ_Button_Start" >Start Quiz</button>
       </div>';
   };
 

@@ -76,6 +76,7 @@ formApp.value('activeClass', {
   }
 });
 
+/*
 jQuery(document).ready(function($) {
   $("#OHQ_Button_Start").on("click", function(e){
     console.log('ohq button start: start');
@@ -92,5 +93,6 @@ function AGX_OHQ_toggleClass() {
   console.log('ohq-modal ===> ohq-modal-active');
 };
 
-
+console.log(document.querySelector('#OHQ_test'));
+*/
 
