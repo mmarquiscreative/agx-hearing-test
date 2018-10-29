@@ -63,13 +63,14 @@
         <div ng-class="stage.testBool(\'exit\') ? \'visible\' : \'hidden\'">';
     echo do_shortcode('[ninja_form id='.$ninjaNum.']');
     echo '
-      </div>
-      <!-- modular display buttons -->';
+      </div>';
+    echo '
+      <!-- views will be injected here -->
+      <div ui-view></div>
+      <!-- modular display buttons -->
+      <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>';
     echo $agx_useNinja_string;
     echo '
-                <button ng-click="stage.updateDisplay()" ng-class="stage.testBool(\'exit\') ? \'btn-exit\' : \'hidden\'">X</button>
-                <!-- views will be injected here -->
-                <div ui-view></div>
               </div>
             </div>
           </div>
