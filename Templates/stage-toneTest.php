@@ -2,7 +2,7 @@
   <div class="header">
     <div ng-hide="tone.startTest">
       <p class="lead-text">This section will help identify which pitches you might have trouble hearing.</p>
-      <button ng-click="tone.startToneTest()" class="btn-submit">Start Audio</button>
+      <button ng-click="tone.startToneTest()" class="btn-submit" id="OHQ_Freq_Start">Start Audio</button>
     </div>
 
     <div ng-show="tone.startTest">

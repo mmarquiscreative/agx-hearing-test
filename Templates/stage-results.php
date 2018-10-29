@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <a class="btn-submit" ng-href="{{results.cta_url}}" >{{results.cta_text}}</a>
+    <a class="btn-submit" id="OHQ_Results_CTA" ng-href="{{results.cta_url}}" >{{results.cta_text}}</a>
   </div>
 
   <div class="results-body">

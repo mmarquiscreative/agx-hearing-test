@@ -15,7 +15,7 @@
       
     echo '
       <div id="OHQ_test">
-        <button id="OHQ_Button_Start" >Start Quiz</button>
+        <button id="OHQ_Open_Quiz" >Start Quiz</button>
       </div>';
   };
 

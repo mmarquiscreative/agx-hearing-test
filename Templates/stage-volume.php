@@ -7,7 +7,7 @@
   </div>
   <audio id="volumeAudio" src="/wp-content/plugins/agx-hearing-test/sounds/noise.mp3" loop autoplay></audio>
   <div class="btns-yn">
-    <button ng-hide="volume.nextButton" ng-click="volume.startNoise()" class="btn-submit"> Play Audio<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
-    <button ng-show="volume.nextButton" ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-submit">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    <button ng-hide="volume.nextButton" ng-click="volume.startNoise()" class="btn-submit" id="OHQ_Volume_Start"> Play Audio<span class="glyphicon glyphicon-circle-arrow-right"></span></button>
+    <button ng-show="volume.nextButton" ng-click="volume.stopNoise()" ui-sref="stage.toneTest" class="btn-submit" id="OHQ_Volume_Next">Next Step <span class="glyphicon glyphicon-circle-arrow-right"></span></button>
   </div>
 </div>
