@@ -316,10 +316,6 @@ LAYOUT ELEMENTS
   margin-top: 5%;
 }
 
-#agx-ohq .environments-intro {
-  display: none;
-}
-
 #agx-ohq .results-row {
   display: flex;
   display: -webkit-flex;
@@ -394,69 +390,6 @@ OBJECT ELEMENTS
   font-size: 120%;
 }
 
-#agx-ohq .calib-body {
-  margin: 2rem auto;
-}
-
-#agx-ohq [class*='calib-side-'] {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#agx-ohq .calib-side-l { left: 30%; }
-#agx-ohq .calib-side-r { right: 30%; }
-
-#agx-ohq [class*='calib-tone-'] {
-  border-radius: 10rem;
-  color: #888;
-  font-size: 80%;
-  margin: .5rem 0;
-  padding: .2rem;
-  text-align: center;
-}
-
-#agx-ohq .calib-ui {
-  height: 10rem;
-  margin: 2rem auto;
-  position: relative;
-}
-
-#agx-ohq .active-calib-tone {
-  background: #b9aac8;
-  color: #000;
-  font-weight: 700;
-}
-
-#agx-ohq [class*='calib-label-'] {
-  background: #b6d8e4;
-  border-radius: 100%;
-  font-size: 120%;
-  height: 4rem;
-  line-height: 320%;
-  margin: .5rem 0;
-  text-align: center;
-  width: 4rem;
-}
-
-#agx-ohq .active-calib-label {
-  background: #008aab;
-  color: #fff;
-}
-
-#agx-ohq .calib-vol {
-  background: #e6f0f4;
-  border-radius: 100%;
-  display: inline-block;
-  height: 10rem;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 10rem;
-}
-
 #agx-ohq .active-freq {
   background: #b6d8e4;
   color: #532d6d;
@@ -498,10 +431,6 @@ OBJECT ELEMENTS
   line-height: 140%;
 }
 
-#agx-ohq .environments-intro {
-  margin: 1.5rem 0 1rem 0;
-}
-
 #agx-ohq .environment {
   font-size: 100%;
 }
@@ -524,7 +453,7 @@ OBJECT ELEMENTS
 #agx-ohq #toneCircle,
 #agx-ohq #speechCircle {
   height: 6rem;
-  margin: .5rem auto;
+  margin: 3% auto;
   width: 6rem;
 }
 
@@ -706,23 +635,12 @@ BUTTONS
 }
 
 #agx-ohq .btn-yn-yes:hover { background: #3d214f; }
-#agx-ohq .btn-yn-no:hover  { background: #00738f;  border: none; }
-
-#agx-ohq .speechBtn:hover  { background: #afa0bd;  border: 2px solid #afa0bd; }
-
-#agx-ohq .speechBtn:active {
-  background: #3d214f;
-  border: none;
-  box-shadow: none;
-  color: #fff;
-  margin-bottom: -2px;
-  top: 0;
-}
+#agx-ohq .btn-yn-no:hover  { background: #00738f; border: none; }
 
 #agx-ohq .speechBtn {
   border: 2px solid #e0e0e0;
   background: #fff;
-  border-radius: 10rem;
+  border-radius: 1000px;
   box-shadow: 1px 1px 3px grey;
   color: #3d3935;
   display: table-cell;
@@ -737,12 +655,23 @@ BUTTONS
   width: 30% !important;
 }
 
+#agx-ohq .speechBtn:hover  { background: #afa0bd; border: 2px solid #afa0bd; }
+
+#agx-ohq .speechBtn:active {
+  background: #3d214f;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  margin-bottom: -1px;
+  top: 0;
+}
+
 #agx-ohq .speechBtn[disabled],
 #agx-ohq .speechBtn[disabled]:hover,
 #agx-ohq .speechBtn[disabled]:active {
   background: #fff;
   border: 2px solid #e0e0e0;
-  border-radius: 10rem;
+  border-radius: 1000px;
   box-shadow: 1px 1px 3px grey;
   display: table-cell;
   font-size: 100%;
@@ -752,7 +681,7 @@ BUTTONS
   margin: 1.25%;
   outline: none;
   position: relative;
-  top: -2px;
+  top: -1px;
   width: 30% !important;
 }
 
@@ -764,12 +693,6 @@ BUTTONS
 #agx-ohq .speechBtn[disabled]:active {
   filter: blur(3px);
 	opacity: 0.5;
-}
-
-#agx-ohq #toneAnswer {
-  margin-top: .25rem;
-  padding: 1rem;
-  width: 12rem;
 }
 
 #agx-ohq #btn-restart {
@@ -826,10 +749,6 @@ RESPONSIVE STYLES
   #agx-ohq .logo-stage {
     margin: 0 auto;
     width: 20%;
-  }
-
-  #agx-ohq [class*='step-'] {
-    height: 3.5rem;
   }
 
   #agx-ohq .intro-body,
@@ -929,7 +848,7 @@ RESPONSIVE STYLES
   }
 
   #agx-ohq .btn-submit {
-    font-size: 100%;
+    font-size: 110%;
     padding: 3% 1%;
   }
 
@@ -965,10 +884,6 @@ RESPONSIVE STYLES
   #agx-ohq .logo-stage {
     margin: 0 auto;
     width: 15%;
-  }
-
-  [class*='step-'] {
-    height: 2rem;
   }
 
   #agx-ohq #stepNavBar {
@@ -1025,7 +940,6 @@ RESPONSIVE STYLES
 
   #agx-ohq .totals-divider {
     margin: 2% auto;
-    width: 80%
   }
 
   #agx-ohq .summary-col {
@@ -1083,7 +997,7 @@ RESPONSIVE STYLES
     font-size: 120%;
     margin: 0 1%;
     padding: 2% 4%;
-    width: 15%;
+    width: 20%
   }
 }
 
@@ -1140,6 +1054,10 @@ RESPONSIVE STYLES
   #agx-ohq .freq-6000hz  { height: 50px; }
   #agx-ohq .freq-8000hz  { height: 60px; }
   #agx-ohq .freq-10000hz { height: 70px; }
+
+  #agx-ohq .totals-divider {
+    width: 80%;
+  }
 
   #agx-ohq .environment {
     margin: 2% 0;

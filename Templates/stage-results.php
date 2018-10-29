@@ -38,7 +38,7 @@
       <div class="results-col results-quiz">
         <p class="results-head">Environments in which you may struggle to hear:</p>
 
-        <div class="quiz-environments"><p class="environments-intro"><strong>Environments in which you may struggle to hear:</strong></p>
+        <div class="quiz-environments">
           <p class="environment" ng-repeat="item in results.wrongAns.quizAns">{{item}}</p>
         </div>
       </div>
@@ -46,7 +46,7 @@
       <div class="results-col results-tone">
         <p class="results-head">Frequencies you may struggle to hear:</p>
 
-        <div class="tone-environments"><p class="environments-intro"><strong>Frequencies you may struggle to hear:</strong></p>
+        <div class="tone-environments">
           <p class="environment" ng-repeat="item in results.wrongAns.toneAns">{{item}} Hz</p>
         </div>
       </div>
@@ -54,7 +54,7 @@
       <div class="results-col results-speech">
         <p class="results-head">Words you may struggle to hear:</p>
 
-        <div class="speech-environments"><p class="environments-intro"><strong>Words you may struggle to hear:</strong></p>
+        <div class="speech-environments">
           <p class="environment" ng-repeat="item in results.wrongAns.speechAnsClean track by $index">{{item}}</p>
         </div>
       </div>
