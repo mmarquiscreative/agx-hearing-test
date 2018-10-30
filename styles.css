@@ -653,6 +653,7 @@ BUTTONS
   position: relative;
   top: -2px;
   width: 30% !important;
+  padding: 0rem;
 }
 
 #agx-ohq .speechBtn:hover  { background: #afa0bd; border: 2px solid #afa0bd; }
