@@ -593,7 +593,6 @@ BUTTONS
   display: block;
   font-weight: 400;
   letter-spacing: .05em;
-  margin: 5% auto;
   min-width: 170px;
   outline: none;
   position: relative;
@@ -850,6 +849,7 @@ RESPONSIVE STYLES
 
   #agx-ohq .btn-submit {
     font-size: 110%;
+    margin: 5% auto;
     padding: 3% 1%;
   }
 
@@ -982,6 +982,7 @@ RESPONSIVE STYLES
 
   #agx-ohq .btn-submit {
     font-size: 110%;
+    margin: 3% auto;
     padding: 1.5% 1%;
   }
 
