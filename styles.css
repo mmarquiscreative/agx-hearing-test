@@ -643,7 +643,7 @@ BUTTONS
   border-radius: 1000px;
   box-shadow: 1px 1px 3px grey;
   color: #3d3935;
-  display: table-cell;
+  /* display: table-cell; */
   font-size: 100%;
   font-weight: 200;
   height: 6vh;
