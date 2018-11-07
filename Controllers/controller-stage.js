@@ -31,6 +31,7 @@ console.log(document.querySelector('#OHQ_test'));
   document.querySelector('#ohq-container').style.display = 'block';
   document.querySelector('#ohq-overlay-parent').style.display = 'block';
     $state.go('stage.intro');
+document.querySelector('body').style.overflow = 'hidden';
   }
 
   ///////////////////////////////////////////////////////////////
@@ -61,6 +62,8 @@ console.log(document.querySelector('#OHQ_test'));
     console.log('ohq-modal-active ===> ohq-modal');
     $state.go('stage.intro');
     resultsObj.restartTest();
+      
+      document.querySelector('body').style.overflow = '';
       
     /*  themePageZIndex = themePageStyles.zIndex;
     tempHeaderIndex = (themePageZIndex - 1);
