@@ -18,8 +18,10 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     speech.bgNoise = new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3');
     console.log(speech.bgNoise);
-    speech.bgNoise.volumeLvl = 1;
-    speech.bgNoise.loop = true;
+    
+    speech.noiseVolume = 1;
+    
+    resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = true;
 
     /*
   if(!speech.testCompleted) {
@@ -118,17 +120,17 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
         // establish how many rounds here
         if(speech.curRound < 4) {
-            speech.bgNoise.pause();
+            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].pause();
             // update which volume level to use
-            speech.bgNoise.volumeLvl++;
+            speech.noiseVolume++;
             
             // play next level of bgnoise
-            speech.bgNoise.src = ('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl' + speech.bgNoise.volumeLvl + '.mp3');
+            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].play();
             
             // console.log(speech.bgNoise.srcPath);
-            console.log(speech.bgNoise.src);
+            console.log(resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume]);
             
-            speech.bgNoise.play();
+            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].play();
             // 1. add one to curRound counter
             speech.curRound++;
 
@@ -155,8 +157,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             resultsObj.speechScore = speech.wrongAns.length;
             // console.log(resultsObj.quizAns);
             resultsObj.speechCompleted = true;
-            speech.bgNoise.loop = false;
-            speech.bgNoise.pause();
+            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = false;
+            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].pause();
             console.log(speech.bgNoise);
             $state.go('^.results');
         }
@@ -207,16 +209,17 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         }
 
         // play first audio
-        tempAudio[0].play();
+        resultsObj.OHQ_audio['speechTest_Word_' + speech.answerKey[0]].play();
+        // tempAudio[0].play();
 
         // play next audio from within setTimeout to delay
         setTimeout(function() {
 
-            tempAudio[1].play();
+            resultsObj.OHQ_audio['speechTest_Word_' + speech.answerKey[1]].play();
 
             // play third audio from within setTimeout
             setTimeout(function() {
-                tempAudio[2].play();
+                resultsObj.OHQ_audio['speechTest_Word_' + speech.answerKey[2]].play();
 
                 // after delay, enable answer button input
                 setTimeout(function() {
