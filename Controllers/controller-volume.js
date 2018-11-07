@@ -1,28 +1,29 @@
 angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
-var volume = this;
+    var volume = this;
     volume.tonePlaying = false;
-	volume.nextButton = false;
-    volume.noise = document.querySelector('#volumeAudio');
+    volume.nextButton = false;
+    volume.noise = new Audio('/wp-content/plugins/agx-hearing-test/sounds/noise.mp3');
+
     volume.noise.volume = resultsObj.globalVolume;
-    
-        volume.noise.pause();
-     volume.startNoise = function(){
+
+    volume.noise.pause();
+    volume.startNoise = function(){
         volume.noise.play();
-                  volume.tonePlaying = true;
-		 volume.nextButton = true;
+        volume.tonePlaying = true;
+        volume.nextButton = true;
 
     }
 
-    
+
     volume.stopNoise = function(){
         volume.noise.pause();
-                volume.tonePlaying = false;
+        volume.tonePlaying = false;
 
     }
-   
 
-  /* var noise = new Audio('/sounds/Speech_Bean.mp3');
-  
+
+    /* var noise = new Audio('/sounds/Speech_Bean.mp3');
+
   noise.currentTime = 0;
 noise.loop = true;
   // commenting out until I can get it to stop when you leave this stage
@@ -35,8 +36,8 @@ noise.preload = 'none';
         });
         }, 1);
 };
-    
-    
+
+
     function pauseAudio() {
         // noise.loop = false;
 
@@ -49,5 +50,5 @@ noise.preload = 'none';
             console.log(noise.paused);
         console.log(noise);
 };*/
-    
+
 }]);

@@ -16,9 +16,9 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
   };
   ////////////////////////////
 
-  speech.bgNoise = document.querySelector('#bgNoise');
+  speech.bgNoise = new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3');
   console.log(speech.bgNoise);
-  speech.bgNoise.volume = 0;
+  speech.bgNoise.volume = 1;
   speech.bgNoise.loop = true;
 
   /*
@@ -31,7 +31,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
   speech.bgNoiseSettings = {
     loopBool: 'true',
-    srcPath: '/wp-content/plugins/agx-hearing-test/sounds/BackgroundNoise.mp3'
+    srcPath: '/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'
   }
 
   // Pulls array of strings from global namespace
@@ -118,7 +118,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
   
     // establish how many rounds here
     if(speech.curRound < 4) {
-      speech.bgNoise.volume += resultsObj.bgNoiseIncrease;
+      // speech.bgNoise.volume += resultsObj.bgNoiseIncrease;
       speech.bgNoise.play();
       // 1. add one to curRound counter
       speech.curRound++;
@@ -176,6 +176,10 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     speech.answerKey.push(speech.answerStrings[num3]);
   }
 
+    document.querySelector('#toneAnswer').addEventListener('click', function(){
+        speech.bgNoise.play();
+    });
+    
   // Play the audio files that match the answers generated
   function playRoundAudio() {
     var tempAudio, delayTime;
@@ -188,7 +192,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     // Push file paths to audio file which corresponds to the round answers
     for(i=0; i < 3; i++) {
-      tempAudio.push(new Audio('/wp-content/plugins/agx-hearing-test/sounds/Speech_' +  speech.answerKey[i] + '.mp3'));
+      tempAudio.push(new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_' +  speech.answerKey[i] + '.mp3'));
     }
 
     // play first audio

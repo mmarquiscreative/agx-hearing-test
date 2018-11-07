@@ -25,7 +25,7 @@
     </div>
 
 		<div class="tone-test-tones">
-			<audio id="bgNoise" ng-src="{{speech.bgNoiseSettings.srcPath}}"></audio>
+			<!-- <audio id="bgNoise" ng-src="{{speech.bgNoiseSettings.srcPath}}"></audio> -->
 		</div>
 	</div>
 </div>
