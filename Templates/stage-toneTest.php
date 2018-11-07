@@ -24,7 +24,7 @@
         </div>
 
         <div class="tone-test-tones">
-          <audio id="toneAudio" ng-src="{{tone.curToneObj.srcPath}}"></audio>
+          <!-- <audio id="toneAudio" ng-src="{{tone.curToneObj.srcPath}}"></audio> -->
         </div>
       </div>
 

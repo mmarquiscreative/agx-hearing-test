@@ -28,6 +28,20 @@ formApp.value('resultsObj', {
   testComplete: function(someString) {
     return this[(someString + 'Completed')];
   },
+    OHQ_audio: {
+        volCalib: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/VolCalib_OHQ_static.mp3'),
+        toneTest_2000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_2000_Hz.mp3'),
+        toneTest_4000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_4000_Hz.mp3'),
+        toneTest_6000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_6000_Hz.mp3'),
+        toneTest_8000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_8000_Hz.mp3'),
+        toneTest_10000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_10000_Hz.mp3')
+    },
 
   restartTest: function() {
     console.log('running restart test');
@@ -47,9 +61,18 @@ formApp.value('resultsObj', {
     this.speechCompleted = false;
     
     // 4. Stop audio
-    var idArray = ['#volumeAudio', '#toneAudio', '#bgNoise'];
-		
-		idArray.forEach(function(cur) {
+    var audioArray = Object.values(this.OHQ_audio);
+		console.log(audioArray);
+      
+      audioArray.forEach(function(cur){
+          console.log(!cur.paused);
+          cur.autoplay = false;
+          cur.loop = false;
+          cur.pause();
+          cur.currentTime = 0;
+      });
+      
+		 /*idArray.forEach(function(cur) {
 			console.log(cur);
 			console.log(document.querySelector(cur));
 			if(document.querySelector(cur) !== null) {
@@ -60,7 +83,7 @@ formApp.value('resultsObj', {
       } else {
 				console.log(cur + ' query came back as null');
 			}
-		});    
+		});    */
   }
 });
 

@@ -6,19 +6,15 @@ tone.startTest = false;
     // returns a boolean from resultsObj.toneCompleted
     tone.testCompleted = resultsObj.testComplete('tone');
 
-    // assigns audio html to a variable
-    tone.toneAudio = document.querySelector('#toneAudio');
-
-    // set volume of audio
-    tone.toneAudio.volume = resultsObj.globalVolume;
+   
 
     // sets loop
-    tone.toneAudio.loop = true;
+    resultsObj.OHQ_audio.toneTest_2000.loop = true;
 
     // establishes autoplay variable
-    tone.toneAudio.autoplay = false;
+    resultsObj.OHQ_audio.toneTest_2000.autoplay = false;
     
-    tone.toneAudio.pause();
+    resultsObj.OHQ_audio.toneTest_2000.pause();
     
     // disable y/n buttons if true
     tone.disabledBool = false;
@@ -40,7 +36,7 @@ tone.startTest = false;
     tone.curClass = new Array('active-freq', '', '', '', '');
 
     // a counter for which tone we're on
-    tone.curTone = 0;
+    tone.curTone = 1;
 
     // an reference object for the current audio filepath / updating it
     tone.curToneObj = {
@@ -50,7 +46,7 @@ tone.startTest = false;
 
     // starts audio if test has not already been completed
     if(!tone.testCompleted && tone.startTest){
-        tone.toneAudio.autoplay = true;
+        resultsObj.OHQ_audio.toneTest_2000.autoplay = true;
     }
 
     // function that runs when either y/n button is pushed
@@ -58,10 +54,9 @@ tone.startTest = false;
     tone.nextTone = function(someBool){
 
         tone.startTest = true;
-        tone.toneAudio.autoplay = true;
         
         // removes 'active-freq' class from current html block
-        tone.curClass[tone.curTone] = '';
+        tone.curClass[(tone.curTone - 1)] = '';
 
         // if false / answered 'no' / couldn't hear tone
         if(!someBool){
@@ -72,19 +67,26 @@ tone.startTest = false;
             // push which frequency they struggled with to resultsObj
             resultsObj.toneAns.push(tone.frequencies[tone.curTone]);
         };
-
+        
+        if(tone.curTone > 0) {
+            // pauses the current audio tone playing
+        resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].pause();
+        };
+        
         tone.curTone++;
 
-        if(tone.curTone < tone.frequencies.length){
-            tone.curClass[tone.curTone] = 'active-freq';
-            var newSrc = ('/wp-content/plugins/agx-hearing-test/sounds/' + tone.frequencies[tone.curTone] + '.mp3');
-            tone.curToneObj.freq = tone.frequencies[tone.curTone];
+        if(tone.curTone <= tone.frequencies.length){
+            tone.curClass[(tone.curTone - 1)] = 'active-freq';
+            
+            resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].play();
+            resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].loop = true;
+            
+            console.log((tone.curTone * 2));
+            console.log(resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000']);
 
-            tone.curToneObj.srcPath = newSrc;
-
-        } else if (tone.curTone >= tone.frequencies.length){
+        } else if (tone.curTone > tone.frequencies.length){
             tone.disabledBool = true;
-            tone.toneAudio.autoplay = false;
+            resultsObj.OHQ_audio.toneTest_2000.autoplay = false;
             tone.buttonHide_YN = true;
             tone.buttonHide_Next = false;
             resultsObj.toneCompleted = true;
@@ -97,13 +99,13 @@ tone.startTest = false;
     }
 
     tone.resetStage = function(){
-        tone.toneAudio.play();
+        resultsObj.OHQ_audio.toneTest_2000.play();
 
                 tone.startTest = false;
         
         setTimeout(function(){
             $scope.$apply(function(){
-                tone.toneAudio.autoplay = true;
+                resultsObj.OHQ_audio.toneTest_2000.autoplay = true;
             });
         }, 1);
         resultsObj.toneScore = 0;
@@ -113,8 +115,9 @@ tone.startTest = false;
     };
     
      tone.startToneTest = function(){
+         console.log('start toneTest running');
         tone.startTest = true;
-        tone.toneAudio.play();
+        resultsObj.OHQ_audio.toneTest_2000.play();
         
     }
 

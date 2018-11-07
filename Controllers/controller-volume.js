@@ -2,21 +2,27 @@ angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj'
     var volume = this;
     volume.tonePlaying = false;
     volume.nextButton = false;
-    volume.noise = new Audio('/wp-content/plugins/agx-hearing-test/sounds/noise.mp3');
+    
 
-    volume.noise.volume = resultsObj.globalVolume;
+    // resultsObj.OHQ_audio.volCalib.volume = resultsObj.globalVolume;
 
-    volume.noise.pause();
+    resultsObj.OHQ_audio.volCalib.pause();
     volume.startNoise = function(){
-        volume.noise.play();
+        resultsObj.OHQ_audio.volCalib.play();
         volume.tonePlaying = true;
         volume.nextButton = true;
 
     }
+    
+    console.log(resultsObj.OHQ_audio.volCalib);
 
-
+document.querySelector('#x_btn_exit').addEventListener('click', function(){
+    
+});
+    
     volume.stopNoise = function(){
-        volume.noise.pause();
+        console.log('running stopNoise');
+        resultsObj.OHQ_audio.volCalib.pause();
         volume.tonePlaying = false;
 
     }
