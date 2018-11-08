@@ -606,6 +606,8 @@ BUTTONS
   background: #532d6d;
 }
 
+
+
 #agx-ohq .btns-yn {
   margin: 0 auto;
   position: relative;
@@ -654,6 +656,9 @@ BUTTONS
   top: -2px;
   width: 30% !important;
   padding: 0rem;
+    transition: 0.2s all ease;
+  -moz-transition: 0.2s all ease;
+  -webkit-transition: 0.2s all ease;
 }
 
 #agx-ohq .speechBtn:hover  { background: #afa0bd; border: 2px solid #afa0bd; }
@@ -665,6 +670,15 @@ BUTTONS
   color: #fff;
   margin-bottom: -1px;
   top: 0;
+}
+
+#agx-ohq .speechBtnAnswer {
+  background: #3d214f;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  
+  top: -2;
 }
 
 #agx-ohq .speechBtn[disabled],
@@ -686,6 +700,7 @@ BUTTONS
   width: 30% !important;
 }
 
+#agx-ohq .btn-submit[disabled],
 #agx-ohq .speechBtn[disabled],
 #agx-ohq .btn-yn-no[disabled],
 #agx-ohq .btn-yn-no[disabled]:hover,

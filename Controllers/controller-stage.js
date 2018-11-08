@@ -146,6 +146,7 @@ document.querySelector('body').style.overflow = 'hidden';
     $state.go('stage.intro');
   };
 
+   
   /*
   stage.loadForm = function() {
 

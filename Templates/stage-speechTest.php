@@ -7,7 +7,8 @@
         <button ng-disabled="speech.ansDisabled" class="btn-submit" ng-click="speech.addAnswer('? ? ?')">Skip Word</button>
       </div>
 
-      <h3>&nbsp;<span style="margin: 0% 5%;" ng-repeat="curAns in speech.answerInput track by $index">{{curAns}}&nbsp;</span></h3>
+        <h3 style="padding: 0; font-weight: regular;"><span style="margin: 0% 5%; text-transform: uppercase; font-size: 1.5rem;" ng-repeat="curAns in speech.answerInput track by $index">{{speech.answerNumberWords[$index] + ' Word: '}}&nbsp;<strong>{{curAns}}</strong>&nbsp;</span></h3>
+       
         
       <div ng-show="!speech.startTestDisabled" >
         <h2>This section is broken into 4 rounds.</h2>

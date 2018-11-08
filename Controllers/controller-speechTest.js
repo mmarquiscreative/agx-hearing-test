@@ -53,6 +53,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     // Key to compare answerInput against to test for true/false
     speech.answerKey = ['Bean', 'Chalk', 'Goose'];
+    
+    speech.answerNumberWords = ['1st', '2nd', '3rd'];
 
     // What answers were wrong (strings)
     speech.wrongAns = [];
@@ -71,6 +73,11 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         // Add new answer if round isn't over
         if(speech.answerInput.length < 2) {
             speech.answerInput.push(someAns);
+            
+            if(someAns !== '? ? ?'){
+                document.querySelector(('#OHQ_Speech_' + someAns)).className += ' speechBtnAnswer';
+            };
+            console.log(someAns);
         } else {
 
             // 1. if round is over push answer then eval
@@ -80,7 +87,11 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
             setTimeout(function() {
                 // 2. compare answers to key
-
+                speech.answerInput.forEach(function(cur){
+                    if(cur !== '? ? ?'){
+                        document.querySelector(('#OHQ_Speech_' + cur)).className = 'speechBtn';
+                };
+                });
                 // 3. reset answerInput array
                 $scope.$apply(function() {
                     speech.answerInput = [];
