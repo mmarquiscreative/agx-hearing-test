@@ -1,12 +1,13 @@
 <div class="stage-tone-test" ng-controller="toneTestController as tone">
   <div class="header">
+   <div ng-hide="tone.testCompleted">
     <div ng-hide="tone.startTest">
       <p class="lead-text">This section will help identify which pitches you might have trouble hearing.</p>
       <button ng-click="tone.startToneTest()" class="btn-submit" id="OHQ_Freq_Start">Start Audio</button>
     </div>
 
     <div ng-show="tone.startTest">
-      <div ng-hide="tone.testCompleted">
+      
         <div class="tone-test-body">
           <p class="lead-text">Do you hear the tone playing?</p>
           <div class="tone-test-frequencies">
@@ -27,7 +28,7 @@
           <!-- <audio id="toneAudio" ng-src="{{tone.curToneObj.srcPath}}"></audio> -->
         </div>
       </div>
-
+</div>
       <!-- Test Completed Section -->
       <div ng-show="tone.testCompleted">
         <h3>Looks like you've already completed this section. Would you like to:</h3>
@@ -35,7 +36,7 @@
         <p>— Or —</p>
         <button ui-sref="stage.speechTest" class="btn-submit">Go to next section?</button>
       </div>
-    </div>
+    
   </div>
 </div>
 

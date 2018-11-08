@@ -4,8 +4,10 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 tone.startTest = false;
     
     // returns a boolean from resultsObj.toneCompleted
-    tone.testCompleted = resultsObj.testComplete('tone');
-
+    tone.testCompleted = resultsObj.toneCompleted;
+    
+    console.log("Start Test: " + tone.startTest);
+    console.log("Test Completed: " + tone.testCompleted);
    
 
     // sets loop
@@ -65,7 +67,7 @@ tone.startTest = false;
             resultsObj.toneScore++
 
             // push which frequency they struggled with to resultsObj
-            resultsObj.toneAns.push(tone.frequencies[tone.curTone]);
+            resultsObj.toneAns.push(tone.frequencies[(tone.curTone - 1)]);
         };
         
         if(tone.curTone > 0) {
@@ -90,8 +92,10 @@ tone.startTest = false;
             tone.buttonHide_YN = true;
             tone.buttonHide_Next = false;
             resultsObj.toneCompleted = true;
+            console.log(resultsObj.toneCompleted);
             $state.go('^.speechTest')
             console.log(resultsObj.toneAns);
+            tone.startTest = false;
 
         } else {
             console.log(("something went wrong with tone.nextTone. Here is someBool: " + someBool + "\n and here is tone.curTone: " + tone.curTone));
@@ -111,7 +115,9 @@ tone.startTest = false;
         resultsObj.toneScore = 0;
         resultsObj.toneAns = [];
         resultsObj.toneCompleted = false;
-        tone.testCompleted = resultsObj.testComplete('tone');
+        resultsObj.toneCompleted = false;
+        tone.testCompleted = resultsObj.toneCompleted;
+        tone.startTest = false;
     };
     
      tone.startToneTest = function(){
