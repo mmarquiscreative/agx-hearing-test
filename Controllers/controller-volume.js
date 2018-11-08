@@ -8,6 +8,7 @@ angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj'
 
     resultsObj.OHQ_audio.volCalib.pause();
     volume.startNoise = function(){
+        resultsObj.OHQ_audio.volCalib.loop = true;
         resultsObj.OHQ_audio.volCalib.play();
         volume.tonePlaying = true;
         volume.nextButton = true;
