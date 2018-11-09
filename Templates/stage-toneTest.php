@@ -20,8 +20,8 @@
         </div>
 
         <div class="btns-yn">
-          <button ng-hide="tone.buttonHide_YN" class="btn-yn-yes" ng-click="tone.nextTone(true)" ng-disabled="{{tone.disabledBool}}">Yes</button>
-          <button ng-hide="tone.buttonHide_YN" class="btn-yn-no" ng-click="tone.nextTone(false)" ng-disabled="{{tone.disabledBool}}">No</button>
+          <button class="btn-yn-yes" ng-click="tone.nextTone(true)" ng-disabled="{{tone.disabledBool}}">Yes</button>
+          <button class="btn-yn-no" ng-click="tone.nextTone(false)" ng-disabled="{{tone.disabledBool}}">No</button>
         </div>
 
         <div class="tone-test-tones">

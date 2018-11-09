@@ -26,14 +26,8 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     // disable y/n buttons if true
     tone.disabledBool = false;
 
-    // hide y/n buttons if true
-    tone.buttonHide_YN = false;
-
-    // hide next button if true
-    tone.buttonHide_Next = true;
-
-    // array of frequency strings that match audio file names
-    tone.frequencies = new Array('2000', '4000', '6000', '8000', '10000');
+    
+    
 
     // The html block with active-freq is styled as the active tone.
     // The active-freq will be pushed down the array,
@@ -43,7 +37,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     tone.curClass = new Array('active-freq', '', '', '', '');
 
     // a counter for which tone we're on
-    tone.curTone = 1;
+    tone.curTone = 2;
 
     // an reference object for the current audio filepath / updating it
     tone.curToneObj = {
@@ -58,9 +52,159 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
 
     // function that runs when either y/n button is pushed
     // someBool is true if 'yes' or false if 'No'
+
+
+    //////////////////////////////////////
+    //////////////////////////////////////
+    // START: Non-bracket notation version 
+
+
     tone.nextTone = function(someBool){
+        var lastFreq = (tone.curTone * 1000);
+        var curFreq = ((tone.curTone + 2) * 1000);
+        var lastClass = (tone.curTone/2 - 1);
+        var curClass = (tone.curTone/2);
+
+        // 1. play audio
+        if(tone.curTone < 10){
+            audioPlayer(lastFreq, 'stop');
+
+            console.log('play ' + curFreq);
+            audioPlayer(curFreq, 'play');
+        } else if (tone.curTone === 10){
+            console.log('stop ' + curFreq);
+            audioPlayer(lastFreq, 'stop');
+        } else {
+            console.log('curFreq greater than 10000');
+        }
+
+        // 2. update style
+        if(tone.curTone < 10){
+            tone.curClass[lastClass] = '';
+            tone.curClass[curClass] = 'active-freq';
+        }
+
+        // 3. push answer
+        // if false / answered 'no' / couldn't hear tone
+        if(!someBool){
+
+            // add one to score for this section
+            resultsObj.toneScore++
+
+            // push which frequency they struggled with to resultsObj
+            resultsObj.toneAns.push(lastFreq);
+        };
+        // 4. Increase curTone by 2
+        tone.curTone += 2;
+
+        // 5. Finish
+        if(tone.curTone > 10){
+            
+            tone.disabledBool = true;
+        
+        // resultsObj.OHQ_audio.toneTest_2000.autoplay = false;
+        // tone.buttonHide_YN = true;
+        
+        resultsObj.toneCompleted = true;
+        console.log(resultsObj.toneCompleted);
+                tone.startTest = false;
+        console.log(resultsObj.toneAns);
+
+        $state.go('^.speechTest');
+            
+        }
+
+        // 6. Move to next stage
+        
+    }
+    function audioPlayer(whichAudio, playStop){
+
+        if(playStop === 'play'){
+
+            switch(whichAudio){
+                case 2000:
+                    resultsObj.OHQ_audio.toneTest_2000.play();
+                    resultsObj.OHQ_audio.toneTest_2000.loop = true;
+                    break;
+                case 4000:
+                    resultsObj.OHQ_audio.toneTest_4000.play();
+                    resultsObj.OHQ_audio.toneTest_4000.loop = true;
+                    break;
+                case 6000:
+                    resultsObj.OHQ_audio.toneTest_6000.play();
+                    resultsObj.OHQ_audio.toneTest_6000.loop = true;
+                    break;
+                case 8000:
+                    resultsObj.OHQ_audio.toneTest_8000.play();
+                    resultsObj.OHQ_audio.toneTest_8000.loop = true;
+                    break;
+                case 10000:
+                    resultsObj.OHQ_audio.toneTest_10000.play();
+                    resultsObj.OHQ_audio.toneTest_10000.loop = true;
+                    break;
+                default:
+                    console.log('audioPlayer PLAY switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+        } else if (playStop === 'stop'){
+
+            switch(whichAudio){
+                case 2000:
+                    resultsObj.OHQ_audio.toneTest_2000.pause();
+                    resultsObj.OHQ_audio.toneTest_2000.loop = false;
+                    break;
+                case 4000:
+                    resultsObj.OHQ_audio.toneTest_4000.pause();
+                    resultsObj.OHQ_audio.toneTest_4000.loop = false;
+                    break;
+                case 6000:
+                    resultsObj.OHQ_audio.toneTest_6000.pause();
+                    resultsObj.OHQ_audio.toneTest_6000.loop = false;
+                    break;
+                case 8000:
+                    resultsObj.OHQ_audio.toneTest_8000.pause();
+                    resultsObj.OHQ_audio.toneTest_8000.loop = false;
+                    break;
+                case 10000:
+                    resultsObj.OHQ_audio.toneTest_10000.pause();
+                    resultsObj.OHQ_audio.toneTest_10000.loop = false;
+                    break;
+                default:
+                    console.log('audioPlayer STOP switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    // END: Non-bracket notation version
+    //////////////////////////////////////
+    //////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+    /*tone.nextTone = function(someBool){
 
         tone.startTest = true;
+
         var lastTone = tone.curTone - 1;
 
         // removes 'active-freq' class from current html block
@@ -108,7 +252,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         } else {
             console.log(("something went wrong with tone.nextTone. Here is someBool: " + someBool + "\n and here is tone.curTone: " + tone.curTone));
         }
-    }
+    } */
 
     tone.resetStage = function(){
 
@@ -122,16 +266,14 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         resultsObj.toneScore = 0;
         resultsObj.toneAns = [];
         resultsObj.toneCompleted = false;
-        resultsObj.toneCompleted = false;
-        tone.testCompleted = resultsObj.toneCompleted;
+
+        tone.testCompleted = false;
         tone.startTest = false;
     };
 
     tone.startToneTest = function(){
-        console.log('start toneTest running');
         tone.startTest = true;
         resultsObj.OHQ_audio.toneTest_2000.play();
-
     }
 
 

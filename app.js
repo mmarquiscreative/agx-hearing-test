@@ -7,7 +7,39 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
 formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take']);
 
 var loadAudio = {
-    speechTest_Word_Puff:
+    volCalib: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/VolCalib_OHQ_static.mp3'),
+        toneTest_2000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_2000_Hz.mp3'),
+        toneTest_4000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_4000_Hz.mp3'),
+        toneTest_6000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_6000_Hz.mp3'),
+        toneTest_8000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_8000_Hz.mp3'),
+        toneTest_10000: 
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_10000_Hz.mp3'),
+        speechTest_Noise_Lvl1:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'),
+        speechTest_Noise_Lvl2:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl2.mp3'),
+        speechTest_Noise_Lvl3:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl3.mp3'),
+        speechTest_Noise_Lvl4:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl4.mp3'),
+        speechTest_Word_Bean:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Bean.mp3'),
+        speechTest_Word_Chalk:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Chalk.mp3'),
+        speechTest_Word_Goose:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Goose.mp3'),
+        speechTest_Word_Kite:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Kite.mp3'),
+        speechTest_Word_Moon:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Moon.mp3'),
+        speechTest_Word_Page:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Page.mp3'),
+        speechTest_Word_Puff:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Puff.mp3'),
         speechTest_Word_Shout:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
@@ -37,7 +69,19 @@ formApp.value('resultsObj', {
   testComplete: function(someString) {
     return this[(someString + 'Completed')];
   },
-    OHQ_audio: {
+    OHQ_audio: { /*
+        volCalib: 
+            loadAudio.volCalib,
+        toneTest_2000: 
+            loadAudio.toneTest_2000,
+        toneTest_4000: 
+            loadAudio.toneTest_4000,
+        toneTest_6000: 
+           loadAudio.toneTest_6000,
+        toneTest_8000: 
+            loadAudio.toneTest_8000,
+        toneTest_10000: 
+            loadAudio.toneTest_10000,*/
         volCalib: 
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/VolCalib_OHQ_static.mp3'),
         toneTest_2000: 
@@ -71,11 +115,11 @@ formApp.value('resultsObj', {
         speechTest_Word_Page:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Page.mp3'),
         speechTest_Word_Puff:
-            loadAudio.speechTest_Word_Puff,
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Puff.mp3'),
         speechTest_Word_Shout:
-            loadAudio.speechTest_Word_Shout,
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
         speechTest_Word_Take:
-            loadAudio.speechTest_Word_Take
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3')
     },
 
   restartTest: function() {
