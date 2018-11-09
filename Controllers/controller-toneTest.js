@@ -1,28 +1,28 @@
 angular.module('formApp').controller('toneTestController', ['$scope', 'resultsObj', '$state', function ($scope, resultsObj, $state) {
     var tone = this;
 
-tone.startTest = false;
-    
+    tone.startTest = false;
+
     // returns a boolean from resultsObj.toneCompleted
     tone.testCompleted = resultsObj.toneCompleted;
-    
+
     console.log("Start Test: " + tone.startTest);
     console.log("Test Completed: " + tone.testCompleted);
-   
+
     resultsObj.OHQ_audio.toneTest_2000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_4000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_6000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_8000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_10000.preload = 'auto';
-    
+
     // sets loop
     resultsObj.OHQ_audio.toneTest_2000.loop = true;
 
     // establishes autoplay variable
     resultsObj.OHQ_audio.toneTest_2000.autoplay = false;
-    
+
     resultsObj.OHQ_audio.toneTest_2000.pause();
-    
+
     // disable y/n buttons if true
     tone.disabledBool = false;
 
@@ -61,9 +61,10 @@ tone.startTest = false;
     tone.nextTone = function(someBool){
 
         tone.startTest = true;
-        
+        var lastTone = tone.curTone - 1;
+
         // removes 'active-freq' class from current html block
-        tone.curClass[(tone.curTone - 1)] = '';
+        tone.curClass[lastTone] = '';
 
         // if false / answered 'no' / couldn't hear tone
         if(!someBool){
@@ -72,22 +73,24 @@ tone.startTest = false;
             resultsObj.toneScore++
 
             // push which frequency they struggled with to resultsObj
-            resultsObj.toneAns.push(tone.frequencies[(tone.curTone - 1)]);
+            resultsObj.toneAns.push(tone.frequencies[lastTone]);
         };
-        
+
         if(tone.curTone > 0) {
             // pauses the current audio tone playing
-        resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].pause();
+            resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].pause();
         };
-        
+
         tone.curTone++;
+        lastTone++;
 
         if(tone.curTone <= tone.frequencies.length){
-            tone.curClass[(tone.curTone - 1)] = 'active-freq';
-            
+
+            tone.curClass[lastTone] = 'active-freq';
+
             resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].play();
             resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000'].loop = true;
-            
+
             console.log((tone.curTone * 2));
             console.log(resultsObj.OHQ_audio['toneTest_' + (tone.curTone * 2) + '000']);
 
@@ -108,10 +111,9 @@ tone.startTest = false;
     }
 
     tone.resetStage = function(){
-        resultsObj.OHQ_audio.toneTest_2000.play();
 
-                tone.startTest = false;
-        
+        tone.startTest = false;
+
         setTimeout(function(){
             $scope.$apply(function(){
                 resultsObj.OHQ_audio.toneTest_2000.autoplay = true;
@@ -124,12 +126,12 @@ tone.startTest = false;
         tone.testCompleted = resultsObj.toneCompleted;
         tone.startTest = false;
     };
-    
-     tone.startToneTest = function(){
-         console.log('start toneTest running');
+
+    tone.startToneTest = function(){
+        console.log('start toneTest running');
         tone.startTest = true;
         resultsObj.OHQ_audio.toneTest_2000.play();
-        
+
     }
 
 
