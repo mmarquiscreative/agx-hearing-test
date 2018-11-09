@@ -6,6 +6,15 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
 // Speech Test Words/options
 formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take']);
 
+var loadAudio = {
+    speechTest_Word_Puff:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Puff.mp3'),
+        speechTest_Word_Shout:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
+        speechTest_Word_Take:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3')
+};
+
 // results object to save individual sections wrong answers to
 formApp.value('resultsObj', {
 	cta_text: '',
@@ -62,11 +71,11 @@ formApp.value('resultsObj', {
         speechTest_Word_Page:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Page.mp3'),
         speechTest_Word_Puff:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Puff.mp3'),
+            loadAudio.speechTest_Word_Puff,
         speechTest_Word_Shout:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
+            loadAudio.speechTest_Word_Shout,
         speechTest_Word_Take:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3')
+            loadAudio.speechTest_Word_Take
     },
 
   restartTest: function() {
