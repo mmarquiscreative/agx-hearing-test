@@ -13,7 +13,7 @@ angular.module('formApp').controller('stageController', ['$scope', '$state', 're
 
 
 
-    /* START: Audio Test Section */
+    /* START: Audio Test Section 
 
     //// CONTROL
     var controlPlayCount = 0;
@@ -151,7 +151,7 @@ stage.doublePlayNext = function(){
     }
     
 }
-    /* END: Audio Test Section */
+     END: Audio Test Section */
 
 
     /* START: Modal Functionality */

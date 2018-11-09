@@ -9,7 +9,12 @@ tone.startTest = false;
     console.log("Start Test: " + tone.startTest);
     console.log("Test Completed: " + tone.testCompleted);
    
-
+    resultsObj.OHQ_audio.toneTest_2000.preload = 'auto';
+    resultsObj.OHQ_audio.toneTest_4000.preload = 'auto';
+    resultsObj.OHQ_audio.toneTest_6000.preload = 'auto';
+    resultsObj.OHQ_audio.toneTest_8000.preload = 'auto';
+    resultsObj.OHQ_audio.toneTest_10000.preload = 'auto';
+    
     // sets loop
     resultsObj.OHQ_audio.toneTest_2000.loop = true;
 

@@ -21,42 +21,42 @@
           </div>
         </div>
 
-       
+       <!-- iphone testing 
    
-   <!-- CONTROL -->
+   <!-- CONTROL 
    <h3>Control Test</h3>
    <p>5 tones</p>
    <button ng-click="stage.controlPlayNext()">Play Next Tone</button>
    
 
-   <!-- Object Property Already Created -->
+    Object Property Already Created 
    <h3>Object Property Tweak</h3>
    <p>3 words on loop</p>
    <button ng-click="stage.objectPropPlayNext()">Play Tone / Next Tone</button>
    
    
-   <!-- Preload: Auto JS-->
+   Preload: Auto JS
    <h3>Preload: Auto</h3>
    <p>3 words on loop</p>
    <button ng-click="stage.preloadPlayNext()">Play Tone / Next Tone</button>
    
 
-   <!-- Src Change -->
+   Src Change 
    <h3>Src Change</h3>
    <p>5 tones</p>
    <button ng-click="stage.srcPlayNext()">Play Tone / Next Tone</button>
-   <!-- <audio id="toneSrc" ng-src="{{stage.curToneSrc}}" ></audio> -->
+    <audio id="toneSrc" ng-src="{{stage.curToneSrc}}" ></audio> 
 
-   <!-- Double Streaming -->
+ Double Streaming 
    <h3>Double Streaming</h3>
    <p>BG Noise and 'Bean' word on loop</p>
    <button ng-click="stage.doublePlayNext()">Toggle Audio</button>
    <audio id="doubleBGNoise" src="/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3"></audio>
    <audio id="doubleWord" src="/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Bean.mp3"></audio>
+   -->
    
    
-   
-   
+  
    
    
    
