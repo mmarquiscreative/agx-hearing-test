@@ -14,6 +14,12 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
     resultsObj.OHQ_audio.toneTest_6000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_8000.preload = 'auto';
     resultsObj.OHQ_audio.toneTest_10000.preload = 'auto';
+    
+resultsObj.OHQ_audio.toneTest_2000.load();
+    resultsObj.OHQ_audio.toneTest_4000.load();
+    resultsObj.OHQ_audio.toneTest_6000.load();
+    resultsObj.OHQ_audio.toneTest_8000.load();
+    resultsObj.OHQ_audio.toneTest_10000.load();
 
     // sets loop
     resultsObj.OHQ_audio.toneTest_2000.loop = true;
@@ -115,6 +121,7 @@ angular.module('formApp').controller('toneTestController', ['$scope', 'resultsOb
         }
 
         // 6. Move to next stage
+        console.log('nextStep pressed');
         
     }
     function audioPlayer(whichAudio, playStop){

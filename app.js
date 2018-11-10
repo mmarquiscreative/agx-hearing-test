@@ -69,7 +69,7 @@ formApp.value('resultsObj', {
   testComplete: function(someString) {
     return this[(someString + 'Completed')];
   },
-    OHQ_audio: { /*
+    OHQ_audio: { 
         volCalib: 
             loadAudio.volCalib,
         toneTest_2000: 
@@ -81,8 +81,8 @@ formApp.value('resultsObj', {
         toneTest_8000: 
             loadAudio.toneTest_8000,
         toneTest_10000: 
-            loadAudio.toneTest_10000,*/
-        volCalib: 
+            loadAudio.toneTest_10000,
+        /*volCalib: 
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/VolCalib_OHQ_static.mp3'),
         toneTest_2000: 
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_2000_Hz.mp3'),
@@ -93,7 +93,7 @@ formApp.value('resultsObj', {
         toneTest_8000: 
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_8000_Hz.mp3'),
         toneTest_10000: 
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_10000_Hz.mp3'),
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_10000_Hz.mp3'),*/
         speechTest_Noise_Lvl1:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'),
         speechTest_Noise_Lvl2:

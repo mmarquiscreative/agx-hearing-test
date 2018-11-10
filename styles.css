@@ -636,6 +636,10 @@ BUTTONS
   color: #fff;
 }
 
+/* #agx-ohq button{
+    touch-action: manipulation;
+}*/
+
 #agx-ohq .btn-yn-yes:hover { background: #3d214f; }
 #agx-ohq .btn-yn-no:hover  { background: #00738f; border: none; }
 
