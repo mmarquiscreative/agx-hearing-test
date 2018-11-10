@@ -2,13 +2,13 @@ angular.module('formApp').controller('volumeController', ['$scope', 'resultsObj'
     var volume = this;
     volume.tonePlaying = false;
     volume.nextButton = false;
-    
+    resultsObj.OHQ_audio.volCalib.preload = 'auto';
 
     // resultsObj.OHQ_audio.volCalib.volume = resultsObj.globalVolume;
 
     resultsObj.OHQ_audio.volCalib.pause();
     volume.startNoise = function(){
-        resultsObj.OHQ_audio.volCalib.preload = 'auto';
+        
         resultsObj.OHQ_audio.volCalib.loop = true;
         resultsObj.OHQ_audio.volCalib.play();
         volume.tonePlaying = true;
