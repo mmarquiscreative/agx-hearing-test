@@ -95,31 +95,31 @@ formApp.value('resultsObj', {
         toneTest_10000: 
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/ToneTest_OHQ_10000_Hz.mp3'),*/
         speechTest_Noise_Lvl1:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'),
+            loadAudio.speechTest_Noise_Lvl1,
         speechTest_Noise_Lvl2:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl2.mp3'),
+            loadAudio.speechTest_Noise_Lvl2,
         speechTest_Noise_Lvl3:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl3.mp3'),
+            loadAudio.speechTest_Noise_Lvl3,
         speechTest_Noise_Lvl4:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl4.mp3'),
+            loadAudio.speechTest_Noise_Lvl4,
         speechTest_Word_Bean:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Bean.mp3'),
+            loadAudio.speechTest_Word_Bean,
         speechTest_Word_Chalk:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Chalk.mp3'),
+            loadAudio.speechTest_Word_Chalk,
         speechTest_Word_Goose:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Goose.mp3'),
+            loadAudio.speechTest_Word_Goose,
         speechTest_Word_Kite:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Kite.mp3'),
+            loadAudio.speechTest_Word_Kite,
         speechTest_Word_Moon:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Moon.mp3'),
+            loadAudio.speechTest_Word_Moon,
         speechTest_Word_Page:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Page.mp3'),
+            loadAudio.speechTest_Word_Page,
         speechTest_Word_Puff:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Puff.mp3'),
+            loadAudio.speechTest_Word_Puff,
         speechTest_Word_Shout:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
+            loadAudio.speechTest_Word_Shout,
         speechTest_Word_Take:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3')
+            loadAudio.speechTest_Word_Take
     },
 
   restartTest: function() {
