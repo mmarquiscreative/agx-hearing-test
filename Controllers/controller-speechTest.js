@@ -14,14 +14,31 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         resultsObj.speechCompleted = false;
         speech.testCompleted = resultsObj.testComplete('speech');
     };
+
+    // Preload BG Noise Audio
+    resultsObj.OHQ_audio.speechTest_Noise_Lvl1.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Noise_Lvl2.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Noise_Lvl3.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Noise_Lvl4.preload = 'auto';
+
+    // Preload Word Audio
+    resultsObj.OHQ_audio.speechTest_Word_Bean.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Chalk.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Goose.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Kite.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Moon.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Page.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Puff.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Shout.preload = 'auto';
+    resultsObj.OHQ_audio.speechTest_Word_Take.preload = 'auto';
+
     ////////////////////////////
 
-    speech.bgNoise = new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3');
-    console.log(speech.bgNoise);
-    
+    speech.bgNoise = resultsObj.OHQ_audio.speechTest_Noise_Lvl1;
+    speech.bgNoise.loop = true;
     speech.noiseVolume = 1;
-    
-    resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = true;
+
+    // resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = true;
 
     /*
   if(!speech.testCompleted) {
@@ -31,7 +48,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
   }
   */
 
-   /* speech.bgNoiseSettings = {
+    /* speech.bgNoiseSettings = {
         loopBool: 'true',
         srcPath: '/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'
     } */
@@ -53,7 +70,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     // Key to compare answerInput against to test for true/false
     speech.answerKey = ['Bean', 'Chalk', 'Goose'];
-    
+
     speech.answerNumberWords = ['1st', '2nd', '3rd'];
 
     // What answers were wrong (strings)
@@ -73,13 +90,15 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         // Add new answer if round isn't over
         if(speech.answerInput.length < 2) {
             speech.answerInput.push(someAns);
-            
+
             if(someAns !== '? ? ?'){
                 document.querySelector(('#OHQ_Speech_' + someAns)).className += ' speechBtnAnswer';
             };
             console.log(someAns);
         } else {
-
+            if(someAns !== '? ? ?'){
+                document.querySelector(('#OHQ_Speech_' + someAns)).className += ' speechBtnAnswer';
+            };
             // 1. if round is over push answer then eval
             speech.answerInput.push(someAns);
 
@@ -90,19 +109,17 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                 speech.answerInput.forEach(function(cur){
                     if(cur !== '? ? ?'){
                         document.querySelector(('#OHQ_Speech_' + cur)).className = 'speechBtn';
-                };
+                    };
                 });
                 // 3. reset answerInput array
                 $scope.$apply(function() {
                     speech.answerInput = [];
                     console.log(speech.answerInput);
+                    speech.roundAudio();
                 });
-            }, 100);
+            }, 1000);
 
-            // 4. Play next round audio/gen answers ect
-            speech.roundAudio();
-
-        }
+        };
     }
 
     function resetAns() {
@@ -124,53 +141,197 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         console.log(speech.wrongAns);
     }
 
+    function increaseBGAudio(){
+        var lastBG;
+
+        // 1. save cur noise volume
+        lastBG = speech.noiseVolume;
+
+        // 2. increase bg audio volume level counter
+        speech.noiseVolume++;
+
+        // 3. play new level of bg noise
+        audioPlayerBG(speech.noiseVolume, 'play');
+
+        // 4. Pause last level of bg audio (overlapping reduces delay)
+        audioPlayerBG(lastBG, 'stop');
+
+    }
+
+
+
+    function audioPlayerBG(whichAudio, playStop){
+
+
+        if(playStop === 'play'){
+
+            switch(whichAudio){
+                case 1:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl1.play();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl1.loop = true;
+                    break;
+                case 2:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl2.play();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl2.loop = true;
+                    break;
+                case 3:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl3.play();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl3.loop = true;
+                    break;
+                case 4:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl4.play();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl4.loop = true;
+                    break;
+                default:
+                    console.log('audioPlayerBG PLAY switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+        } else if (playStop === 'stop'){
+
+            switch(whichAudio){
+                case 1:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl1.pause();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl1.loop = false;
+                    break;
+                case 2:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl2.pause();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl2.loop = false;
+                    break;
+                case 3:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl3.pause();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl3.loop = false;
+                    break;
+                case 4:
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl4.pause();
+                    resultsObj.OHQ_audio.speechTest_Noise_Lvl4.loop = false;
+                    break;
+                default:
+                    console.log('audioPlayerBG STOP switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+
+
+        }
+    }
+
+    function audioPlayerWord(whichAudio, playStop){
+
+        if(playStop === 'play'){
+
+            switch(whichAudio){
+                case 'Bean':
+                    resultsObj.OHQ_audio.speechTest_Word_Bean.play();
+                    break;
+                case 'Chalk':
+                    resultsObj.OHQ_audio.speechTest_Word_Chalk.play();
+                    break;
+                case 'Goose':
+                    resultsObj.OHQ_audio.speechTest_Word_Goose.play();
+                    break;
+                case 'Kite':
+                    resultsObj.OHQ_audio.speechTest_Word_Kite.play();
+                    break;
+                case 'Moon':
+                    resultsObj.OHQ_audio.speechTest_Word_Moon.play();
+                    break;
+                case 'Page':
+                    resultsObj.OHQ_audio.speechTest_Word_Page.play();
+                    break;
+                case 'Puff':
+                    resultsObj.OHQ_audio.speechTest_Word_Puff.play();
+                    break;
+                case 'Shout':
+                    resultsObj.OHQ_audio.speechTest_Word_Shout.play();
+                    break;
+                case 'Take':
+                    resultsObj.OHQ_audio.speechTest_Word_Take.play();
+                    break;
+                default:
+                    console.log('audioPlayerBG PLAY switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+        } else if (playStop === 'stop'){
+
+            switch(whichAudio){
+                case 'Bean':
+                    resultsObj.OHQ_audio.speechTest_Word_Bean.pause();
+                    break;
+                case 'Chalk':
+                    resultsObj.OHQ_audio.speechTest_Word_Chalk.pause();
+                    break;
+                case 'Goose':
+                    resultsObj.OHQ_audio.speechTest_Word_Goose.pause();
+                    break;
+                case 'Kite':
+                    resultsObj.OHQ_audio.speechTest_Word_Kite.pause();
+                    break;
+                case 'Moon':
+                    resultsObj.OHQ_audio.speechTest_Word_Moon.pause();
+                    break;
+                case 'Page':
+                    resultsObj.OHQ_audio.speechTest_Word_Page.pause();
+                    break;
+                case 'Puff':
+                    resultsObj.OHQ_audio.speechTest_Word_Puff.pause();
+                    break;
+                case 'Shout':
+                    resultsObj.OHQ_audio.speechTest_Word_Shout.pause();
+                    break;
+                case 'Take':
+                    resultsObj.OHQ_audio.speechTest_Word_Take.pause();
+                    break;
+                default:
+                    console.log('audioPlayerBG STOP switch didnt work. whichAudio was: ' + whichAudio);
+            };
+
+
+
+        }
+    }
+
     // play new round audio/gen new round answers
     speech.roundAudio = function() {
 
         // speech.bgNoise.autoplay = true;
 
-        // establish how many rounds here
+        // If not last round
         if(speech.curRound < 4) {
-            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].pause();
-            // update which volume level to use
-            speech.noiseVolume++;
-            
-            // play next level of bgnoise
-            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].play();
-            
-            // console.log(speech.bgNoise.srcPath);
-            console.log(resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume]);
-            
-            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].play();
-            // 1. add one to curRound counter
+
+            // 1. increase BG Noise
+            increaseBGAudio();
+
+            // 2. add one to curRound counter
             speech.curRound++;
 
             // 2. disable answer input
             speech.ansDisabled = true;
 
-            // 3. disable start test button
+            // 3. disable start test button ????? move somewhere?
             speech.startTestDisabled = true;
 
             // 4. generate new round answers
             generateRoundAns();
 
             // 5. play corresponding audio for new round answers
-
             playRoundAudio();
 
+
+            // if last round
         } else {
 
-            // 1. disable answer input
+            // 1. Disable answer input
             speech.ansDisabled = true;
 
             // 2. Push number of wrong answers to global resultsObj object
-            console.log('time for the next round');
             resultsObj.speechScore = speech.wrongAns.length;
-            // console.log(resultsObj.quizAns);
+
+            // 3. Mark section as complete in resultObj
             resultsObj.speechCompleted = true;
-            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = false;
-            resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].pause();
-            console.log(speech.bgNoise);
+
+            // 4. Stop current BG noise
+            audioPlayerBG(speech.noiseVolume, 'stop');
+
+            // 5. Go to results section
             $state.go('^.results');
         }
     };
@@ -204,8 +365,43 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         // speech.bgNoise.play();
     }); */
 
-    // Play the audio files that match the answers generated
     function playRoundAudio() {
+        var tempAudio, delayTime, endDelayTime;
+
+        // 1. Set delay between word audio playing
+        delayTime = 1200;
+
+        // 2. Set delay before starting next round
+        endDelayTime = delayTime * 1.3;
+
+        // 3. Play first audio
+        audioPlayerWord(speech.answerKey[0], 'play');
+
+
+        // 4. Play next audio from within setTimeout to delay
+        setTimeout(function() {
+
+            audioPlayerWord(speech.answerKey[1], 'play');
+
+            // 5. Play third audio from within setTimeout
+            setTimeout(function() {
+                audioPlayerWord(speech.answerKey[2], 'play');
+
+
+                // 6. After delay, enable answer button input
+                setTimeout(function() {
+
+                    // enable answer button input
+                    $scope.$apply(resetAns());
+                    console.log(speech.ansDisabled);
+                }, endDelayTime);
+            }, delayTime)
+        }, delayTime);
+
+    };
+
+    // Play the audio files that match the answers generated
+    /*  function playRoundAudio() {
         var tempAudio, delayTime;
 
         // initialize empty array
@@ -242,6 +438,6 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             }, delayTime)
         }, delayTime);
 
-    }
+    } */
 }]);
 
