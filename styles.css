@@ -676,8 +676,10 @@ BUTTONS
   top: 0;
 }
 
-#agx-ohq .speechBtnAnswer {
-  background: #3d214f;
+#agx-ohq .speechBtnAnswer, #agx-ohq .speechBtnAnswer[disabled],
+#agx-ohq .speechBtnAnswer[disabled]:hover,
+#agx-ohq .speechBtnAnswer[disabled]:active {
+  background: #3d214f !important;
   border: none;
   box-shadow: none;
   color: #fff;
@@ -713,6 +715,9 @@ BUTTONS
 #agx-ohq .speechBtn[disabled]:active {
   filter: blur(3px);
 	opacity: 0.5;
+    transition: 0.4s all ease;
+  -moz-transition: 0.4s all ease;
+  -webkit-transition: 0.4s all ease;
 }
 
 #agx-ohq #btn-restart {

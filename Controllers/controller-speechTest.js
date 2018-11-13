@@ -96,9 +96,13 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
             };
             console.log(someAns);
         } else {
+                            speech.ansDisabled = true;
+
             if(someAns !== '? ? ?'){
                 document.querySelector(('#OHQ_Speech_' + someAns)).className += ' speechBtnAnswer';
             };
+
+
             // 1. if round is over push answer then eval
             speech.answerInput.push(someAns);
 
@@ -111,6 +115,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                         document.querySelector(('#OHQ_Speech_' + cur)).className = 'speechBtn';
                     };
                 });
+
+
                 // 3. reset answerInput array
                 $scope.$apply(function() {
                     speech.answerInput = [];
