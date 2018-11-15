@@ -260,7 +260,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     }*/
 function audioPlayerSpeechTest (whichAudio){
     var curVol = (20 - (speech.noiseVolume * 5));
-    var curSrc = ('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down' + curVol + '.mp3');
+    var curSrc = ('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down' + curVol + '_up7.5.mp3');
     
     console.log(curSrc);
     

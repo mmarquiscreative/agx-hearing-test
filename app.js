@@ -46,7 +46,7 @@ var loadAudio = {
         speechTest_Word_Take:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3'),
         speechTest_Master_lvl1:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down15.mp3')
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down15_up7.5.mp3')
 };
 
 // results object to save individual sections wrong answers to
