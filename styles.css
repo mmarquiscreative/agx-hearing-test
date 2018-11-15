@@ -663,6 +663,7 @@ BUTTONS
     transition: 0.2s all ease;
   -moz-transition: 0.2s all ease;
   -webkit-transition: 0.2s all ease;
+    overflow: hidden;
 }
 
 #agx-ohq .speechBtn:hover  { background: #afa0bd; border: 2px solid #afa0bd; }
@@ -745,6 +746,35 @@ BUTTONS
   outline: none;
 }
 
+#OHQ_speechBadge_container {
+    width: 100%;
+}
+
+#OHQ_speechWord {
+    padding-top: 2%;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+        padding-left: 10%;
+
+}
+
+#OHQ_speechBtn_badge1 {
+    
+    position: absolute;
+    padding-top: 3%;
+    color: #3d214f;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    border: 2px solid #e6f0f4;
+    background-color: #e6f0f4;
+    z-index: 2;
+    
+    
+}
+
 
 /******************************************************************
 RESPONSIVE STYLES
@@ -752,6 +782,8 @@ RESPONSIVE STYLES
 
 @media (min-width: 200px) {
 
+    
+    
   #agx-ohq h1 { font-size: 150%; }
   #agx-ohq h2 { font-size: 110%; }
   #agx-ohq h3 { font-size: 100%; }

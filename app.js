@@ -44,7 +44,9 @@ var loadAudio = {
         speechTest_Word_Shout:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Shout.mp3'),
         speechTest_Word_Take:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3')
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3'),
+        speechTest_Master_lvl1:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down15.mp3')
 };
 
 // results object to save individual sections wrong answers to
@@ -119,7 +121,9 @@ formApp.value('resultsObj', {
         speechTest_Word_Shout:
             loadAudio.speechTest_Word_Shout,
         speechTest_Word_Take:
-            loadAudio.speechTest_Word_Take
+            loadAudio.speechTest_Word_Take,
+        speechTest_Master_lvl1:
+            loadAudio.speechTest_Master_lvl1
     },
 
   restartTest: function() {
