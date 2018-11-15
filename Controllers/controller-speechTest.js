@@ -39,7 +39,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     speech.bgNoise = resultsObj.OHQ_audio.speechTest_Noise_Lvl1;
     speech.bgNoise.loop = true;
-    speech.noiseVolume = 1;
+    speech.noiseVolume = 0;
 
     // resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = true;
 
@@ -56,9 +56,45 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         srcPath: '/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Noise_Lvl1.mp3'
     } */
 
+    
+                
     // Pulls array of strings from global namespace
-    speech.answerStrings = answerStrings;
-
+   
+    speech.answerStringOptions = {
+        lvl1: ['Moon', 
+                'Puff', 
+               'Bean', 
+               'Shout', 
+               'Chalk', 
+               'Kite', 
+               'Page', 
+               'Goose', 
+               'Take'
+               ],
+        lvl2: ['Kite', 
+               'Bean', 
+               'Page', 
+               'Take',
+               'Goose', 
+               'Shout',
+                'Puff', 
+               'Chalk', 
+               'Moon' 
+               ],
+        lvl3: ['Take',
+              'Shout', 
+               'Puff', 
+               'Kite', 
+               'Bean', 
+               'Moon', 
+               'Goose', 
+               'Chalk', 
+              'Page' 
+                ]
+    };
+    
+     speech.answerStrings = speech.answerStringOptions.lvl1;
+    speech.curAnswerStrings = answerStrings;
     // Are the answer buttons disabled?
     speech.ansDisabled = true;
 
@@ -223,6 +259,13 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         }
     }*/
 function audioPlayerSpeechTest (whichAudio){
+    var curVol = (20 - (speech.noiseVolume * 5));
+    var curSrc = ('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down' + curVol + '.mp3');
+    
+    console.log(curSrc);
+    
+    
+    
     
     var curStart = 0;
     var clipEnd = 5900;
@@ -231,35 +274,55 @@ function audioPlayerSpeechTest (whichAudio){
             switch(whichAudio){
                 case 'Bean':
                     curStart = 0;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
                     break;
                 case 'Chalk':
                     curStart = 2;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Goose':
                     curStart = 4;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Kite':
                     curStart = 6;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Moon':
                     curStart = 8;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Page':
                     curStart = 10;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Puff':
                     curStart = 12;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Shout':
                     curStart = 14;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 case 'Take':
                     curStart = 16;
+                    console.log('index of ' + whichAudio + 'is ' + curStart);
+                    
                     break;
                 default:
                     console.log('audioPlayerBG PLAY switch didnt work. whichAudio was: ' + whichAudio);
             };
     
+
+    
+    resultsObj.OHQ_audio.speechTest_Master_lvl1.src = curSrc;
     resultsObj.OHQ_audio.speechTest_Master_lvl1.currentTime = curStart;
                     resultsObj.OHQ_audio.speechTest_Master_lvl1.play();
                     setTimeout(function() {
@@ -401,6 +464,24 @@ function audioPlayerSpeechTest (whichAudio){
         // 1. Reset answerKey array
         speech.answerKey = [];
         
+        /*switch(speech.noiseVolume){
+        case 1:
+            speech.answerStrings = speech.answerStringOptions.lvl1;
+            speech.curAnswerStrings = speech.answerStringOptions.lvl1;
+            break;
+        case 2:
+            speech.curAnswerStrings = speech.answerStringOptions.lvl2;
+            speech.curAnswerStrings = speech.answerStringOptions.lvl2;
+            break;
+        case 3:
+            speech.curAnswerStrings = speech.answerStringOptions.lvl3;
+            speech.curAnswerStrings = speech.answerStringOptions.lvl3;
+            break;
+        default:
+            console.log('no answer string options. Cur volume was: ' + speech.noiseVolume);
+    };
+    */
+        
         // 2. Gen random start index
         startIndex = Math.round(Math.random()*6);
         console.log('Start Index is: ' + startIndex);
@@ -410,9 +491,9 @@ function audioPlayerSpeechTest (whichAudio){
             var curIndex = (i + startIndex);
             console.log('Cur Index is: ' + curIndex);
             
-            var pushAnswer = speech.answerStrings[curIndex];
+            var pushAnswer = speech.curAnswerStrings[curIndex];
             speech.answerKey.push(pushAnswer);
-            console.log(pushAnswer);
+            console.log(speech.curAnswerStrings);
         }
         
         console.log(speech.answerKey);
