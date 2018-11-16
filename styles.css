@@ -593,13 +593,13 @@ BUTTONS
   display: block;
   font-weight: 400;
   letter-spacing: .05em;
+  line-height: 125%;
   min-width: 170px;
   outline: none;
   position: relative;
   transition: 0.2s all ease;
   -moz-transition: 0.2s all ease;
   -webkit-transition: 0.2s all ease;
-  width: 20%;
 }
 
 #agx-ohq .btn-modal:hover, .btn-submit:hover {
@@ -716,7 +716,7 @@ BUTTONS
 #agx-ohq .speechBtn[disabled]:active {
   filter: blur(3px);
 	opacity: 0.5;
-    transition: 0.4s all ease;
+  transition: 0.4s all ease;
   -moz-transition: 0.4s all ease;
   -webkit-transition: 0.4s all ease;
 }
@@ -907,7 +907,8 @@ RESPONSIVE STYLES
   #agx-ohq .btn-submit {
     font-size: 110%;
     margin: 5% auto;
-    padding: 3% 1%;
+    padding: 3% 2%;
+    max-width: 50%;
   }
 
   #agx-ohq #btn-restart {
@@ -1041,6 +1042,7 @@ RESPONSIVE STYLES
     font-size: 110%;
     margin: 3% auto;
     padding: 1.5% 1%;
+    max-width: 40%;
   }
 
   #agx-ohq #btn-restart {
@@ -1133,6 +1135,7 @@ RESPONSIVE STYLES
   #agx-ohq .btn-submit {
     font-size: 120%;
     padding: 1% .5%;
+    max-width: 30%;
   }
 
   #agx-ohq #btn-restart {
