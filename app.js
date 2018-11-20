@@ -4,7 +4,16 @@ var formApp = angular.module('formApp', ['ngAnimate', 'ui.router']);
 //// Global VALUES ////
 
 // Speech Test Words/options
-formApp.value('answerStrings', ['Bean', 'Chalk', 'Goose', 'Kite', 'Moon', 'Page', 'Puff', 'Shout', 'Take']);
+formApp.value('answerStrings', ['Moon', 
+               'Puff', 
+               'Bean', 
+               'Shout', 
+               'Chalk', 
+               'Kite', 
+               'Page', 
+               'Goose', 
+               'Take'
+              ]);
 
 var loadAudio = {
     volCalib: 
@@ -46,7 +55,11 @@ var loadAudio = {
         speechTest_Word_Take:
             new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_OHQ_Word_Take.mp3'),
         speechTest_Master_lvl1:
-            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down15_up7.5.mp3')
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down15_up7.5.mp3'),
+    speechTest_Master_lvl2:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down10_up7.5.mp3'),
+    speechTest_Master_lvl3:
+            new Audio('/wp-content/plugins/agx-hearing-test/sounds/SpeechTest_down5_up7.5.mp3')
 };
 
 // results object to save individual sections wrong answers to
@@ -123,7 +136,11 @@ formApp.value('resultsObj', {
         speechTest_Word_Take:
             loadAudio.speechTest_Word_Take,
         speechTest_Master_lvl1:
-            loadAudio.speechTest_Master_lvl1
+            loadAudio.speechTest_Master_lvl1,
+        speechTest_Master_lvl2:
+            loadAudio.speechTest_Master_lvl2,
+        speechTest_Master_lvl3:
+            loadAudio.speechTest_Master_lvl3
     },
 
   restartTest: function() {
