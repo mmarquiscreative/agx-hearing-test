@@ -63,43 +63,43 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     // Pulls array of strings from global namespace
 
     speech.answerStringOptions = [[
-            'Bean', 
-               'Chalk', 
-               'Goose', 
-               'Kite', 
-               'Moon', 
-               'Page', 
-               'Puff', 
-               'Shout', 
-               'Take'],
-       [    'Kite', 
-               'Bean', 
-               'Page', 
-               'Take',
-               'Goose', 
-               'Shout',
-               'Puff', 
-               'Chalk', 
-               'Moon' 
-              ],
-        [   'Take',
-               'Shout', 
-               'Puff', 
-               'Kite', 
-               'Bean', 
-               'Moon', 
-               'Goose', 
-               'Chalk', 
-               'Page' 
-              ]];
+        'Bean', 
+        'Chalk', 
+        'Goose', 
+        'Kite', 
+        'Moon', 
+        'Page', 
+        'Puff', 
+        'Shout', 
+        'Take'],
+                                  [    'Kite', 
+                                   'Bean', 
+                                   'Page', 
+                                   'Take',
+                                   'Goose', 
+                                   'Shout',
+                                   'Puff', 
+                                   'Chalk', 
+                                   'Moon' 
+                                  ],
+                                  [   'Take',
+                                   'Shout', 
+                                   'Puff', 
+                                   'Kite', 
+                                   'Bean', 
+                                   'Moon', 
+                                   'Goose', 
+                                   'Chalk', 
+                                   'Page' 
+                                  ]];
 
 
 
 
     speech.answerStrings = answerStrings;
-    
+
     speech.curAnswerStrings = speech.answerStringOptions[0];
-    
+
     // Are the answer buttons disabled?
     speech.ansDisabled = true;
 
@@ -176,25 +176,43 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         speech.ansDisabled = false;
     }
 
-    // Compare input answers to answer key
+    
+    // Compare answer input to answer key
     function evalAnswers() {
+        
         for(i = 0; i < 4; i++) {
 
             // if answerInput doesn't match answerKey
             if(speech.answerInput[i] !== speech.answerKey[i]) {
-                console.log(speech.answerInput[i] + " vs " + speech.answerKey[i]);
-                // add wrong answer string to wrongAns array
+               
+                // 1. console.log answer input vs correct answer
+                console.log("Answer Input: " + speech.answerInput[i] + "\n Correct Answer: " + speech.answerKey[i]);
+                
+                // 2. Add wrong answer string to wrongAns array
                 speech.wrongAns.push(speech.answerKey[i]);
+                
+                // 3. Push wrong answer string to resultsObj for later use
                 resultsObj.speechAns.push(speech.answerKey[i]);
+
+                
+                //// DEV: Debug [START]
+    
+                // 1. console.log controller's wrong answer array
+                console.log("speech.wrongAns: " + speech.wrongAns);
+
+                // 2. console.log resultsObj wrong answer array
+                console.log("resultsObj.speechAns: " + resultsObj.speechAns);
+                
+                //// DEV: Debug [END] 
+
             }
         }
-        console.log(speech.wrongAns);
     }
 
 
 
     function speechAudioCurStart(whichAudio) {
-var curStart;
+        var curStart;
         if(speech.noiseVolume === 1){
             switch(whichAudio){
                 case 'Bean':
@@ -345,16 +363,16 @@ var curStart;
         } else {
             console.log('whichAudio: ' + whichAudio);
         };
-        
+
         return curStart;
     }
 
-    
-    
-        function audioPlayerSpeechTest (whichAudio){
-            var curStart = speechAudioCurStart(whichAudio);
+
+
+    function audioPlayerSpeechTest (whichAudio){
+        var curStart = speechAudioCurStart(whichAudio);
         var clipEnd = 5900;
-        
+
         switch(speech.noiseVolume){
             case 1:
                 resultsObj.OHQ_audio.speechTest_Master_lvl1.currentTime = curStart;
@@ -388,66 +406,66 @@ var curStart;
                 break;
             default:
                 console.log('whichMasterAudio switch--speech.noiseVolume is: ' + speech.noiseVolume);
-            }
-           
-
         }
 
 
-        // play new round audio/gen new round answers
-        speech.roundAudio = function() {
-
-            // speech.bgNoise.autoplay = true;
-
-            // If not last round
-            if(speech.curRound < 4) {
-
-                // 1. increase BG Noise
-
-                speech.noiseVolume++;
-                // 2. add one to curRound counter
-                speech.curRound++;
-
-                // 2. disable answer input
-                speech.ansDisabled = true;
-
-                // 3. disable start test button ????? move somewhere?
-                speech.startTestDisabled = true;
-
-                // 4. generate new round answers
-                generateRoundAns();
-
-                // 5. play corresponding audio for new round answers
-                playRoundAudio();
+    }
 
 
-                // if last round
-            } else {
+    // play new round audio/gen new round answers
+    speech.roundAudio = function() {
 
-                // 1. Disable answer input
-                speech.ansDisabled = true;
+        // speech.bgNoise.autoplay = true;
 
-                // 2. Push number of wrong answers to global resultsObj object
-                resultsObj.speechScore = speech.wrongAns.length;
+        // If not last round
+        if(speech.curRound < 4) {
 
-                // 3. Mark section as complete in resultObj
-                resultsObj.speechCompleted = true;
+            // 1. increase BG Noise
 
-                // 4. Stop current BG noise
-                // audioPlayerBG(speech.noiseVolume, 'stop');
+            speech.noiseVolume++;
+            // 2. add one to curRound counter
+            speech.curRound++;
 
-                // 5. Go to results section
-                $state.go('^.results');
-            }
-        };
+            // 2. disable answer input
+            speech.ansDisabled = true;
 
-        function generateRoundAns(){
-            var startIndex;
+            // 3. disable start test button ????? move somewhere?
+            speech.startTestDisabled = true;
 
-            // 1. Reset answerKey array
-            speech.answerKey = [];
+            // 4. generate new round answers
+            generateRoundAns();
 
-            /*switch(speech.noiseVolume){
+            // 5. play corresponding audio for new round answers
+            playRoundAudio();
+
+
+            // if last round
+        } else {
+
+            // 1. Disable answer input
+            speech.ansDisabled = true;
+
+            // 2. Push number of wrong answers to global resultsObj object
+            resultsObj.speechScore = speech.wrongAns.length;
+
+            // 3. Mark section as complete in resultObj
+            resultsObj.speechCompleted = true;
+
+            // 4. Stop current BG noise
+            // audioPlayerBG(speech.noiseVolume, 'stop');
+
+            // 5. Go to results section
+            $state.go('^.results');
+        }
+    };
+
+    function generateRoundAns(){
+        var startIndex;
+
+        // 1. Reset answerKey array
+        speech.answerKey = [];
+
+        /*switch(speech.noiseVolume){
         case 1:
             speech.answerStrings = speech.answerStringOptions.lvl1;
             speech.curAnswerStrings = speech.answerStringOptions.lvl1;
@@ -465,35 +483,35 @@ var curStart;
     };
     */
 
-            // 2. Gen random start index
-            startIndex = Math.round(Math.random()*6);
-            console.log('Start Index is: ' + startIndex);
+        // 2. Gen random start index
+        startIndex = Math.round(Math.random()*6);
+        console.log('Start Index is: ' + startIndex);
 
-            // 3. Push 3 answers to answerKey
-            for(var i = 0; i < 3; i++){
-                var curVol = (speech.noiseVolume - 1);
-                console.log('curVol is: ' + curVol);
-                var curIndex = (i + startIndex);
-                console.log('Cur Index is: ' + curIndex);
+        // 3. Push 3 answers to answerKey
+        for(var i = 0; i < 3; i++){
+            var curVol = (speech.noiseVolume - 1);
+            console.log('curVol is: ' + curVol);
+            var curIndex = (i + startIndex);
+            console.log('Cur Index is: ' + curIndex);
 
-                var pushAnswer = speech.answerStringOptions[curVol][curIndex];
-                speech.answerKey.push(pushAnswer);
-                console.log(speech.answerStringOptions[curVol]);
-            }
-
-            console.log(speech.answerKey);
-        };
-
-        
-        function playRoundAudio(){
-            var startAnswer;
-
-            startAnswer = speech.answerKey[0];
-
-            audioPlayerSpeechTest(startAnswer);
-
+            var pushAnswer = speech.answerStringOptions[curVol][curIndex];
+            speech.answerKey.push(pushAnswer);
+            console.log(speech.answerStringOptions[curVol]);
         }
 
-        
-    }]);
+        console.log(speech.answerKey);
+    };
+
+
+    function playRoundAudio(){
+        var startAnswer;
+
+        startAnswer = speech.answerKey[0];
+
+        audioPlayerSpeechTest(startAnswer);
+
+    }
+
+
+}]);
 

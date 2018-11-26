@@ -133,7 +133,7 @@ angular.module('formApp').controller('resultsController', ['$scope', 'resultsObj
         console.log(results[someObj].name + ": ");        console.log(results[someObj]);
 
     };
-    scoreToPercent(23, 89);
+    // scoreToPercent(23, 89);
 
     function scoreToPercent(actualScore, perfectScore){
         var returnPercent = 100 - ((actualScore/perfectScore) * 100);
