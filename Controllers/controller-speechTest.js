@@ -179,8 +179,29 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     
     // Compare answer input to answer key
     function evalAnswers() {
+        /* var whichIndex = 0;
+        
+        speech.answerInput.forEach(function(cur){
+            
+            if(cur !== speech.answerKey[whichIndex]){
+                               
+                // 1. console.log answer input vs correct answer
+                console.log("Answer Input: " + speech.answerInput[i] + "\n Correct Answer: " + speech.answerKey[i]);
+                
+                // 2. Add wrong answer string to wrongAns array
+                speech.wrongAns.push(speech.answerKey[i]);
+                
+                // 3. Push wrong answer string to resultsObj for later use
+                resultsObj.speechAns.push(speech.answerKey[i]);
+                
+                
+            }
+            
+        }) */
         
         for(i = 0; i < 4; i++) {
+            
+            
 
             // if answerInput doesn't match answerKey
             if(speech.answerInput[i] !== speech.answerKey[i]) {
