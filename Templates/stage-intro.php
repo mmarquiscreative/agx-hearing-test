@@ -3,7 +3,7 @@
     <img class="agx-hearing-logo logo-intro" src="/wp-content/plugins/agx-hearing-test/img/AGX-Hearing-Color.png" />
     <h1>AGX<sup>&reg;</sup> Online Hearing Quiz</h1>
   </div>
-	<div><button id="OHQ_Speech_Moon" class="speechBtn" speechtest > <div id="OHQ_speechBtn_badge1"><strong>1<sup>ST</sup></strong></div><p id="OHQ_speechWord">Moon</p></button></div>
+	<!-- <div><button id="OHQ_Speech_Moon" class="speechBtn" speechtest > <div id="OHQ_speechBtn_badge1"><strong>1<sup>ST</sup></strong></div><p id="OHQ_speechWord">Moon</p></button></div>-->
   <div class="intro-body">
     <p class="lead-text">Is it time to talk to an audiologist?</p>
     <p class="lead-text">This online hearing quiz can help identify problem areas in your hearing health.</p>

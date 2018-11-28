@@ -43,6 +43,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     speech.bgNoise.loop = true;
     speech.noiseVolume = 0;
 
+    
+    
     // resultsObj.OHQ_audio['speechTest_Noise_Lvl' + speech.noiseVolume].loop = true;
 
     /*
@@ -113,7 +115,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
     speech.answerInput = [];
 
     // Key to compare answerInput against to test for true/false
-    speech.answerKey = ['Bean', 'Chalk', 'Goose'];
+    // speech.answerKey = ['Bean', 'Chalk', 'Goose'];
+    speech.answerKey = [];
 
     speech.answerNumberWords = ['1st', '2nd', '3rd'];
 
@@ -396,6 +399,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
         switch(speech.noiseVolume){
             case 1:
+                
+                console.log("Which audio was: " + whichAudio + "\n curStart was: " + curStart);
                 resultsObj.OHQ_audio.speechTest_Master_lvl1.currentTime = curStart;
                 resultsObj.OHQ_audio.speechTest_Master_lvl1.play();
                 console.log('case 1 fired with: ' + speech.noiseVolume);
@@ -406,6 +411,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                 }, 5900);
                 break;
             case 2:
+                console.log(resultsObj.OHQ_audio.speechTest_Master_lvl2);
+                console.log("Which audio was: " + whichAudio + "\n curStart was: " + curStart);
                 resultsObj.OHQ_audio.speechTest_Master_lvl2.currentTime = curStart;
                 resultsObj.OHQ_audio.speechTest_Master_lvl2.play();
                 console.log('case 2 fired with: ' + speech.noiseVolume);
@@ -416,6 +423,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
                 }, 5900);
                 break;
             case 3:
+                console.log(resultsObj.OHQ_audio.speechTest_Master_lvl3);
+                console.log("Which audio was: " + whichAudio + "\n curStart was: " + curStart);
                 resultsObj.OHQ_audio.speechTest_Master_lvl3.currentTime = curStart;
                 resultsObj.OHQ_audio.speechTest_Master_lvl3.play();
                 console.log('case 3 fired with: ' + speech.noiseVolume);
@@ -435,7 +444,8 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
     // play new round audio/gen new round answers
     speech.roundAudio = function() {
-
+        
+        console.log("speech.answerKey: " + speech.answerKey);
         // speech.bgNoise.autoplay = true;
 
         // If not last round
@@ -455,9 +465,11 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
             // 4. generate new round answers
             generateRoundAns();
+        console.log("speech.answerKey: " + speech.answerKey);
 
             // 5. play corresponding audio for new round answers
             playRoundAudio();
+        console.log("speech.answerKey: " + speech.answerKey);
 
 
             // if last round
@@ -485,6 +497,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
 
         // 1. Reset answerKey array
         speech.answerKey = [];
+        console.log(resultsObj.quizAns);
 
         /*switch(speech.noiseVolume){
         case 1:
@@ -528,7 +541,7 @@ angular.module('formApp').controller('SpeechTest', ['$scope', 'resultsObj', 'ans
         var startAnswer;
 
         startAnswer = speech.answerKey[0];
-
+        console.log("startAnswer is: " + startAnswer);
         audioPlayerSpeechTest(startAnswer);
 
     }

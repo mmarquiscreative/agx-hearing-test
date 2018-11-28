@@ -177,10 +177,38 @@ stage.doublePlayNext = function(){
     function openOHQ() {
         document.querySelector('#ohq-container').style.display = 'block';
         document.querySelector('#ohq-overlay-parent').style.display = 'block';
+        var test_iOS = is_iOS();
+        
+        
+        
+        if(test_iOS){
+            console.log('is_iOS came back true: running pre-play actions');
+            resultsObj.OHQ_audio.speechTest_Master_lvl1.play();
+    resultsObj.OHQ_audio.speechTest_Master_lvl1.pause();
+            resultsObj.OHQ_audio.speechTest_Master_lvl2.play();
+    resultsObj.OHQ_audio.speechTest_Master_lvl2.pause();
+            resultsObj.OHQ_audio.speechTest_Master_lvl3.play();
+    resultsObj.OHQ_audio.speechTest_Master_lvl3.pause();
+                     };
         $state.go('stage.intro');
+        
         document.querySelector('body').style.overflow = 'hidden';
     }
+function is_iOS () {
+    /*
+        Returns whether device agent is iOS Safari
+    */
+    
+    console.log(navigator.userAgent);
+    
+    var ua = navigator.userAgent;
+    var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+    var webkitUa = !!ua.match(/WebKit/i);
 
+    return webkitUa && iOS && !ua.match(/CriOS/i);
+    
+    //return typeof webkit !== 'undefined' && iOS && webkit && !ua.match(/CriOS/i);
+};
     ///////////////////////////////////////////////////////////////
     // ::AGXHearing.com::START AGX Hearing Floating Header Workaround 
     ///////////////////////////////////////////////////////////////
