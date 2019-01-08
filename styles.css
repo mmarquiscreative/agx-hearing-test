@@ -28,6 +28,7 @@ grey:       #3d3935
 	border-top-width: 0px;
 }
 
+
 /******************************************************************
 ANIMATIONS
 ******************************************************************/
@@ -694,7 +695,7 @@ BUTTONS
   border: 2px solid #e0e0e0;
   border-radius: 1000px;
   box-shadow: 1px 1px 3px grey;
-  /* display: table-cell; */
+  display: table-cell;
   font-size: 100%;
   font-weight: 200;
   height: 6vh;
@@ -704,6 +705,13 @@ BUTTONS
   position: relative;
   top: -1px;
   width: 30% !important;
+}
+
+#agx-ohq .speech-current-answers {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  justify-content: center;
 }
 
 #agx-ohq .btn-submit[disabled],
@@ -855,6 +863,10 @@ RESPONSIVE STYLES
   #agx-ohq .freq-8000hz  { height: 10%; width: 55%; }
   #agx-ohq .freq-10000hz { height: 10%; width: 60%; }
 
+  #agx-ohq .speech-current-answers {
+    flex-direction: column;
+  }
+
   #agx-ohq .results-summary {
     flex-direction: column;
     padding: 0 0 5% 0;
@@ -986,6 +998,10 @@ RESPONSIVE STYLES
   #agx-ohq .freq-6000hz  { height: 5%; width: 30%; }
   #agx-ohq .freq-8000hz  { height: 5%; width: 35%; }
   #agx-ohq .freq-10000hz { height: 5%; width: 40%; }
+
+  #agx-ohq .speech-current-answers {
+    flex-direction: row;
+  }
 
   #agx-ohq .results-summary {
     flex-direction: row;
