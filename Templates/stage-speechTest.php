@@ -14,7 +14,7 @@
       <div ng-show="!speech.startTestDisabled" >
         <h2>This section is broken into 4 rounds.</h2>
         <p class="lead-text" ng-disabled="speech.startTestDisabled">1. In each round you'll hear three words spoken. <br/><br/>2. After you hear them, click on the 3 words you heard (in order). <br/><br/>3. The background noise increases for each round, so if at any point you aren't able to hear a word, you can click on the 'Skip Word' button.<br/><br/></p>
-        <button ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-submit" id="toneAnswer">Start Test</button>
+        <button ng-disabled="speech.startTestDisabled" ng-click="speech.roundAudio()" class="btn-submit" id="btn-start-speech-in-noise">Start Test</button>
       </div>  
     </div>
 
